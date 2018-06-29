@@ -11,7 +11,6 @@
 """
 
 
-import io
 import json
 import logging
 import re
@@ -23,23 +22,6 @@ import certifi
 from six.moves.urllib.parse import urlencode
 
 logger = logging.getLogger(__name__)
-
-
-class RESTResponse(io.IOBase):
-
-    def __init__(self, resp, data):
-        self.aiohttp_response = resp
-        self.status = resp.status
-        self.reason = resp.reason
-        self.data = data
-
-    def getheaders(self):
-        """Returns a CIMultiDictProxy of the response headers."""
-        return self.aiohttp_response.headers
-
-    def getheader(self, name, default=None):
-        """Returns a given response header."""
-        return self.aiohttp_response.headers.get(name, default)
 
 
 class RESTClientObject(object):
