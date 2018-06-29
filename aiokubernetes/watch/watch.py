@@ -14,8 +14,10 @@
 
 import json
 import pydoc
+from functools import partial
+from types import SimpleNamespace
 
-from kubernetes import client
+import aiokubernetes.api_client as client
 
 PYDOC_RETURN_LABEL = ":return:"
 
@@ -27,12 +29,6 @@ PYDOC_RETURN_LABEL = ":return:"
 TYPE_LIST_SUFFIX = "List"
 
 
-class SimpleNamespace:
-
-    def __init__(self, **kwargs):
-        self.__dict__.update(kwargs)
-
-
 def _find_return_type(func):
     for line in pydoc.getdoc(func).splitlines():
         if line.startswith(PYDOC_RETURN_LABEL):
@@ -40,21 +36,10 @@ def _find_return_type(func):
     return ""
 
 
-def iter_resp_lines(resp):
-    prev = ""
-    for seg in resp.read_chunked(decode_content=False):
-        if isinstance(seg, bytes):
-            seg = seg.decode('utf8')
-        seg = prev + seg
-        lines = seg.split("\n")
-        if not seg.endswith("\n"):
-            prev = lines[-1]
-            lines = lines[:-1]
-        else:
-            prev = ""
-        for line in lines:
-            if line:
-                yield line
+class Stream(object):
+
+    def __init__(self, func, *args, **kwargs):
+        pass
 
 
 class Watch(object):
@@ -63,7 +48,6 @@ class Watch(object):
         self._raw_return_type = return_type
         self._stop = False
         self._api_client = client.ApiClient()
-        self.resource_version = 0
 
     def stop(self):
         self._stop = True
@@ -72,25 +56,64 @@ class Watch(object):
         if self._raw_return_type:
             return self._raw_return_type
         return_type = _find_return_type(func)
+
         if return_type.endswith(TYPE_LIST_SUFFIX):
             return return_type[:-len(TYPE_LIST_SUFFIX)]
         return return_type
 
-    def unmarshal_event(self, data, return_type):
+    def unmarshal_event(self, data: str, response_type):
+        """Return the K8s response `data` in JSON format.
+
+        """
         js = json.loads(data)
+
+        # Make a copy of the original object and save it under the
+        # `raw_object` key because we will replace the data under `object` with
+        # a Python native type shortly.
         js['raw_object'] = js['object']
-        if return_type:
-            obj = SimpleNamespace(data=json.dumps(js['raw_object']))
-            js['object'] = self._api_client.deserialize(obj, return_type)
-            if hasattr(js['object'], 'metadata'):
-                self.resource_version = js['object'].metadata.resource_version
-            # For custom objects that we don't have model defined, json
-            # deserialization results in dictionary
-            elif (isinstance(js['object'], dict) and 'metadata' in js['object']
-                  and 'resourceVersion' in js['object']['metadata']):
-                self.resource_version = js['object']['metadata'][
-                    'resourceVersion']
+
+        # Something went wrong. A typical example would be that the user
+        # supplied a resource version that was too old. In that case K8s would
+        # not send a conventional ADDED/DELETED/... event but an error.
+        if js['type'].lower() == 'error':
+            return js
+
+        # If possible, compile the JSON response into a Python native response
+        # type, eg `V1Namespace` or `V1Pod`,`ExtensionsV1beta1Deployment`, ...
+        if response_type is not None:
+            js['object'] = self._api_client.deserialize(
+                response=SimpleNamespace(data=json.dumps(js['raw_object'])),
+                response_type=response_type
+            )
         return js
+
+    def __aiter__(self):
+        return self
+
+    async def __anext__(self):
+        return await self.next()
+
+    async def next(self):
+        # Set the response object to the user supplied function (eg
+        # `list_namespaced_pods`) if this is the first iteration.
+        if self.resp is None:
+            self.resp = await self.func()
+
+        # Abort at the current iteration if the user has called `stop` on this
+        # stream instance.
+        if self._stop:
+            raise StopAsyncIteration
+
+        # Fetch the next K8s response.
+        line = await self.resp.content.readline()
+        line = line.decode('utf8')
+
+        # Stop the iterator if K8s sends an empty response. This happens when
+        # eg the supplied timeout has expired.
+        if line == '':
+            raise StopAsyncIteration
+
+        return self.unmarshal_event(line, self.return_type)
 
     def stream(self, func, *args, **kwargs):
         """Watch an API resource and stream the result back via a generator.
@@ -107,9 +130,9 @@ class Watch(object):
                              'object' value will be the same as 'raw_object'.
 
         Example:
-            v1 = kubernetes.client.CoreV1Api()
-            watch = kubernetes.watch.Watch()
-            for e in watch.stream(v1.list_namespace, resource_version=1127):
+            v1 = aiokubernetes.api_client.CoreV1Api()
+            watch = aiokubernetes.api_watch.Watch()
+            async for e in watch.stream(v1.list_namespace, timeout_seconds=10):
                 type = e['type']
                 object = e['object']  # object is one of type return_type
                 raw_object = e['raw_object']  # raw_object is a dict
@@ -117,24 +140,12 @@ class Watch(object):
                 if should_stop:
                     watch.stop()
         """
-
         self._stop = False
-        return_type = self.get_return_type(func)
+        self.return_type = self.get_return_type(func)
         kwargs['watch'] = True
         kwargs['_preload_content'] = False
 
-        timeouts = ('timeout_seconds' in kwargs)
-        while True:
-            resp = func(*args, **kwargs)
-            try:
-                for line in iter_resp_lines(resp):
-                    yield self.unmarshal_event(line, return_type)
-                    if self._stop:
-                        break
-            finally:
-                kwargs['resource_version'] = self.resource_version
-                resp.close()
-                resp.release_conn()
+        self.func = partial(func, *args, **kwargs)
+        self.resp = None
 
-            if timeouts or self._stop:
-                break
+        return self

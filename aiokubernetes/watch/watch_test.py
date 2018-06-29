@@ -12,114 +12,80 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import unittest
+import json
 
-from mock import Mock
+from asynctest import CoroutineMock, Mock, TestCase
 
-from .watch import Watch
+from aiokubernetes.watch import Watch
 
 
-class WatchTests(unittest.TestCase):
+class WatchTest(TestCase):
 
-    def test_watch_with_decode(self):
-        fake_resp = Mock()
-        fake_resp.close = Mock()
-        fake_resp.release_conn = Mock()
-        fake_resp.read_chunked = Mock(
-            return_value=[
-                '{"type": "ADDED", "object": {"metadata": {"name": "test1",'
-                '"resourceVersion": "1"}, "spec": {}, "status": {}}}\n',
-                '{"type": "ADDED", "object": {"metadata": {"name": "test2",'
-                '"resourceVersion": "2"}, "spec": {}, "sta',
-                'tus": {}}}\n'
-                '{"type": "ADDED", "object": {"metadata": {"name": "test3",'
-                '"resourceVersion": "3"}, "spec": {}, "status": {}}}\n',
-                'should_not_happened\n'])
+    async def test_watch_with_decode(self):
+        fake_resp = CoroutineMock()
+        fake_resp.content.readline = CoroutineMock()
+        side_effects = [
+            {
+                "type": "ADDED",
+                "object": {
+                    "metadata": {"name": "test{}".format(uid)},
+                    "spec": {}, "status": {}
+                }
+            }
+            for uid in range(3)
+        ]
+        side_effects = [json.dumps(_).encode('utf8') for _ in side_effects]
+        side_effects.extend([AssertionError('Should not have been called')])
+        fake_resp.content.readline.side_effect = side_effects
 
         fake_api = Mock()
-        fake_api.get_namespaces = Mock(return_value=fake_resp)
+        fake_api.get_namespaces = CoroutineMock(return_value=fake_resp)
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
 
-        w = Watch()
-        count = 1
-        for e in w.stream(fake_api.get_namespaces):
+        watch = Watch()
+        count = 0
+        async for e in watch.stream(fake_api.get_namespaces, resource_version='123'):
             self.assertEqual("ADDED", e['type'])
             # make sure decoder worked and we got a model with the right name
             self.assertEqual("test%d" % count, e['object'].metadata.name)
-            # make sure decoder worked and updated Watch.resource_version
-            self.assertEqual(
-                "%d" % count, e['object'].metadata.resource_version)
-            self.assertEqual("%d" % count, w.resource_version)
+
+            # Stop the watch. This must not return the next event which would
+            # be an AssertionError exception.
             count += 1
-            # make sure we can stop the watch and the last event with won't be
-            # returned
-            if count == 4:
-                w.stop()
+            if count == len(side_effects) - 1:
+                watch.stop()
 
         fake_api.get_namespaces.assert_called_once_with(
-            _preload_content=False, watch=True)
-        fake_resp.read_chunked.assert_called_once_with(decode_content=False)
-        fake_resp.close.assert_called_once()
-        fake_resp.release_conn.assert_called_once()
+            _preload_content=False, watch=True, resource_version='123')
 
-    def test_watch_stream_twice(self):
-        w = Watch(float)
-        for step in ['first', 'second']:
-            fake_resp = Mock()
-            fake_resp.close = Mock()
-            fake_resp.release_conn = Mock()
-            fake_resp.read_chunked = Mock(
-                return_value=['{"type": "ADDED", "object": 1}\n'] * 4)
+    async def test_watch_k8s_empty_response(self):
+        """Stop the iterator when the response is empty.
 
-            fake_api = Mock()
-            fake_api.get_namespaces = Mock(return_value=fake_resp)
-            fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
+        This typically happens when the user supplied timeout expires.
 
-            count = 1
-            for e in w.stream(fake_api.get_namespaces):
-                count += 1
-                if count == 3:
-                    w.stop()
+        """
+        # Mock the readline return value to first return a valid response
+        # followed by an empty response.
+        fake_resp = CoroutineMock()
+        fake_resp.content.readline = CoroutineMock()
+        side_effects = [
+            {"type": "ADDED", "object": {"metadata": {"name": "test0"}, "spec": {}, "status": {}}},
+            {"type": "ADDED", "object": {"metadata": {"name": "test1"}, "spec": {}, "status": {}}},
+        ]
+        side_effects = [json.dumps(_).encode('utf8') for _ in side_effects]
+        fake_resp.content.readline.side_effect = side_effects + [b'']
 
-            self.assertEqual(count, 3)
-            fake_api.get_namespaces.assert_called_once_with(
-                _preload_content=False, watch=True)
-            fake_resp.read_chunked.assert_called_once_with(
-                decode_content=False)
-            fake_resp.close.assert_called_once()
-            fake_resp.release_conn.assert_called_once()
-
-    def test_watch_stream_loop(self):
-        w = Watch(float)
-
-        fake_resp = Mock()
-        fake_resp.close = Mock()
-        fake_resp.release_conn = Mock()
-        fake_resp.read_chunked = Mock(
-            return_value=['{"type": "ADDED", "object": 1}\n'])
-
+        # Fake the K8s resource object to watch.
         fake_api = Mock()
-        fake_api.get_namespaces = Mock(return_value=fake_resp)
+        fake_api.get_namespaces = CoroutineMock(return_value=fake_resp)
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
 
-        count = 0
-
-        # when timeout_seconds is set, auto-exist when timeout reaches
-        for e in w.stream(fake_api.get_namespaces, timeout_seconds=1):
-            count = count + 1
-        self.assertEqual(count, 1)
-
-        # when no timeout_seconds, only exist when w.stop() is called
-        for e in w.stream(fake_api.get_namespaces):
-            count = count + 1
-            if count == 2:
-                w.stop()
-
-        self.assertEqual(count, 2)
-        self.assertEqual(fake_api.get_namespaces.call_count, 2)
-        self.assertEqual(fake_resp.read_chunked.call_count, 2)
-        self.assertEqual(fake_resp.close.call_count, 2)
-        self.assertEqual(fake_resp.release_conn.call_count, 2)
+        # Iteration must cease after all valid responses were received.
+        watch = Watch()
+        cnt = 0
+        async for _ in watch.stream(fake_api.get_namespaces): # noqa
+            cnt += 1
+        self.assertEqual(cnt, len(side_effects))
 
     def test_unmarshal_with_float_object(self):
         w = Watch()
@@ -131,48 +97,49 @@ class WatchTests(unittest.TestCase):
 
     def test_unmarshal_with_no_return_type(self):
         w = Watch()
-        event = w.unmarshal_event('{"type": "ADDED", "object": ["test1"]}',
-                                  None)
+        event = w.unmarshal_event(
+            '{"type": "ADDED", "object": ["test1"]}', None)
         self.assertEqual("ADDED", event['type'])
         self.assertEqual(["test1"], event['object'])
         self.assertEqual(["test1"], event['raw_object'])
 
-    def test_unmarshal_with_custom_object(self):
-        w = Watch()
-        event = w.unmarshal_event('{"type": "ADDED", "object": {"apiVersion":'
-                                  '"test.com/v1beta1","kind":"foo","metadata":'
-                                  '{"name": "bar", "resourceVersion": "1"}}}',
-                                  'object')
-        self.assertEqual("ADDED", event['type'])
-        # make sure decoder deserialized json into dictionary and updated
-        # Watch.resource_version
-        self.assertTrue(isinstance(event['object'], dict))
-        self.assertEqual("1", event['object']['metadata']['resourceVersion'])
-        self.assertEqual("1", w.resource_version)
+    async def test_unmarshall_k8s_error_response(self):
+        """Never parse messages of type ERROR.
 
-    def test_watch_with_exception(self):
-        fake_resp = Mock()
-        fake_resp.close = Mock()
-        fake_resp.release_conn = Mock()
-        fake_resp.read_chunked = Mock(side_effect=KeyError('expected'))
+        This test uses an actually recorded error, in this case for an outdated
+        resource version.
 
+        """
+        # An actual error response sent by K8s during testing.
+        k8s_err = {
+            'type': 'ERROR',
+            'object': {
+                'kind': 'Status', 'apiVersion': 'v1', 'metadata': {},
+                'status': 'Failure',
+                'message': 'too old resource version: 1 (8146471)',
+                'reason': 'Gone', 'code': 410
+            }
+        }
+
+        ret = Watch().unmarshal_event(json.dumps(k8s_err), None)
+        self.assertEqual(ret['type'], k8s_err['type'])
+        self.assertEqual(ret['object'], k8s_err['object'])
+        self.assertEqual(ret['object'], k8s_err['object'])
+
+    async def test_watch_with_exception(self):
+        fake_resp = CoroutineMock()
+        fake_resp.content.readline = CoroutineMock()
+        fake_resp.content.readline.side_effect = KeyError("expected")
         fake_api = Mock()
-        fake_api.get_thing = Mock(return_value=fake_resp)
+        fake_api.get_namespaces = CoroutineMock(return_value=fake_resp)
+        fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
 
-        w = Watch()
-        try:
-            for _ in w.stream(fake_api.get_thing):
-                self.fail(self, "Should fail on exception.")
-        except KeyError:
-            pass
-            # expected
-
-        fake_api.get_thing.assert_called_once_with(
-            _preload_content=False, watch=True)
-        fake_resp.read_chunked.assert_called_once_with(decode_content=False)
-        fake_resp.close.assert_called_once()
-        fake_resp.release_conn.assert_called_once()
+        with self.assertRaises(KeyError):
+            watch = Watch()
+            async for e in watch.stream(fake_api.get_namespaces, timeout_seconds=10): # noqa
+                pass
 
 
 if __name__ == '__main__':
-    unittest.main()
+    import asynctest
+    asynctest.main()
