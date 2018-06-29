@@ -29,7 +29,7 @@ class WSClientTest(unittest.TestCase):
                 ('https://api.domain.com', 'wss://api.domain.com'),
                 ('http://api.domain.com/', 'ws://api.domain.com/'),
                 ('https://api.domain.com/', 'wss://api.domain.com/'),
-                ]:
+        ]:
             self.assertEqual(get_websocket_url(url), ws_url)
 
 
