@@ -15,7 +15,6 @@
 import os
 
 from ..api_client import Configuration
-
 from .config_exception import ConfigException
 
 SERVICE_HOST_ENV_NAME = "KUBERNETES_SERVICE_HOST"

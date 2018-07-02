@@ -28,7 +28,6 @@ from requests_oauthlib import OAuth2Session
 from six import PY3
 
 from ..api_client import ApiClient, Configuration
-
 from .config_exception import ConfigException
 from .dateutil import UTC, format_rfc3339, parse_rfc3339
 

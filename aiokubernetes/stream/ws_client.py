@@ -10,16 +10,17 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from aiokubernetes.rest import ApiException
-
-import select
-import certifi
-import time
 import collections
-from websocket import WebSocket, ABNF, enableTrace
-import six
+import select
 import ssl
-from six.moves.urllib.parse import urlencode, quote_plus, urlparse, urlunparse
+import time
+
+import certifi
+import six
+from six.moves.urllib.parse import urlencode, urlparse, urlunparse
+from websocket import ABNF, WebSocket, enableTrace
+
+from aiokubernetes.rest import ApiException
 
 STDIN_CHANNEL = 0
 STDOUT_CHANNEL = 1
@@ -49,7 +50,9 @@ class WSClient:
             header.append("authorization: %s" % headers['authorization'])
 
         if headers and 'sec-websocket-protocol' in headers:
-            header.append("sec-websocket-protocol: %s" % headers['sec-websocket-protocol'])
+            header.append(
+                "sec-websocket-protocol: %s" % headers['sec-websocket-protocol']
+            )
         else:
             header.append("sec-websocket-protocol: v4.channel.k8s.io")
 
@@ -101,7 +104,7 @@ class WSClient:
                 if "\n" in data:
                     index = data.find("\n")
                     ret = data[:index]
-                    data = data[index+1:]
+                    data = data[index + 1:]
                     if data:
                         self._channels[channel] = data
                     else:
