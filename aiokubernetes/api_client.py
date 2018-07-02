@@ -158,7 +158,12 @@ class ApiClient(object):
         if _preload_content:
             # deserialize response data
             if response_type:
-                return_data = self.deserialize(response_data, response_type)
+                if response_type == "file":
+                    return self.__deserialize_file(response_data)
+
+                # fetch data from response object
+                data = await response_data.json()
+                return self.__deserialize(data, response_type)
             else:
                 return_data = None
 
