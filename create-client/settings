@@ -1,0 +1,3 @@
+export KUBERNETES_BRANCH="release-1.10"
+export CLIENT_VERSION="1.0"  # just a random value
+export PACKAGE_NAME="aiokubernetes"
