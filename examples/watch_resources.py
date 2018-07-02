@@ -1,19 +1,19 @@
 """Watch multiple K8s event streams without threads."""
 import asyncio
 
-from aiokubernetes import api, config, watch
+import aiokubernetes as k8s
 
 
 async def watch_namespaces():
-    v1 = api.CoreV1Api()
-    async for event in watch.Watch(v1.list_namespace):
+    v1 = k8s.api.CoreV1Api()
+    async for event in k8s.watch.Watch(v1.list_namespace):
         etype, obj = event['type'], event['object']
         print(f"{etype} namespace {obj.metadata.name}")
 
 
 async def watch_pods():
-    v1 = api.CoreV1Api()
-    async for event in watch.Watch(v1.list_pod_for_all_namespaces):
+    v1 = k8s.api.CoreV1Api()
+    async for event in k8s.watch.Watch(v1.list_pod_for_all_namespaces):
         evt, obj = event['type'], event['object']
         print(f"{evt} pod {obj.metadata.name} in NS {obj.metadata.namespace}")
 
@@ -21,7 +21,7 @@ async def watch_pods():
 def main():
     # Load the kubeconfig file specified in the KUBECONFIG environment
     # variable, or fall back to `~/.kube/config`.
-    config.load_kube_config()
+    k8s.config.load_kube_config()
 
     # Define the tasks to watch namespaces and pods.
     tasks = [
