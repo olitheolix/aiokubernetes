@@ -1,0 +1,18 @@
+# ref: https://docs.travis-ci.com/user/languages/python
+language: python
+dist: trusty
+sudo: true
+services:
+  - docker
+
+matrix:
+    include:
+     - python: 3.6
+       env: TOXENV=style-checks
+     - python: 3.6
+       env: TOXENV=py36-functional
+install:
+  - pip install tox
+
+script:
+  - tox

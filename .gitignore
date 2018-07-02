@@ -62,3 +62,9 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# Ignore the kubernetes-client repo.
+/create-client/gen/
+
+# Ignore all pytest folders.
+**/.pytest_cache/
