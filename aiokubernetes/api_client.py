@@ -17,7 +17,6 @@ import mimetypes
 import os
 import re
 import tempfile
-from multiprocessing.pool import ThreadPool
 
 # python 2 and python 3 compatibility library
 import six
@@ -136,14 +135,14 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-            header_params = dict(self.parameters_to_tuples(header_params,
-                                                           collection_formats))
+            header_params = dict(
+                self.parameters_to_tuples(header_params, collection_formats)
+            )
 
         # path parameters
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
-            path_params = self.parameters_to_tuples(path_params,
-                                                    collection_formats)
+            path_params = self.parameters_to_tuples(path_params, collection_formats)
             for k, v in path_params:
                 # specified safe chars, encode everything
                 resource_path = resource_path.replace(
@@ -154,15 +153,13 @@ class ApiClient(object):
         # query parameters
         if query_params:
             query_params = self.sanitize_for_serialization(query_params)
-            query_params = self.parameters_to_tuples(query_params,
-                                                     collection_formats)
+            query_params = self.parameters_to_tuples(query_params, collection_formats)
 
         # post parameters
         if post_params or files:
             post_params = self.prepare_post_parameters(post_params, files)
             post_params = self.sanitize_for_serialization(post_params)
-            post_params = self.parameters_to_tuples(post_params,
-                                                    collection_formats)
+            post_params = self.parameters_to_tuples(post_params, collection_formats)
 
         # auth setting
         self.update_params_for_auth(header_params, query_params, auth_settings)
