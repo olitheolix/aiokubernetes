@@ -66,7 +66,6 @@ class ApiClient(object):
             configuration = Configuration()
         self.configuration = configuration
 
-        self.pool = ThreadPool()
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {}
         if header_name is not None:
@@ -74,10 +73,6 @@ class ApiClient(object):
         self.cookie = cookie
         # Set default User-Agent.
         self.user_agent = 'Swagger-Codegen/1.0/python'
-
-    def __del__(self):
-        self.pool.close()
-        self.pool.join()
 
     @property
     def user_agent(self):
@@ -318,23 +313,16 @@ class ApiClient(object):
             If parameter async is False or missing,
             then the method will return the response directly.
         """
-        if not async:
-            return self.__call_api(resource_path, method,
-                                   path_params, query_params, header_params,
-                                   body, post_params, files,
-                                   response_type, auth_settings,
-                                   _return_http_data_only, collection_formats,
-                                   _preload_content, _request_timeout)
-        else:
-            thread = self.pool.apply_async(self.__call_api, (resource_path,
-                                           method, path_params, query_params,
-                                           header_params, body,
-                                           post_params, files,
-                                           response_type, auth_settings,
-                                           _return_http_data_only,
-                                           collection_formats,
-                                           _preload_content, _request_timeout))
-        return thread
+        return self.__call_api(
+            resource_path,
+            method, path_params, query_params,
+            header_params, body,
+            post_params, files,
+            response_type, auth_settings,
+            _return_http_data_only,
+            collection_formats,
+            _preload_content, _request_timeout
+        )
 
     def request(self, method, url, query_params=None, headers=None,
                 post_params=None, body=None, _preload_content=True,
