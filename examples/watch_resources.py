@@ -6,14 +6,14 @@ import aiokubernetes as k8s
 
 async def watch_namespaces():
     v1 = k8s.api.CoreV1Api()
-    async for event in k8s.watch.Watch(v1.list_namespace):
+    async for event in k8s.watch.Watch(v1.list_namespace, timeout_seconds=1):
         etype, obj = event['type'], event['object']
         print(f"{etype} namespace {obj.metadata.name}")
 
 
 async def watch_pods():
     v1 = k8s.api.CoreV1Api()
-    async for event in k8s.watch.Watch(v1.list_pod_for_all_namespaces):
+    async for event in k8s.watch.Watch(v1.list_pod_for_all_namespaces, timeout_seconds=1):
         evt, obj = event['type'], event['object']
         print(f"{evt} pod {obj.metadata.name} in NS {obj.metadata.namespace}")
 
