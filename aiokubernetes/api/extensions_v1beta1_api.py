@@ -138,7 +138,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1DaemonSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -249,7 +248,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -368,7 +366,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1DeploymentRollback',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -479,7 +476,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1Ingress',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -590,7 +586,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1NetworkPolicy',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -701,7 +696,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ReplicaSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -804,7 +798,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1PodSecurityPolicy',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -939,7 +932,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1074,7 +1066,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1209,7 +1200,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1344,7 +1334,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1479,7 +1468,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1606,7 +1594,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1737,7 +1724,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1868,7 +1854,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1999,7 +1984,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2130,7 +2114,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2261,7 +2244,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2384,7 +2366,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2475,7 +2456,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1APIResourceList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2602,7 +2582,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1DaemonSetList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2729,7 +2708,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1DeploymentList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2856,7 +2834,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1IngressList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2991,7 +2968,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1DaemonSetList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3126,7 +3102,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1DeploymentList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3261,7 +3236,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1IngressList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3396,7 +3370,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1NetworkPolicyList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3531,7 +3504,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ReplicaSetList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3658,7 +3630,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1NetworkPolicyList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3785,7 +3756,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1PodSecurityPolicyList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3912,7 +3882,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ReplicaSetList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4031,7 +4000,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1DaemonSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4150,7 +4118,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1DaemonSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4269,7 +4236,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4388,7 +4354,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4507,7 +4472,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4626,7 +4590,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1Ingress',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4745,7 +4708,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1Ingress',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4864,7 +4826,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1NetworkPolicy',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4983,7 +4944,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ReplicaSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -5102,7 +5062,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -5221,7 +5180,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ReplicaSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -5340,7 +5298,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -5451,7 +5408,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1PodSecurityPolicy',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -5570,7 +5526,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1DaemonSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -5681,7 +5636,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1DaemonSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -5800,7 +5754,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -5911,7 +5864,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -6022,7 +5974,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -6141,7 +6092,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1Ingress',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -6252,7 +6202,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1Ingress',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -6371,7 +6320,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1NetworkPolicy',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -6490,7 +6438,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ReplicaSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -6601,7 +6548,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -6712,7 +6658,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ReplicaSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -6823,7 +6768,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -6934,7 +6878,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1PodSecurityPolicy',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -7053,7 +6996,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1DaemonSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -7172,7 +7114,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1DaemonSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -7291,7 +7232,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -7410,7 +7350,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -7529,7 +7468,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -7648,7 +7586,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1Ingress',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -7767,7 +7704,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1Ingress',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -7886,7 +7822,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1NetworkPolicy',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -8005,7 +7940,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ReplicaSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -8124,7 +8058,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -8243,7 +8176,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ReplicaSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -8362,7 +8294,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -8473,7 +8404,6 @@ class ExtensionsV1beta1Api(object):
             files=local_var_files,
             response_type='ExtensionsV1beta1PodSecurityPolicy',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

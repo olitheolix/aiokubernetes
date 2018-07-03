@@ -138,7 +138,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ControllerRevision',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -249,7 +248,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -368,7 +366,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1DeploymentRollback',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -479,7 +476,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1StatefulSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -614,7 +610,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -749,7 +744,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -884,7 +878,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1015,7 +1008,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1146,7 +1138,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1277,7 +1268,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1368,7 +1358,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1APIResourceList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1495,7 +1484,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ControllerRevisionList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1622,7 +1610,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1DeploymentList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1757,7 +1744,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ControllerRevisionList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1892,7 +1878,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1DeploymentList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2027,7 +2012,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1StatefulSetList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2154,7 +2138,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1StatefulSetList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2273,7 +2256,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ControllerRevision',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2392,7 +2374,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2511,7 +2492,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2630,7 +2610,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2749,7 +2728,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1StatefulSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2868,7 +2846,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2987,7 +2964,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1StatefulSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3106,7 +3082,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ControllerRevision',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3225,7 +3200,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3336,7 +3310,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3447,7 +3420,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3566,7 +3538,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1StatefulSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3677,7 +3648,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3788,7 +3758,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1StatefulSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3907,7 +3876,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1ControllerRevision',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4026,7 +3994,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4145,7 +4112,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4264,7 +4230,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1Deployment',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4383,7 +4348,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1StatefulSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4502,7 +4466,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='AppsV1beta1Scale',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -4621,7 +4584,6 @@ class AppsV1beta1Api(object):
             files=local_var_files,
             response_type='V1beta1StatefulSet',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

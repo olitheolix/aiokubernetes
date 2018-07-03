@@ -130,7 +130,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1ClusterRole',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -233,7 +232,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1ClusterRoleBinding',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -344,7 +342,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1Role',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -455,7 +452,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1RoleBinding',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -578,7 +574,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -701,7 +696,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -828,7 +822,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -955,7 +948,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1090,7 +1082,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1225,7 +1216,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1356,7 +1346,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1487,7 +1476,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1Status',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1578,7 +1566,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1APIResourceList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1705,7 +1692,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1ClusterRoleList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1832,7 +1818,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1ClusterRoleBindingList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1967,7 +1952,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1RoleList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2102,7 +2086,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1RoleBindingList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2229,7 +2212,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1RoleBindingList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2356,7 +2338,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1RoleList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2467,7 +2448,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1ClusterRole',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2578,7 +2558,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1ClusterRoleBinding',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2697,7 +2676,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1Role',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2816,7 +2794,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1RoleBinding',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2919,7 +2896,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1ClusterRole',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3022,7 +2998,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1ClusterRoleBinding',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3133,7 +3108,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1Role',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3244,7 +3218,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1RoleBinding',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3355,7 +3328,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1ClusterRole',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3466,7 +3438,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1ClusterRoleBinding',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3585,7 +3556,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1Role',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -3704,7 +3674,6 @@ class RbacAuthorizationV1Api(object):
             files=local_var_files,
             response_type='V1RoleBinding',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
