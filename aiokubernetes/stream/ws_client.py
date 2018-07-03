@@ -32,7 +32,7 @@ def get_websocket_url(url):
     return urlunparse(parts)
 
 
-class WsApiClient(aiokubernetes.api_client.ApiClient):
+class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
 
     async def request(self, method, url, query_params=None, headers=None,
                       post_params=None, body=None, _preload_content=True,
