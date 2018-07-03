@@ -13,9 +13,9 @@
 # limitations under the License.
 
 import json
+from types import SimpleNamespace
 
 from asynctest import CoroutineMock, Mock, TestCase
-from types import SimpleNamespace
 
 import aiokubernetes as k8s
 
@@ -71,10 +71,15 @@ class WatchTest(TestCase):
         side_effects.extend([AssertionError('Should not have been called')])
         fake_resp.content.readline.side_effect = side_effects
 
+        # Actual API client instance because we will need it to wrap the
+        # Json structure in `side_effects` into a Swagger generated Python object.
+        api_client = k8s.api_client.ApiClient()
+
         fake_api = Mock()
         fake_api.get_namespaces = CoroutineMock(
             return_value=SimpleNamespace(parsed=fake_resp))
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
+        fake_api.get_namespaces.__self__ = SimpleNamespace(api_client=api_client)
 
         watch = k8s.watch.Watch(fake_api.get_namespaces, resource_version='123')
         count = 0
@@ -91,6 +96,9 @@ class WatchTest(TestCase):
 
         fake_api.get_namespaces.assert_called_once_with(
             _preload_content=False, watch=True, resource_version='123')
+
+        # For a clean shutdown of the test.
+        await api_client.rest_client.pool_manager.close()
 
     async def test_watch_k8s_empty_response(self):
         """Stop the iterator when the response is empty.
@@ -120,6 +128,7 @@ class WatchTest(TestCase):
         fake_api.get_namespaces = CoroutineMock(
             return_value=SimpleNamespace(parsed=fake_resp))
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
+        fake_api.get_namespaces.__self__ = fake_api
 
         # Iteration must cease after all valid responses were received.
         watch = k8s.watch.Watch(fake_api.get_namespaces)
@@ -174,6 +183,7 @@ class WatchTest(TestCase):
         fake_api.get_namespaces = CoroutineMock(
             return_value=SimpleNamespace(parsed=fake_resp))
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
+        fake_api.get_namespaces.__self__ = fake_api
 
         with self.assertRaises(KeyError):
             watch = k8s.watch.Watch(fake_api.get_namespaces, timeout_seconds=10)
