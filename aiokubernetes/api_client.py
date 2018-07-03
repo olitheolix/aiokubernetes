@@ -17,6 +17,7 @@ import mimetypes
 import os
 import re
 import tempfile
+from types import SimpleNamespace
 
 # python 2 and python 3 compatibility library
 import six
@@ -125,7 +126,6 @@ class ApiClient(object):
             If parameter async is False or missing,
             then the method will return the response directly.
         """
-
         config = self.configuration
 
         # header parameters
@@ -178,26 +178,21 @@ class ApiClient(object):
             _preload_content=_preload_content,
             _request_timeout=_request_timeout)
 
-        self.last_response = response_data
-
-        return_data = response_data
         if _preload_content:
             # deserialize response data
             if response_type:
                 if response_type == "file":
-                    return self.__deserialize_file(response_data)
-
-                # fetch data from response object
-                data = await response_data.json()
-                return self.__deserialize(data, response_type)
+                    return_data = self.__deserialize_file(response_data)
+                else:
+                    # fetch data from response object
+                    data = await response_data.json()
+                    return_data = self.__deserialize(data, response_type)
             else:
                 return_data = None
-
-        if _return_http_data_only:
-            return (return_data)
         else:
-            return (return_data, response_data.status,
-                    response_data.getheaders())
+            return_data = response_data
+
+        return SimpleNamespace(http=response_data, parsed=return_data)
 
     def sanitize_for_serialization(self, obj):
         """Builds a JSON POST object.

@@ -76,7 +76,14 @@ class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
             # fixme: Make this an aiohttp response.
             async def data_json():
                 return resp_all
-            return SimpleNamespace(data=resp_all, json=data_json, status=200, response_type=None)
+            return SimpleNamespace(
+                data=resp_all,
+                json=data_json,
+                status=200,
+                response_type=None,
+                method='WEBSOCKET',
+                url=url,
+            )
 
         else:
 

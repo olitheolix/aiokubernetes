@@ -15,6 +15,7 @@
 import json
 
 from asynctest import CoroutineMock, Mock, TestCase
+from types import SimpleNamespace
 
 import aiokubernetes as k8s
 
@@ -71,7 +72,8 @@ class WatchTest(TestCase):
         fake_resp.content.readline.side_effect = side_effects
 
         fake_api = Mock()
-        fake_api.get_namespaces = CoroutineMock(return_value=fake_resp)
+        fake_api.get_namespaces = CoroutineMock(
+            return_value=SimpleNamespace(parsed=fake_resp))
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
 
         watch = k8s.watch.Watch(fake_api.get_namespaces, resource_version='123')
@@ -115,14 +117,13 @@ class WatchTest(TestCase):
 
         # Fake the K8s resource object to watch.
         fake_api = Mock()
-        fake_api.get_namespaces = CoroutineMock(return_value=fake_resp)
+        fake_api.get_namespaces = CoroutineMock(
+            return_value=SimpleNamespace(parsed=fake_resp))
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
 
         # Iteration must cease after all valid responses were received.
         watch = k8s.watch.Watch(fake_api.get_namespaces)
-        cnt = 0
-        async for _ in watch: # noqa
-            cnt += 1
+        cnt = len([_ async for _ in watch])
         self.assertEqual(cnt, len(side_effects))
 
     def test_unmarshal_with_float_object(self):
@@ -170,13 +171,13 @@ class WatchTest(TestCase):
         fake_resp.content.readline = CoroutineMock()
         fake_resp.content.readline.side_effect = KeyError("expected")
         fake_api = Mock()
-        fake_api.get_namespaces = CoroutineMock(return_value=fake_resp)
+        fake_api.get_namespaces = CoroutineMock(
+            return_value=SimpleNamespace(parsed=fake_resp))
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
 
         with self.assertRaises(KeyError):
             watch = k8s.watch.Watch(fake_api.get_namespaces, timeout_seconds=10)
-            async for e in watch: # noqa
-                pass
+            [_ async for _ in watch]
 
 
 if __name__ == '__main__':

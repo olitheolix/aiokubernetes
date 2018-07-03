@@ -136,7 +136,7 @@ class Watch(object):
             raise StopAsyncIteration
 
         # Fetch the next K8s response.
-        line = await self.resp.content.readline()
+        line = await self.resp.parsed.content.readline()
         line = line.decode('utf8')
 
         # Stop the iterator if K8s sends an empty response. This happens when
