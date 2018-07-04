@@ -72,7 +72,10 @@ async def create_deployment(api_client, ws_api_client):
         print(f'Connecting to Pod <{pod_name}>')
 
         v1_ws = k8s.CoreV1Api(api_client=ws_api_client)
-        exec_command = ['/bin/sh', '-c', 'echo This is stderr >&2; echo This is stdout']
+        exec_command = [
+            '/bin/sh', '-c',
+            'echo This is stderr >&2; sleep 5s; echo This is stdout'
+        ]
         resp = await v1_ws.connect_get_namespaced_pod_exec(
             pod_name, namespace,
             command=exec_command,
@@ -110,10 +113,22 @@ async def create_deployment(api_client, ws_api_client):
     print('------------ End of Demo ------------')
 
 
+async def watch_websocket_queue(queue):
+    # Print whatever comes in on `queue` whenever it arrives.
+    while True:
+        msg = await queue.get()
+        print(f'Websocket received <{msg}>')
+
+
 async def setup():
+    queue = asyncio.Queue()
+
     # Create client API instances (Websocket and Http).
     api_client = k8s.config.new_client_from_config()
-    ws_api_client = k8s.config.new_websocket_client_from_config()
+    ws_api_client = k8s.config.new_websocket_client_from_config(queue=queue)
+
+    # Create task to do nothing but watch the Websocket queue.
+    queue_watch = asyncio.ensure_future(watch_websocket_queue(queue))
 
     # Specify and dispatch the tasks.
     tasks = [
@@ -123,6 +138,7 @@ async def setup():
     await asyncio.gather(*tasks)
 
     print('\nShutting down')
+    queue_watch.cancel()
     await api_client.rest_client.pool_manager.close()
     await ws_api_client.rest_client.pool_manager.close()
 
