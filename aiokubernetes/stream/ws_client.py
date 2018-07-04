@@ -30,6 +30,9 @@ def get_websocket_url(url):
 
 
 class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
+    def __init__(self, *args, **kwargs):
+        self.queue = kwargs.pop('queue', None)
+        super().__init__(*args, **kwargs)
 
     async def request(self, method, url, query_params=None, headers=None,
                       post_params=None, body=None, _preload_content=True,
@@ -60,13 +63,22 @@ class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
             pool = self.rest_client.pool_manager
             async with pool.ws_connect(url, headers=headers) as ws:
                 async for msg in ws:
-                    msg = msg.data.decode('utf-8')
+                    msg = msg.data
+
+                    # Ignore empty messages.
                     if len(msg) == 0:
                         continue
 
-                    channel, data = ord(msg[0]), msg[1:]
+                    # Put the message verbatim into the user supplied queue.
+                    if self.queue is not None:
+                        await self.queue.put(msg)
+
+                    # The first byte determines if the message was printed on
+                    # STDOUT or STDERR. Ignore the messages that were neither
+                    # (ie ERROR_CHANNEL).
+                    channel, data = msg[0], msg[1:]
                     if len(data) > 0 and channel in [STDOUT_CHANNEL, STDERR_CHANNEL]:
-                        resp_all += data
+                        resp_all += data.decode('utf8')
 
             # fixme: Make this an aiohttp response.
             async def data_json():
