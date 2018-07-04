@@ -46,12 +46,11 @@ sed -i '/^ *async=params\.get.*/d' api/*.py
 # These import are technically unnecessary but are convenient for end users.
 cat >>"__init__.py" <<EOF
 
-# These import are unnecessary but make imports more convenient.
-import aiokubernetes.api as api
+# These import are technically unnecessary but are convenient for end users.
 import aiokubernetes.config as config
-import aiokubernetes.models as models
 import aiokubernetes.stream as stream
-import aiokubernetes.watch as watch
+
+from aiokubernetes.watch import Watch
 EOF
 
 popd

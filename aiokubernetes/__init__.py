@@ -596,9 +596,8 @@ from aiokubernetes.models.v2beta1_resource_metric_source import V2beta1ResourceM
 from aiokubernetes.models.v2beta1_resource_metric_status import V2beta1ResourceMetricStatus
 from aiokubernetes.models.version_info import VersionInfo
 
-# These import are unnecessary but make imports more convenient.
-import aiokubernetes.api as api
+# These import are technically unnecessary but are convenient for end users.
 import aiokubernetes.config as config
-import aiokubernetes.models as models
 import aiokubernetes.stream as stream
-import aiokubernetes.watch as watch
+
+from aiokubernetes.watch import Watch
