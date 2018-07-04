@@ -17,8 +17,6 @@ import pydoc
 from functools import partial
 from types import SimpleNamespace
 
-import aiokubernetes.api_client as client
-
 
 def _find_return_type(func):
     """Return the K8s return type as a string, eg `V1Namespace`.
@@ -78,7 +76,7 @@ class Watch(object):
                     watch.stop()
 
         """
-        self._api_client = client.ApiClient()
+        self._api_client = func.__self__.api_client
         self._stop = False
 
         # Make this more explicit and cover with a test.
@@ -136,7 +134,7 @@ class Watch(object):
             raise StopAsyncIteration
 
         # Fetch the next K8s response.
-        line = await self.resp.content.readline()
+        line = await self.resp.parsed.content.readline()
         line = line.decode('utf8')
 
         # Stop the iterator if K8s sends an empty response. This happens when

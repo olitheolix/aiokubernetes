@@ -17,7 +17,7 @@ import mimetypes
 import os
 import re
 import tempfile
-from multiprocessing.pool import ThreadPool
+from types import SimpleNamespace
 
 # python 2 and python 3 compatibility library
 import six
@@ -66,7 +66,6 @@ class ApiClient(object):
             configuration = Configuration()
         self.configuration = configuration
 
-        self.pool = ThreadPool()
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {}
         if header_name is not None:
@@ -74,10 +73,6 @@ class ApiClient(object):
         self.cookie = cookie
         # Set default User-Agent.
         self.user_agent = 'Swagger-Codegen/1.0/python'
-
-    def __del__(self):
-        self.pool.close()
-        self.pool.join()
 
     @property
     def user_agent(self):
@@ -91,13 +86,46 @@ class ApiClient(object):
     def set_default_header(self, header_name, header_value):
         self.default_headers[header_name] = header_value
 
-    async def __call_api(
+    async def call_api(
             self, resource_path, method, path_params=None,
             query_params=None, header_params=None, body=None, post_params=None,
             files=None, response_type=None, auth_settings=None,
             _return_http_data_only=None, collection_formats=None,
             _preload_content=True, _request_timeout=None):
+        """Makes the HTTP request (synchronous) and returns deserialized data.
 
+        :param resource_path: Path to method endpoint.
+        :param method: Method to call.
+        :param path_params: Path parameters in the url.
+        :param query_params: Query parameters in the url.
+        :param header_params: Header parameters to be
+            placed in the request header.
+        :param body: Request body.
+        :param post_params dict: Request post form parameters,
+            for `application/x-www-form-urlencoded`, `multipart/form-data`.
+        :param auth_settings list: Auth Settings names for the request.
+        :param response: Response data type.
+        :param files dict: key -> filename, value -> filepath,
+            for `multipart/form-data`.
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param collection_formats: dict of collection formats for path, query,
+            header, and post parameters.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return:
+            fixme: docu is wrong
+            If async parameter is True,
+            the request will be called asynchronously.
+            The method will return the request thread.
+            If parameter async is False or missing,
+            then the method will return the response directly.
+        """
         config = self.configuration
 
         # header parameters
@@ -107,14 +135,14 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-            header_params = dict(self.parameters_to_tuples(header_params,
-                                                           collection_formats))
+            header_params = dict(
+                self.parameters_to_tuples(header_params, collection_formats)
+            )
 
         # path parameters
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
-            path_params = self.parameters_to_tuples(path_params,
-                                                    collection_formats)
+            path_params = self.parameters_to_tuples(path_params, collection_formats)
             for k, v in path_params:
                 # specified safe chars, encode everything
                 resource_path = resource_path.replace(
@@ -125,15 +153,13 @@ class ApiClient(object):
         # query parameters
         if query_params:
             query_params = self.sanitize_for_serialization(query_params)
-            query_params = self.parameters_to_tuples(query_params,
-                                                     collection_formats)
+            query_params = self.parameters_to_tuples(query_params, collection_formats)
 
         # post parameters
         if post_params or files:
             post_params = self.prepare_post_parameters(post_params, files)
             post_params = self.sanitize_for_serialization(post_params)
-            post_params = self.parameters_to_tuples(post_params,
-                                                    collection_formats)
+            post_params = self.parameters_to_tuples(post_params, collection_formats)
 
         # auth setting
         self.update_params_for_auth(header_params, query_params, auth_settings)
@@ -152,26 +178,21 @@ class ApiClient(object):
             _preload_content=_preload_content,
             _request_timeout=_request_timeout)
 
-        self.last_response = response_data
-
-        return_data = response_data
         if _preload_content:
             # deserialize response data
             if response_type:
                 if response_type == "file":
-                    return self.__deserialize_file(response_data)
-
-                # fetch data from response object
-                data = await response_data.json()
-                return self.__deserialize(data, response_type)
+                    return_data = self.__deserialize_file(response_data)
+                else:
+                    # fetch data from response object
+                    data = await response_data.json()
+                    return_data = self.__deserialize(data, response_type)
             else:
                 return_data = None
-
-        if _return_http_data_only:
-            return (return_data)
         else:
-            return (return_data, response_data.status,
-                    response_data.getheaders())
+            return_data = response_data
+
+        return SimpleNamespace(http=response_data, parsed=return_data)
 
     def sanitize_for_serialization(self, obj):
         """Builds a JSON POST object.
@@ -275,66 +296,6 @@ class ApiClient(object):
             return self.__deserialize_datatime(data)
         else:
             return self.__deserialize_model(data, klass)
-
-    def call_api(self, resource_path, method,
-                 path_params=None, query_params=None, header_params=None,
-                 body=None, post_params=None, files=None,
-                 response_type=None, auth_settings=None, async=None,
-                 _return_http_data_only=None, collection_formats=None,
-                 _preload_content=True, _request_timeout=None):
-        """Makes the HTTP request (synchronous) and returns deserialized data.
-
-        To make an async request, set the async parameter.
-
-        :param resource_path: Path to method endpoint.
-        :param method: Method to call.
-        :param path_params: Path parameters in the url.
-        :param query_params: Query parameters in the url.
-        :param header_params: Header parameters to be
-            placed in the request header.
-        :param body: Request body.
-        :param post_params dict: Request post form parameters,
-            for `application/x-www-form-urlencoded`, `multipart/form-data`.
-        :param auth_settings list: Auth Settings names for the request.
-        :param response: Response data type.
-        :param files dict: key -> filename, value -> filepath,
-            for `multipart/form-data`.
-        :param async bool: execute request asynchronously
-        :param _return_http_data_only: response data without head status code
-                                       and headers
-        :param collection_formats: dict of collection formats for path, query,
-            header, and post parameters.
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
-                                 be returned without reading/decoding response
-                                 data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :return:
-            If async parameter is True,
-            the request will be called asynchronously.
-            The method will return the request thread.
-            If parameter async is False or missing,
-            then the method will return the response directly.
-        """
-        if not async:
-            return self.__call_api(resource_path, method,
-                                   path_params, query_params, header_params,
-                                   body, post_params, files,
-                                   response_type, auth_settings,
-                                   _return_http_data_only, collection_formats,
-                                   _preload_content, _request_timeout)
-        else:
-            thread = self.pool.apply_async(self.__call_api, (resource_path,
-                                           method, path_params, query_params,
-                                           header_params, body,
-                                           post_params, files,
-                                           response_type, auth_settings,
-                                           _return_http_data_only,
-                                           collection_formats,
-                                           _preload_content, _request_timeout))
-        return thread
 
     def request(self, method, url, query_params=None, headers=None,
                 post_params=None, body=None, _preload_content=True,

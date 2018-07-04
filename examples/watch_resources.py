@@ -4,34 +4,38 @@ import asyncio
 import aiokubernetes as k8s
 
 
-async def watch_namespaces():
-    v1 = k8s.api.CoreV1Api()
-    async for event in k8s.watch.Watch(v1.list_namespace):
+async def watch_resource(resource, **kwargs):
+    async for event in k8s.Watch(resource, **kwargs):
         etype, obj = event['type'], event['object']
-        print(f"{etype} namespace {obj.metadata.name}")
+        print(f"{etype} {obj.kind} {obj.metadata.name}")
 
 
-async def watch_pods():
-    v1 = k8s.api.CoreV1Api()
-    async for event in k8s.watch.Watch(v1.list_pod_for_all_namespaces):
-        evt, obj = event['type'], event['object']
-        print(f"{evt} pod {obj.metadata.name} in NS {obj.metadata.namespace}")
+async def setup():
+    # Create client API instances (Websocket and Http).
+    api_client = k8s.config.new_client_from_config()
+
+    # Namespaces and Pods are part of the K8s Core API.
+    corev1 = k8s.CoreV1Api(api_client)
+
+    # Deployments are part of the Extension API (still in beta).
+    extv1beta = k8s.ExtensionsV1beta1Api(api_client)
+
+    # Specify and dispatch the tasks.
+    tasks = [
+        watch_resource(corev1.list_namespace, timeout_seconds=5),
+        watch_resource(corev1.list_pod_for_all_namespaces, timeout_seconds=5),
+        watch_resource(extv1beta.list_deployment_for_all_namespaces, timeout_seconds=5),
+    ]
+    await asyncio.gather(*tasks)
+
+    # Terminate the connection pool for a clean shutdown.
+    await api_client.rest_client.pool_manager.close()
 
 
 def main():
-    # Load the kubeconfig file specified in the KUBECONFIG environment
-    # variable, or fall back to `~/.kube/config`.
-    k8s.config.load_kube_config()
-
-    # Define the tasks to watch namespaces and pods.
-    tasks = [
-        asyncio.ensure_future(watch_namespaces()),
-        asyncio.ensure_future(watch_pods()),
-    ]
-
-    # Push tasks into event loop.
+    # Setup event loop and setup the program.
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(asyncio.gather(*tasks))
+    loop.run_until_complete(asyncio.ensure_future(setup()))
     loop.close()
 
 

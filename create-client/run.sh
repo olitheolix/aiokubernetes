@@ -33,19 +33,24 @@ rm -rf "$OPENAPI_DIR/aiokubernetes"
 cp -r aiokubernetes/test aiokubernetes/docs "$AIOK8S_DIR/"
 cp -r aiokubernetes/aiokubernetes/api aiokubernetes/aiokubernetes/models "$AIOK8S_DIR/aiokubernetes/"
 
-# The __init__ file contains just contains convenience imports. These serve as a
-# sanity check that all generated models are indeed in our `api/` folder.
+# The __init__ file contains just contains convenience imports. We copy it
+# anyway because these serve as a sanity check that all generated models are
+# indeed in our `api/` folder.
 cp -r aiokubernetes/aiokubernetes/__init__.py "$AIOK8S_DIR/aiokubernetes/__init__.py"
+popd
 
-# Import the main components in __init__ file for convenience library usage.
-cat >>"$AIOK8S_DIR/aiokubernetes/__init__.py" <<EOF
+pushd "$AIOK8S_DIR/aiokubernetes/"
+# Remove the `async=params.get('async')` parameter from the calls to `self.api_client.call_api`.
+sed -i '/^ *async=params\.get.*/d' api/*.py
 
-# These import are unnecessary but make imports more convenient.
-import aiokubernetes.api as api
+# These import are technically unnecessary but are convenient for end users.
+cat >>"__init__.py" <<EOF
+
+# These import are technically unnecessary but are convenient for end users.
 import aiokubernetes.config as config
-import aiokubernetes.models as models
 import aiokubernetes.stream as stream
-import aiokubernetes.watch as watch
+
+from aiokubernetes.watch import Watch
 EOF
 
 popd

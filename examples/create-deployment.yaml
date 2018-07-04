@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+
+metadata:
+  name: login
+  namespace: delme
+
+spec:
+  replicas: 1
+
+  template:
+    metadata:
+      labels:
+        app: login
+
+    spec:
+      containers:
+        - name: login
+          image: alpine:latest
+          command: ["sleep", "1000d"]
+          imagePullPolicy: IfNotPresent
