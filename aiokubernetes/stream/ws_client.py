@@ -10,8 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from six.moves.urllib.parse import urlencode, urlparse, urlunparse
 from types import SimpleNamespace
+from urllib.parse import urlencode, urlparse, urlunparse
 
 import aiokubernetes
 
@@ -23,13 +23,10 @@ RESIZE_CHANNEL = 4
 
 
 def get_websocket_url(url):
-    parsed_url = urlparse(url)
-    parts = list(parsed_url)
-    if parsed_url.scheme == 'http':
-        parts[0] = 'ws'
-    elif parsed_url.scheme == 'https':
-        parts[0] = 'wss'
-    return urlunparse(parts)
+    parts = urlparse(url)
+    assert parts.scheme in ('http', 'https')
+    new_scheme = 'ws' if parts.scheme == 'http' else 'wss'
+    return urlunparse(parts._replace(scheme=new_scheme))
 
 
 class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
@@ -49,8 +46,7 @@ class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
                     new_query_params.append((key, value))
             query_params = new_query_params
 
-        if headers is None:
-            headers = {}
+        headers = headers or {}
         if 'sec-websocket-protocol' not in headers:
             headers['sec-websocket-protocol'] = 'v4.channel.k8s.io'
 
@@ -60,18 +56,17 @@ class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
         url = get_websocket_url(url)
 
         if _preload_content:
-
             resp_all = ''
-            async with self.rest_client.pool_manager.ws_connect(url, headers=headers) as ws:
+            pool = self.rest_client.pool_manager
+            async with pool.ws_connect(url, headers=headers) as ws:
                 async for msg in ws:
                     msg = msg.data.decode('utf-8')
-                    if len(msg) > 1:
-                        channel = ord(msg[0])
-                        data = msg[1:]
+                    if len(msg) == 0:
+                        continue
 
-                        if data:
-                            if channel in [STDOUT_CHANNEL, STDERR_CHANNEL]:
-                                resp_all += data
+                    channel, data = ord(msg[0]), msg[1:]
+                    if len(data) > 0 and channel in [STDOUT_CHANNEL, STDERR_CHANNEL]:
+                        resp_all += data
 
             # fixme: Make this an aiohttp response.
             async def data_json():
@@ -84,7 +79,5 @@ class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
                 method='WEBSOCKET',
                 url=url,
             )
-
         else:
-
             return self.rest_client.pool_manager.ws_connect(url)
