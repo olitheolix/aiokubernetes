@@ -1,21 +1,28 @@
-"""Print all pod names in the cluster."""
+"""Print the name of all pods in the cluster."""
 import asyncio
 
 import aiokubernetes as k8s
 
 
 async def main():
-    # Load the kubeconfig file specified in the KUBECONFIG environment
-    # variable, or fall back to `~/.kube/config`.
-    k8s.config.load_kube_config()
+    # Create an API client instance based on the file specified in the
+    # KUBECONFIG environment variable (fall back `~/.kube/config` if KUBECONFIG
+    # variable does not exist).
+    api_client = k8s.config.new_client_from_config()
 
-    # Pod queries are part of the Core API.
-    v1 = k8s.api.CoreV1Api()
+    # Ask for all Pods.
+    v1 = k8s.api.CoreV1Api(api_client)
     ret = await v1.list_pod_for_all_namespaces()
 
+    # Ensure the API call to Kubernetes succeeded.
+    assert ret.http.status == 200
+
     # Print the pod names.
-    for i in ret.items:
+    for i in ret.parsed.items:
         print(f"{i.metadata.namespace} {i.metadata.name}")
+
+    # Terminate the connection pool for a clean shutdown.
+    await api_client.rest_client.pool_manager.close()
 
 
 if __name__ == '__main__':
