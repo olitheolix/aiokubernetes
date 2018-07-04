@@ -15,7 +15,7 @@
 from types import SimpleNamespace
 
 import asynctest
-from asynctest import CoroutineMock, TestCase, patch
+from asynctest import CoroutineMock, TestCase, patch, mock
 
 import aiokubernetes as k8s
 from aiokubernetes.stream import WebsocketApiClient
@@ -49,50 +49,44 @@ class WSClientTest(TestCase):
         with self.assertRaises(AssertionError):
             get_websocket_url('foo://bar.com')
 
-    async def test_exec_ws(self):
+    @mock.patch.object(k8s.api_client, 'rest')
+    async def test_exec_ws(self, m_rest):
+        """Verify the Websocket connection sends the correct headers."""
 
-        class WsMock:
-            def __init__(self):
-                self.iter = 0
+        # Iterator mock to simulate a websocket connection. Aiohttp uses
+        # async context managers which is why need to turn this mock object
+        # into an async context manager afterwards as well.
+        m_ws = asynctest.mock.MagicMock()
+        m_ws.__aiter__.return_value = [
+            SimpleNamespace(data=(chr(1) + 'message1 ').encode('utf-8')),
+            SimpleNamespace(data=(chr(1) + 'message2 ').encode('utf-8')),
+        ]
+        m_ws.__aenter__.return_value = m_ws.__aexit__.return_value = m_ws
 
-            def __aiter__(self):
-                return self
+        m_rest.RESTClientObject.return_value.pool_manager = m_rest
+        m_rest.ws_connect.return_value = m_ws
 
-            async def __aexit__(self, exc_type, exc, tb):
-                return self
+        # Make the websocket request through our Mock.
+        ws = k8s.CoreV1Api(api_client=WebsocketApiClient())
+        resp = await ws.connect_get_namespaced_pod_exec(
+            'pod', 'namespace', command="mock-command",
+            stderr=True, stdin=False, stdout=True, tty=False
+        )
 
-            async def __aenter__(self):
-                return self
+        # Must have returned the payload we specified in the async iterator above.
+        self.assertEqual(resp.parsed, 'message1 message2 ')
 
-            async def __anext__(self):
-                self.iter += 1
-                if self.iter > 5:
-                    raise StopAsyncIteration
-                return SimpleNamespace(data=(chr(1) + 'mock').encode('utf-8'))
-
-        mock = CoroutineMock()
-        mock.RESTClientObject.return_value.pool_manager = mock
-        mock.ws_connect.return_value = WsMock()
-        with patch('aiokubernetes.api_client.rest', mock):
-
-            ws = k8s.CoreV1Api(api_client=WebsocketApiClient())
-            resp = ws.connect_get_namespaced_pod_exec('pod', 'namespace',
-                                                      command="mock-command",
-                                                      stderr=True, stdin=False,
-                                                      stdout=True, tty=False)
-
-            ret = await resp
-            self.assertEqual(ret.parsed, 'mock' * 5)
-            mock.ws_connect.assert_called_once_with(
-                'wss://localhost/api/v1/namespaces/namespace/pods/pod/exec?'
-                'command=mock-command&stderr=True&stdin=False&stdout=True&tty=False',
-                headers={
-                    'sec-websocket-protocol': 'v4.channel.k8s.io',
-                    'Accept': '*/*',
-                    'User-Agent': 'Swagger-Codegen/1.0/python',
-                    'Content-Type': 'application/json'
-                }
-            )
+        # The WS connection must have received the correct headers automatically.
+        m_rest.ws_connect.assert_called_once_with(
+            'wss://localhost/api/v1/namespaces/namespace/pods/pod/exec?'
+            'command=mock-command&stderr=True&stdin=False&stdout=True&tty=False',
+            headers={
+                'sec-websocket-protocol': 'v4.channel.k8s.io',
+                'Accept': '*/*',
+                'User-Agent': 'Swagger-Codegen/1.0/python',
+                'Content-Type': 'application/json'
+            }
+        )
 
 
 if __name__ == '__main__':
