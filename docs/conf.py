@@ -12,10 +12,15 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import glob
+import os
+import sys
 
+from recommonmark.parser import CommonMarkParser
+
+sys.path.insert(0, os.path.abspath('..'))
+
+import aiokubernetes            # noqa
 
 # -- Project information -----------------------------------------------------
 
@@ -40,16 +45,18 @@ release = ''
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
 ]
+
+autosummary_generate = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
-#
-# source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_parsers = {'.md': CommonMarkParser}
+source_suffix = ['.rst', '.md']
 
 # The master toctree document.
 master_doc = 'index'
@@ -158,3 +165,53 @@ texinfo_documents = [
 
 
 # -- Extension configuration -------------------------------------------------
+def remove_module_docstring(app, what, name, obj, options, lines):
+    """Suppress module level doc strings for the modules under aiokubernetes.api"""
+    if what == "module" and name.startswith('aiokubernetes.api'):
+        del lines[:]
+
+
+def create_auto_summary():
+    # Find all Python files under aiokubernetes/api.
+    api_dir = f'{aiokubernetes.api.__path__[0]}/*.py'
+    fnames = list(glob.glob(api_dir))
+    fnames = [os.path.basename(_) for _ in fnames]
+
+    # Convert the file name to a Python module name: 'foo.py' -> 'foo'
+    module_names = [_.rpartition('.py')[0] for _ in fnames]
+
+    # Preamble of "api_reference.rst" file.
+    lines = [
+        'API Reference',
+        '=============',
+        '',
+        '.. autosummary::',
+        '   :toctree: _autosummary',
+        '',
+    ]
+
+    # Insert the module names into the autosummary section so we get a nice
+    # table with all modules.
+    for name in module_names:
+        lines.append(f'   aiokubernetes.api.{name}')
+
+    # Add section that will contain the details of every module.
+    lines.extend([
+        '',
+        'Module Documentation',
+        '--------------------',
+        '',
+    ])
+
+    # Create the automodule commands for all modules under "aiokubernetes/api".
+    for name in module_names:
+        lines.append(f'.. automodule:: aiokubernetes.api.{name}')
+        lines.append(f'   :members:')
+
+    # Create the Rest file (it is referenced in "index.rst").
+    open('api_reference.rst', 'w').write(str.join('\n', lines))
+
+
+def setup(app):
+    app.connect("autodoc-process-docstring", remove_module_docstring)
+    create_auto_summary()

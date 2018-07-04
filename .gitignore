@@ -68,3 +68,10 @@ target/
 
 # Ignore all pytest folders.
 **/.pytest_cache/
+
+
+# Sphinx
+docs/api_reference.rst
+docs/_build/
+docs/_autosummary/
+docs/_templates/
