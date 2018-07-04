@@ -17,7 +17,7 @@ from setuptools import setup
 REQUIRES = open('requirements.txt').readlines()
 TESTS_REQUIRES = open('test-requirements.txt').readlines()
 
-CLIENT_VERSION = "0.1"
+CLIENT_VERSION = "0.2"
 PACKAGE_NAME = "aiokubernetes"
 DEVELOPMENT_STATUS = "3 - Alpha"
 
