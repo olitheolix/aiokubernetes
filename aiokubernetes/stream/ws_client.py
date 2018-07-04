@@ -13,6 +13,8 @@
 from types import SimpleNamespace
 from urllib.parse import urlencode, urlparse, urlunparse
 
+import aiohttp
+
 import aiokubernetes
 
 STDIN_CHANNEL = 0
@@ -63,6 +65,11 @@ class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
             pool = self.rest_client.pool_manager
             async with pool.ws_connect(url, headers=headers) as ws:
                 async for msg in ws:
+                    # The messages are of type `aiohttp.WSMessage`.
+                    # We currently only allow binary content.
+                    # fixup: graceful handling of alternative content; stream
+                    # raw content through queue?
+                    assert msg.type == aiohttp.WSMsgType.BINARY, 'Wrong message type'
                     msg = msg.data
 
                     # Ignore empty messages.
@@ -76,6 +83,7 @@ class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
                     # The first byte determines if the message was printed on
                     # STDOUT or STDERR. Ignore the messages that were neither
                     # (ie ERROR_CHANNEL).
+                    # fixup: when do we actually get an ERROR_CHANNEL? Add test.
                     channel, data = msg[0], msg[1:]
                     if len(data) > 0 and channel in [STDOUT_CHANNEL, STDERR_CHANNEL]:
                         resp_all += data.decode('utf8')
