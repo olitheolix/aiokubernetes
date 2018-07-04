@@ -24,7 +24,7 @@ RESIZE_CHANNEL = 4
 
 def get_websocket_url(url):
     parts = urlparse(url)
-    assert parts.scheme in ('http', 'https')
+    assert parts.scheme in ('http', 'https'), f'Unknown scheme <{parts.scheme}>'
     new_scheme = 'ws' if parts.scheme == 'http' else 'wss'
     return urlunparse(parts._replace(scheme=new_scheme))
 
