@@ -39,6 +39,16 @@ class WSClientTest(TestCase):
         for url, ws_url in in_out:
             self.assertEqual(get_websocket_url(url), ws_url)
 
+            # The parser must cope with non-lower case schemes (eg
+            # HTtp://foo.com) but always return strictly lower-case versions
+            # (eg http://foo.com).
+            url_upper = url.replace('http', 'HtTp')
+            self.assertEqual(get_websocket_url(url_upper), ws_url)
+
+        # Hard abort for unknown schemes.
+        with self.assertRaises(AssertionError):
+            get_websocket_url('foo://bar.com')
+
     async def test_exec_ws(self):
 
         class WsMock:
