@@ -25,7 +25,7 @@ def _find_return_type(func):
 
     Raise `AssertionError` if the doc string was ambiguous.
 
-    NOTE: this function makes _assumes_ the doc strings have a certain type.
+    NOTE: this function _assumes_ the doc strings have a certain type.
     """
     # Find all the lines that mention the return type.
     lines = [_ for _ in pydoc.getdoc(func).splitlines() if _.startswith(":return:")]
