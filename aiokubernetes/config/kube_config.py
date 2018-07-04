@@ -498,7 +498,9 @@ def new_client_from_config(
 def new_websocket_client_from_config(
         config_file=None,
         context=None,
-        persist_config=True):
+        persist_config=True,
+        queue=None,
+):
     """Loads configuration the same as load_kube_config but returns an ApiClient
     to be used with any API object. This will allow the caller to concurrently
     talk with multiple clusters."""
@@ -506,4 +508,4 @@ def new_websocket_client_from_config(
     load_kube_config(config_file=config_file, context=context,
                      client_configuration=client_config,
                      persist_config=persist_config)
-    return WebsocketApiClient(configuration=client_config)
+    return WebsocketApiClient(configuration=client_config, queue=queue)
