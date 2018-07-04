@@ -15,6 +15,7 @@
 import asyncio
 from types import SimpleNamespace
 
+import aiohttp
 import asynctest
 from asynctest import TestCase, mock
 
@@ -60,8 +61,8 @@ class WSClientTest(TestCase):
         # WebsocketApiClient assumes it deals with `aiohttp`.
         m_ws = asynctest.mock.MagicMock()
         m_ws.__aiter__.return_value = [
-            SimpleNamespace(data=(chr(1) + 'message1 ').encode('utf-8')),
-            SimpleNamespace(data=(chr(1) + 'message2 ').encode('utf-8')),
+            SimpleNamespace(data=(b'\x01message1 '), type=aiohttp.WSMsgType.BINARY),
+            SimpleNamespace(data=(b'\x01message2 '), type=aiohttp.WSMsgType.BINARY),
         ]
         m_ws.__aenter__.return_value = m_ws.__aexit__.return_value = m_ws
 
@@ -102,8 +103,8 @@ class WSClientTest(TestCase):
         # WebsocketApiClient assumes it deals with `aiohttp`.
         m_ws = asynctest.mock.MagicMock()
         m_ws.__aiter__.return_value = [
-            SimpleNamespace(data=(b'message1 ')),
-            SimpleNamespace(data=(b'message2 ')),
+            SimpleNamespace(data=(b'\x01message1 '), type=aiohttp.WSMsgType.BINARY),
+            SimpleNamespace(data=(b'\x01message2 '), type=aiohttp.WSMsgType.BINARY),
         ]
         m_ws.__aenter__.return_value = m_ws.__aexit__.return_value = m_ws
 
@@ -124,8 +125,8 @@ class WSClientTest(TestCase):
 
         # Messages must also have been pushed into the queue as they came in.
         assert queue.qsize() == 2
-        self.assertEqual(await queue.get(), b'message1 ')
-        self.assertEqual(await queue.get(), b'message2 ')
+        self.assertEqual(await queue.get(), b'\x01message1 ')
+        self.assertEqual(await queue.get(), b'\x01message2 ')
 
 
 if __name__ == '__main__':
