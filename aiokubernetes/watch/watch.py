@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import functools
 import json
 import pydoc
-import functools
 from types import SimpleNamespace
 
 
@@ -88,6 +88,34 @@ class Watch(object):
         self.api_func = functools.partial(api_func, *args, **kwargs)
         self.resp = None
 
+    def __aiter__(self):
+        return self
+
+    async def __anext__(self):
+        return await self.next()
+
+    async def next(self):
+        # Set the response object to the user supplied function (eg
+        # `list_namespaced_pods`) if this is the first iteration.
+        if self.resp is None:
+            self.resp = await self.api_func()
+
+        # Abort at the current iteration if the user has called `stop` on this
+        # stream instance.
+        if self._stop:
+            raise StopAsyncIteration
+
+        # Fetch the next K8s response.
+        line = await self.resp.parsed.content.readline()
+        line = line.decode('utf8')
+
+        # Stop the iterator if K8s sends an empty response. This happens when
+        # eg the supplied timeout has expired.
+        if line == '':
+            raise StopAsyncIteration
+
+        return self.unmarshal_event(line, self.return_type)
+
     def stop(self):
         self._stop = True
 
@@ -116,31 +144,3 @@ class Watch(object):
                 response_type=response_type
             )
         return js
-
-    def __aiter__(self):
-        return self
-
-    async def __anext__(self):
-        return await self.next()
-
-    async def next(self):
-        # Set the response object to the user supplied function (eg
-        # `list_namespaced_pods`) if this is the first iteration.
-        if self.resp is None:
-            self.resp = await self.api_func()
-
-        # Abort at the current iteration if the user has called `stop` on this
-        # stream instance.
-        if self._stop:
-            raise StopAsyncIteration
-
-        # Fetch the next K8s response.
-        line = await self.resp.parsed.content.readline()
-        line = line.decode('utf8')
-
-        # Stop the iterator if K8s sends an empty response. This happens when
-        # eg the supplied timeout has expired.
-        if line == '':
-            raise StopAsyncIteration
-
-        return self.unmarshal_event(line, self.return_type)
