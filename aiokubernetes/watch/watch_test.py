@@ -136,7 +136,10 @@ class WatchTest(TestCase):
         self.assertEqual(cnt, len(side_effects))
 
     def test_unmarshal_with_float_object(self):
-        w = k8s.watch.Watch(k8s.api.CoreV1Api().list_namespace)
+        # Dummy ApiClient instance.
+        api_client = k8s.api_client.ApiClient()
+
+        w = k8s.watch.Watch(k8s.api.CoreV1Api(api_client).list_namespace)
         event = w.unmarshal_event('{"type": "ADDED", "object": 1}', 'float')
         self.assertEqual("ADDED", event['type'])
         self.assertEqual(1.0, event['object'])
@@ -144,7 +147,10 @@ class WatchTest(TestCase):
         self.assertEqual(1, event['raw_object'])
 
     def test_unmarshal_with_no_return_type(self):
-        w = k8s.watch.Watch(k8s.api.CoreV1Api().list_namespace)
+        # Dummy ApiClient instance.
+        api_client = k8s.api_client.ApiClient()
+
+        w = k8s.watch.Watch(k8s.api.CoreV1Api(api_client).list_namespace)
         event = w.unmarshal_event(
             '{"type": "ADDED", "object": ["test1"]}', None)
         self.assertEqual("ADDED", event['type'])
@@ -169,7 +175,10 @@ class WatchTest(TestCase):
             }
         }
 
-        watch = k8s.watch.Watch(k8s.api.CoreV1Api().list_namespace)
+        # Dummy ApiClient instance.
+        api_client = k8s.api_client.ApiClient()
+
+        watch = k8s.watch.Watch(k8s.api.CoreV1Api(api_client).list_namespace)
         ret = watch.unmarshal_event(json.dumps(k8s_err), None)
         self.assertEqual(ret['type'], k8s_err['type'])
         self.assertEqual(ret['object'], k8s_err['object'])
