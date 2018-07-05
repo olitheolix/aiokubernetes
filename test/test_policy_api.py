@@ -24,7 +24,7 @@ class TestPolicyApi(unittest.TestCase):
     """PolicyApi unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.policy_api.PolicyApi()  # noqa: E501
+        self.api = aiokubernetes.api.policy_api.PolicyApi(None)  # noqa: E501
 
     def tearDown(self):
         pass

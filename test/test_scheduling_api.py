@@ -24,7 +24,7 @@ class TestSchedulingApi(unittest.TestCase):
     """SchedulingApi unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.scheduling_api.SchedulingApi()  # noqa: E501
+        self.api = aiokubernetes.api.scheduling_api.SchedulingApi(None)  # noqa: E501
 
     def tearDown(self):
         pass

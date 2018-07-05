@@ -24,7 +24,7 @@ class TestStorageApi(unittest.TestCase):
     """StorageApi unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.storage_api.StorageApi()  # noqa: E501
+        self.api = aiokubernetes.api.storage_api.StorageApi(None)  # noqa: E501
 
     def tearDown(self):
         pass

@@ -24,7 +24,7 @@ class TestApiextensionsV1beta1Api(unittest.TestCase):
     """ApiextensionsV1beta1Api unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.apiextensions_v1beta1_api.ApiextensionsV1beta1Api()  # noqa: E501
+        self.api = aiokubernetes.api.apiextensions_v1beta1_api.ApiextensionsV1beta1Api(None)  # noqa: E501
 
     def tearDown(self):
         pass

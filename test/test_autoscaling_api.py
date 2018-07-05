@@ -24,7 +24,7 @@ class TestAutoscalingApi(unittest.TestCase):
     """AutoscalingApi unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.autoscaling_api.AutoscalingApi()  # noqa: E501
+        self.api = aiokubernetes.api.autoscaling_api.AutoscalingApi(None)  # noqa: E501
 
     def tearDown(self):
         pass

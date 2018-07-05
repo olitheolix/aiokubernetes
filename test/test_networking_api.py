@@ -24,7 +24,7 @@ class TestNetworkingApi(unittest.TestCase):
     """NetworkingApi unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.networking_api.NetworkingApi()  # noqa: E501
+        self.api = aiokubernetes.api.networking_api.NetworkingApi(None)  # noqa: E501
 
     def tearDown(self):
         pass

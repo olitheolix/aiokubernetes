@@ -24,7 +24,7 @@ class TestApiregistrationApi(unittest.TestCase):
     """ApiregistrationApi unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.apiregistration_api.ApiregistrationApi()  # noqa: E501
+        self.api = aiokubernetes.api.apiregistration_api.ApiregistrationApi(None)  # noqa: E501
 
     def tearDown(self):
         pass
