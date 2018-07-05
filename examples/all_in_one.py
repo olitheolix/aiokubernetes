@@ -23,7 +23,7 @@ async def watch_resource(resource, **kwargs):
 
 async def create_deployment(api_client, ws_api_client):
     img_alpine_34, img_alpine_35 = 'alpine:3.4', 'alpine:3.5'
-    time_between_steps = 10
+    time_between_steps = 3
 
     # Create deployment.
     base_path = os.path.dirname(os.path.abspath(__file__))
@@ -64,6 +64,7 @@ async def create_deployment(api_client, ws_api_client):
             await asyncio.sleep(0.1)
             continue
         print('\n****', resp.http.method, resp.http.status, resp.http.url, '\n')
+        del resp
 
         if len(pods) > 1:
             print('Found multiple login pods')
@@ -74,16 +75,18 @@ async def create_deployment(api_client, ws_api_client):
         v1_ws = k8s.CoreV1Api(api_client=ws_api_client)
         exec_command = [
             '/bin/sh', '-c',
-            'echo This is stderr >&2; sleep 5s; echo This is stdout'
+            'echo This is stderr >&2; sleep 0s; echo This is stdout'
         ]
-        resp = await v1_ws.connect_get_namespaced_pod_exec(
+        connection = await v1_ws.connect_get_namespaced_pod_exec(
             pod_name, namespace,
             command=exec_command,
             stderr=True, stdin=False,
             stdout=True, tty=False
         )
-        print('****', resp.http.method, resp.http.status, resp.http.url)
-        print(f'--- Pod Output ---\n{resp.parsed}\n------------------')
+
+        async with connection.http as ws:
+            async for msg in ws:
+                print(f'  Websocket received: {msg.data}')
         break
     else:
         print('No login has entered "running" state yet - skip connection test')
