@@ -94,7 +94,7 @@ class ApiClient(object):
         )
 
         # https pool manager
-        self.pool_manager = aiohttp.ClientSession(connector=connector)
+        self.session = aiohttp.ClientSession(connector=connector)
 
     @property
     def user_agent(self):
@@ -400,7 +400,7 @@ class ApiClient(object):
                          declared content type."""
                 raise ApiException(status=0, reason=msg)
 
-        return await self.pool_manager.request(**args)
+        return await self.session.request(**args)
 
     def parameters_to_tuples(self, params, collection_formats):
         """Get parameters as list of tuples, formatting collections.

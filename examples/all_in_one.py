@@ -139,8 +139,8 @@ async def setup():
 
     print('\nShutting down')
     queue_watch.cancel()
-    await api_client.pool_manager.close()
-    await ws_api_client.pool_manager.close()
+    await api_client.session.close()
+    await ws_api_client.session.close()
 
 
 def main():
