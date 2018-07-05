@@ -446,9 +446,8 @@ def list_kube_config_contexts(config_file=None):
     return loader.list_contexts(), loader.current_context
 
 
-def load_kube_config(config_file=None, context=None,
-                     client_configuration=None,
-                     persist_config=True):
+def load_kube_config(client_configuration, config_file=None,
+                     context=None, persist_config=True):
     """Loads authentication and cluster information from kube-config file
     and stores them in kubernetes.client.configuration.
 
@@ -474,12 +473,8 @@ def load_kube_config(config_file=None, context=None,
     loader = _get_kube_config_loader_for_yaml_file(
         config_file, active_context=context,
         config_persister=config_persister)
-    if client_configuration is None:
-        config = Configuration()
-        loader.load_and_set(config)
-        Configuration.set_default(config)
-    else:
-        loader.load_and_set(client_configuration)
+
+    loader.load_and_set(client_configuration)
 
 
 def new_client_from_config(
