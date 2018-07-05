@@ -51,8 +51,7 @@ class WSClientTest(TestCase):
         with self.assertRaises(AssertionError):
             get_websocket_url('foo://bar.com')
 
-    @mock.patch.object(k8s.api_client, 'rest')
-    async def test_exec_ws(self, m_rest):
+    async def test_exec_ws(self):
         """Verify the Websocket connection sends the correct headers."""
 
         # Mocked async iterator to simulate the message streaming in from a
@@ -68,11 +67,14 @@ class WSClientTest(TestCase):
 
         # Stub out the Rest client that will ultimately be called on to create
         # the Websocket connection.
-        m_rest.RESTClientObject.return_value.pool_manager = m_rest
+        m_rest = mock.MagicMock()
         m_rest.ws_connect.return_value = m_ws
 
+        api_client = WebsocketApiClient()
+        api_client.pool_manager = m_rest
+
         # Make the websocket request through our Mock.
-        ws = k8s.CoreV1Api(api_client=WebsocketApiClient())
+        ws = k8s.CoreV1Api(api_client=api_client)
         resp = await ws.connect_get_namespaced_pod_exec(
             'pod', 'namespace', command="mock-command",
             stderr=True, stdin=False, stdout=True, tty=False
@@ -93,8 +95,7 @@ class WSClientTest(TestCase):
             }
         )
 
-    @mock.patch.object(k8s.api_client, 'rest')
-    async def test_ws_put_messages_into_queue(self, m_rest):
+    async def test_ws_put_messages_into_queue(self):
         """Messages must go into a queue as they stream in."""
 
         # Mocked async iterator to simulate the message streaming in from a
@@ -110,14 +111,17 @@ class WSClientTest(TestCase):
 
         # Stub out the Rest client that will ultimately be called on to create
         # the Websocket connection.
-        m_rest.RESTClientObject.return_value.pool_manager = m_rest
+        m_rest = mock.MagicMock()
         m_rest.ws_connect.return_value = m_ws
 
+        # Create an ApiClient instance with a stubbed pool_manager.
         queue = asyncio.Queue()
+        api_client = WebsocketApiClient(queue=queue)
+        api_client.pool_manager = m_rest
 
         # Make the websocket request through our Mock. Pass our Queue along to
         # the WebsocketClient to receive message immediately.
-        ws = k8s.CoreV1Api(api_client=WebsocketApiClient(queue=queue))
+        ws = k8s.CoreV1Api(api_client=api_client)
         await ws.connect_get_namespaced_pod_exec(
             'pod', 'namespace', command="mock-command",
             stderr=True, stdin=False, stdout=True, tty=False
