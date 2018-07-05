@@ -14,7 +14,7 @@
 
 import json
 import pydoc
-from functools import partial
+import functools
 from types import SimpleNamespace
 
 
@@ -49,10 +49,10 @@ def _find_return_type(func):
 
 class Watch(object):
 
-    def __init__(self, func, *args, **kwargs):
+    def __init__(self, api_func, *args, **kwargs):
         """Watch an API resource and stream the result back via a generator.
 
-        :param func: The API function pointer, for instance,
+        :param api_func: The API function pointer, for instance,
                      CoreV1Api().list_namespace`. Any parameter to the function
                      can be passed after this parameter.
 
@@ -61,8 +61,9 @@ class Watch(object):
                    'raw_object': a dict representing the watched object.
                    'object': A model representation of raw_object. The name of
                              model will be determined based on
-                             the func's doc string. If it cannot be determined,
-                             'object' value will be the same as 'raw_object'.
+                             the api_func's doc string. If it cannot be
+                             determined, 'object' value will be the same as
+                             'raw_object'.
 
         Example:
             v1 = kubernetes_asyncio.client.CoreV1Api()
@@ -76,15 +77,15 @@ class Watch(object):
                     watch.stop()
 
         """
-        self._api_client = func.__self__.api_client
+        self._api_client = api_func.__self__.api_client
         self._stop = False
 
         # Make this more explicit and cover with a test.
-        self.return_type = _find_return_type(func)
+        self.return_type = _find_return_type(api_func)
         kwargs['watch'] = True
         kwargs['_preload_content'] = False
 
-        self.api_func = partial(func, *args, **kwargs)
+        self.api_func = functools.partial(api_func, *args, **kwargs)
         self.resp = None
 
     def stop(self):
