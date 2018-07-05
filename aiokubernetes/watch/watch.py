@@ -19,7 +19,7 @@ from types import SimpleNamespace
 
 
 def _find_return_type(func):
-    """Return the K8s return type as a string, eg `V1Namespace`.
+    """Return the K8s response type as a string, eg `V1Namespace`.
 
     Return None if the return type was not in the doc string of `func`.
 

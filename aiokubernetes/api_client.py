@@ -198,7 +198,10 @@ class ApiClient(object):
             _request_timeout=_request_timeout
         )
 
-        # Deserialize the response if the caller requested it.
+        # Deserialize the response if the caller requested it. This is almost
+        # always True, the only notable exception being the Watch class, which
+        # has to read the response line by line from the raw return value (each
+        # line corresponds to one event).
         if _preload_content:
             if response_type is None:
                 return_data = None
