@@ -474,7 +474,7 @@ def load_kube_config(config_file=None, context=None,
         config_file, active_context=context,
         config_persister=config_persister)
     if client_configuration is None:
-        config = type.__call__(Configuration)
+        config = Configuration()
         loader.load_and_set(config)
         Configuration.set_default(config)
     else:
@@ -488,7 +488,7 @@ def new_client_from_config(
     """Loads configuration the same as load_kube_config but returns an ApiClient
     to be used with any API object. This will allow the caller to concurrently
     talk with multiple clusters."""
-    client_config = type.__call__(Configuration)
+    client_config = Configuration()
     load_kube_config(config_file=config_file, context=context,
                      client_configuration=client_config,
                      persist_config=persist_config)
@@ -504,7 +504,7 @@ def new_websocket_client_from_config(
     """Loads configuration the same as load_kube_config but returns an ApiClient
     to be used with any API object. This will allow the caller to concurrently
     talk with multiple clusters."""
-    client_config = type.__call__(Configuration)
+    client_config = Configuration()
     load_kube_config(config_file=config_file, context=context,
                      client_configuration=client_config,
                      persist_config=persist_config)
