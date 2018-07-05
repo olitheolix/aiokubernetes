@@ -22,7 +22,7 @@ async def main():
         print(f"{i.metadata.namespace} {i.metadata.name}")
 
     # Terminate the connection pool for a clean shutdown.
-    await api_client.rest_client.pool_manager.close()
+    await api_client.pool_manager.close()
 
 
 if __name__ == '__main__':
