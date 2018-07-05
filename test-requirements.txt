@@ -9,3 +9,5 @@ pytest-cov>=2.5.1
 pytest-xdist
 pytest>=3.3.1
 randomize>=0.13
+sphinx
+sphinx_rtd_theme
