@@ -30,7 +30,6 @@ rm -rf "$OPENAPI_DIR/aiokubernetes"
 ./python-async-generic.sh aiokubernetes "${SCRIPT_ROOT}/settings"
 
 # Copy the generated files/folder to the correct location of the `aiokubernetes` client library.
-cp -r aiokubernetes/test aiokubernetes/docs "$AIOK8S_DIR/"
 cp -r aiokubernetes/aiokubernetes/api aiokubernetes/aiokubernetes/models "$AIOK8S_DIR/aiokubernetes/"
 
 # The __init__ file contains just contains convenience imports. We copy it
