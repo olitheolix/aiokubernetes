@@ -73,7 +73,7 @@ class WatchTest(TestCase):
 
         # Actual API client instance because we will need it to wrap the
         # Json structure in `side_effects` into a Swagger generated Python object.
-        api_client = k8s.api_client.ApiClient()
+        api_client = k8s.api_client.ApiClient(k8s.configuration.Configuration())
 
         fake_api = Mock()
         fake_api.get_namespaces = CoroutineMock(
@@ -137,7 +137,7 @@ class WatchTest(TestCase):
 
     def test_unmarshal_with_float_object(self):
         # Dummy ApiClient instance.
-        api_client = k8s.api_client.ApiClient()
+        api_client = k8s.api_client.ApiClient(k8s.configuration.Configuration())
 
         w = k8s.watch.Watch(k8s.api.CoreV1Api(api_client).list_namespace)
         event = w.unmarshal_event('{"type": "ADDED", "object": 1}', 'float')
@@ -148,7 +148,7 @@ class WatchTest(TestCase):
 
     def test_unmarshal_with_no_return_type(self):
         # Dummy ApiClient instance.
-        api_client = k8s.api_client.ApiClient()
+        api_client = k8s.api_client.ApiClient(k8s.configuration.Configuration())
 
         w = k8s.watch.Watch(k8s.api.CoreV1Api(api_client).list_namespace)
         event = w.unmarshal_event(
@@ -176,7 +176,7 @@ class WatchTest(TestCase):
         }
 
         # Dummy ApiClient instance.
-        api_client = k8s.api_client.ApiClient()
+        api_client = k8s.api_client.ApiClient(k8s.configuration.Configuration())
 
         watch = k8s.watch.Watch(k8s.api.CoreV1Api(api_client).list_namespace)
         ret = watch.unmarshal_event(json.dumps(k8s_err), None)

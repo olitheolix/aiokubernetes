@@ -61,18 +61,17 @@ class ApiClient(object):
         'object': object,
     }
 
-    def __init__(self, configuration=None, header_name=None, header_value=None,
+    def __init__(self, configuration, header_name=None, header_value=None,
                  cookie=None):
-        if configuration is None:
-            configuration = Configuration()
-        self.configuration = configuration
-
         self.default_headers = {}
         if header_name is not None:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
+
         # Set default User-Agent.
         self.user_agent = 'Swagger-Codegen/1.0/python'
+
+        self.configuration = configuration
 
         # ca_certs
         if configuration.ssl_ca_cert:
