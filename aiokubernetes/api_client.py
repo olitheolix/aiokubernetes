@@ -191,24 +191,24 @@ class ApiClient(object):
         # request url
         url = self.configuration.host + resource_path
 
-        # perform request and return response
+        # Make the request and wait for a response.
         response_data = await self.request(
             method, url, query_params=query_params, headers=header_params,
             post_params=post_params, body=body,
-            _preload_content=_preload_content,
-            _request_timeout=_request_timeout)
+            _request_timeout=_request_timeout
+        )
 
+        # Deserialize the response if the caller requested it.
         if _preload_content:
-            # deserialize response data
-            if response_type:
+            if response_type is None:
+                return_data = None
+            else:
                 if response_type == "file":
                     return_data = self.__deserialize_file(response_data)
                 else:
                     # fetch data from response object
                     data = await response_data.json()
                     return_data = self.__deserialize(data, response_type)
-            else:
-                return_data = None
         else:
             return_data = response_data
 
