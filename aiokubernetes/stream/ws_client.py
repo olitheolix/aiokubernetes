@@ -62,8 +62,7 @@ class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
 
         if _preload_content:
             resp_all = ''
-            pool = self.rest_client.pool_manager
-            async with pool.ws_connect(url, headers=headers) as ws:
+            async with self.pool_manager.ws_connect(url, headers=headers) as ws:
                 async for msg in ws:
                     # The messages are of type `aiohttp.WSMessage`.
                     # We currently only allow binary content.
@@ -100,4 +99,4 @@ class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
                 url=url,
             )
         else:
-            return self.rest_client.pool_manager.ws_connect(url)
+            return self.pool_manager.ws_connect(url)
