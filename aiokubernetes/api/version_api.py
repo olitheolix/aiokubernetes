@@ -42,7 +42,7 @@ class VersionApi(object):
         >>> thread = api.get_code(async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param: async bool
         :return: VersionInfo
                  If the method is called asynchronously,
                  returns the request thread.
@@ -63,7 +63,7 @@ class VersionApi(object):
         >>> thread = api.get_code_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param: async bool
         :return: VersionInfo
                  If the method is called asynchronously,
                  returns the request thread.

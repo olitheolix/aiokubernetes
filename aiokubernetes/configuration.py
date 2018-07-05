@@ -108,7 +108,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         If the logger_file is None, then add stream handler and remove file
         handler. Otherwise, add file handler and remove stream handler.
 
-        :param value: The logger_file path.
+        :param: value: The logger_file path.
         :type: str
         """
         return self.__logger_file
@@ -120,7 +120,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         If the logger_file is None, then add stream handler and remove file
         handler. Otherwise, add file handler and remove stream handler.
 
-        :param value: The logger_file path.
+        :param: value: The logger_file path.
         :type: str
         """
         self.__logger_file = value
@@ -147,7 +147,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
     def debug(self):
         """Debug status
 
-        :param value: The debug status, True or False.
+        :param: value: The debug status, True or False.
         :type: bool
         """
         return self.__debug
@@ -156,7 +156,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
     def debug(self, value):
         """Debug status
 
-        :param value: The debug status, True or False.
+        :param: value: The debug status, True or False.
         :type: bool
         """
         self.__debug = value
@@ -180,7 +180,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
 
         The logger_formatter will be updated when sets logger_format.
 
-        :param value: The format string.
+        :param: value: The format string.
         :type: str
         """
         return self.__logger_format
@@ -191,7 +191,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
 
         The logger_formatter will be updated when sets logger_format.
 
-        :param value: The format string.
+        :param: value: The format string.
         :type: str
         """
         self.__logger_format = value
@@ -200,7 +200,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
     def get_api_key_with_prefix(self, identifier):
         """Gets API key (with prefix if set).
 
-        :param identifier: The identifier of apiKey.
+        :param: identifier: The identifier of apiKey.
         :return: The token for api key authentication.
         """
         if (self.api_key.get(identifier) and

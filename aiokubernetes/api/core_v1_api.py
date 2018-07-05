@@ -42,10 +42,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_delete_namespaced_pod_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -66,10 +66,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_delete_namespaced_pod_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -152,11 +152,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_delete_namespaced_pod_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -177,11 +177,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_delete_namespaced_pod_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -270,10 +270,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_delete_namespaced_service_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -294,10 +294,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_delete_namespaced_service_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -380,11 +380,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_delete_namespaced_service_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -405,11 +405,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_delete_namespaced_service_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -498,9 +498,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_delete_node_proxy(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -521,9 +521,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_delete_node_proxy_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -600,10 +600,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_delete_node_proxy_with_path(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -624,10 +624,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_delete_node_proxy_with_path_with_http_info(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -710,14 +710,14 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_pod_attach(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str container: The container in which to execute the command. Defaults to only container if there is only one container in the pod.
-        :param bool stderr: Stderr if true indicates that stderr is to be redirected for the attach call. Defaults to true.
-        :param bool stdin: Stdin if true, redirects the standard input stream of the pod for this call. Defaults to false.
-        :param bool stdout: Stdout if true indicates that stdout is to be redirected for the attach call. Defaults to true.
-        :param bool tty: TTY if true indicates that a tty will be allocated for the attach call. This is passed through the container runtime so the tty is allocated on the worker node by the container runtime. Defaults to false.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str container: The container in which to execute the command. Defaults to only container if there is only one container in the pod.
+        :param: bool stderr: Stderr if true indicates that stderr is to be redirected for the attach call. Defaults to true.
+        :param: bool stdin: Stdin if true, redirects the standard input stream of the pod for this call. Defaults to false.
+        :param: bool stdout: Stdout if true indicates that stdout is to be redirected for the attach call. Defaults to true.
+        :param: bool tty: TTY if true indicates that a tty will be allocated for the attach call. This is passed through the container runtime so the tty is allocated on the worker node by the container runtime. Defaults to false.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -738,14 +738,14 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_pod_attach_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str container: The container in which to execute the command. Defaults to only container if there is only one container in the pod.
-        :param bool stderr: Stderr if true indicates that stderr is to be redirected for the attach call. Defaults to true.
-        :param bool stdin: Stdin if true, redirects the standard input stream of the pod for this call. Defaults to false.
-        :param bool stdout: Stdout if true indicates that stdout is to be redirected for the attach call. Defaults to true.
-        :param bool tty: TTY if true indicates that a tty will be allocated for the attach call. This is passed through the container runtime so the tty is allocated on the worker node by the container runtime. Defaults to false.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str container: The container in which to execute the command. Defaults to only container if there is only one container in the pod.
+        :param: bool stderr: Stderr if true indicates that stderr is to be redirected for the attach call. Defaults to true.
+        :param: bool stdin: Stdin if true, redirects the standard input stream of the pod for this call. Defaults to false.
+        :param: bool stdout: Stdout if true indicates that stdout is to be redirected for the attach call. Defaults to true.
+        :param: bool tty: TTY if true indicates that a tty will be allocated for the attach call. This is passed through the container runtime so the tty is allocated on the worker node by the container runtime. Defaults to false.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -836,15 +836,15 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_pod_exec(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str command: Command is the remote command to execute. argv array. Not executed within a shell.
-        :param str container: Container in which to execute the command. Defaults to only container if there is only one container in the pod.
-        :param bool stderr: Redirect the standard error stream of the pod for this call. Defaults to true.
-        :param bool stdin: Redirect the standard input stream of the pod for this call. Defaults to false.
-        :param bool stdout: Redirect the standard output stream of the pod for this call. Defaults to true.
-        :param bool tty: TTY if true indicates that a tty will be allocated for the exec call. Defaults to false.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str command: Command is the remote command to execute. argv array. Not executed within a shell.
+        :param: str container: Container in which to execute the command. Defaults to only container if there is only one container in the pod.
+        :param: bool stderr: Redirect the standard error stream of the pod for this call. Defaults to true.
+        :param: bool stdin: Redirect the standard input stream of the pod for this call. Defaults to false.
+        :param: bool stdout: Redirect the standard output stream of the pod for this call. Defaults to true.
+        :param: bool tty: TTY if true indicates that a tty will be allocated for the exec call. Defaults to false.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -865,15 +865,15 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_pod_exec_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str command: Command is the remote command to execute. argv array. Not executed within a shell.
-        :param str container: Container in which to execute the command. Defaults to only container if there is only one container in the pod.
-        :param bool stderr: Redirect the standard error stream of the pod for this call. Defaults to true.
-        :param bool stdin: Redirect the standard input stream of the pod for this call. Defaults to false.
-        :param bool stdout: Redirect the standard output stream of the pod for this call. Defaults to true.
-        :param bool tty: TTY if true indicates that a tty will be allocated for the exec call. Defaults to false.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str command: Command is the remote command to execute. argv array. Not executed within a shell.
+        :param: str container: Container in which to execute the command. Defaults to only container if there is only one container in the pod.
+        :param: bool stderr: Redirect the standard error stream of the pod for this call. Defaults to true.
+        :param: bool stdin: Redirect the standard input stream of the pod for this call. Defaults to false.
+        :param: bool stdout: Redirect the standard output stream of the pod for this call. Defaults to true.
+        :param: bool tty: TTY if true indicates that a tty will be allocated for the exec call. Defaults to false.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -966,10 +966,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_pod_portforward(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param int ports: List of ports to forward Required when using WebSockets
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: int ports: List of ports to forward Required when using WebSockets
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -990,10 +990,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_pod_portforward_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param int ports: List of ports to forward Required when using WebSockets
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: int ports: List of ports to forward Required when using WebSockets
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1076,10 +1076,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_pod_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1100,10 +1100,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_pod_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1186,11 +1186,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_pod_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1211,11 +1211,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_pod_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1304,10 +1304,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_service_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1328,10 +1328,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_service_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1414,11 +1414,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_service_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1439,11 +1439,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_namespaced_service_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1532,9 +1532,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_node_proxy(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1555,9 +1555,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_node_proxy_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1634,10 +1634,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_node_proxy_with_path(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1658,10 +1658,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_get_node_proxy_with_path_with_http_info(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1744,10 +1744,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_head_namespaced_pod_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1768,10 +1768,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_head_namespaced_pod_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1854,11 +1854,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_head_namespaced_pod_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1879,11 +1879,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_head_namespaced_pod_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1972,10 +1972,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_head_namespaced_service_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1996,10 +1996,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_head_namespaced_service_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2082,11 +2082,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_head_namespaced_service_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2107,11 +2107,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_head_namespaced_service_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2200,9 +2200,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_head_node_proxy(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2223,9 +2223,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_head_node_proxy_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2302,10 +2302,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_head_node_proxy_with_path(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2326,10 +2326,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_head_node_proxy_with_path_with_http_info(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2412,10 +2412,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_options_namespaced_pod_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2436,10 +2436,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_options_namespaced_pod_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2522,11 +2522,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_options_namespaced_pod_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2547,11 +2547,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_options_namespaced_pod_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2640,10 +2640,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_options_namespaced_service_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2664,10 +2664,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_options_namespaced_service_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2750,11 +2750,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_options_namespaced_service_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2775,11 +2775,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_options_namespaced_service_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2868,9 +2868,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_options_node_proxy(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2891,9 +2891,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_options_node_proxy_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2970,10 +2970,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_options_node_proxy_with_path(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2994,10 +2994,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_options_node_proxy_with_path_with_http_info(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3080,10 +3080,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_patch_namespaced_pod_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3104,10 +3104,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_patch_namespaced_pod_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3190,11 +3190,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_patch_namespaced_pod_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3215,11 +3215,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_patch_namespaced_pod_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3308,10 +3308,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_patch_namespaced_service_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3332,10 +3332,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_patch_namespaced_service_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3418,11 +3418,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_patch_namespaced_service_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3443,11 +3443,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_patch_namespaced_service_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3536,9 +3536,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_patch_node_proxy(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3559,9 +3559,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_patch_node_proxy_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3638,10 +3638,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_patch_node_proxy_with_path(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3662,10 +3662,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_patch_node_proxy_with_path_with_http_info(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3748,14 +3748,14 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_pod_attach(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str container: The container in which to execute the command. Defaults to only container if there is only one container in the pod.
-        :param bool stderr: Stderr if true indicates that stderr is to be redirected for the attach call. Defaults to true.
-        :param bool stdin: Stdin if true, redirects the standard input stream of the pod for this call. Defaults to false.
-        :param bool stdout: Stdout if true indicates that stdout is to be redirected for the attach call. Defaults to true.
-        :param bool tty: TTY if true indicates that a tty will be allocated for the attach call. This is passed through the container runtime so the tty is allocated on the worker node by the container runtime. Defaults to false.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str container: The container in which to execute the command. Defaults to only container if there is only one container in the pod.
+        :param: bool stderr: Stderr if true indicates that stderr is to be redirected for the attach call. Defaults to true.
+        :param: bool stdin: Stdin if true, redirects the standard input stream of the pod for this call. Defaults to false.
+        :param: bool stdout: Stdout if true indicates that stdout is to be redirected for the attach call. Defaults to true.
+        :param: bool tty: TTY if true indicates that a tty will be allocated for the attach call. This is passed through the container runtime so the tty is allocated on the worker node by the container runtime. Defaults to false.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3776,14 +3776,14 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_pod_attach_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str container: The container in which to execute the command. Defaults to only container if there is only one container in the pod.
-        :param bool stderr: Stderr if true indicates that stderr is to be redirected for the attach call. Defaults to true.
-        :param bool stdin: Stdin if true, redirects the standard input stream of the pod for this call. Defaults to false.
-        :param bool stdout: Stdout if true indicates that stdout is to be redirected for the attach call. Defaults to true.
-        :param bool tty: TTY if true indicates that a tty will be allocated for the attach call. This is passed through the container runtime so the tty is allocated on the worker node by the container runtime. Defaults to false.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str container: The container in which to execute the command. Defaults to only container if there is only one container in the pod.
+        :param: bool stderr: Stderr if true indicates that stderr is to be redirected for the attach call. Defaults to true.
+        :param: bool stdin: Stdin if true, redirects the standard input stream of the pod for this call. Defaults to false.
+        :param: bool stdout: Stdout if true indicates that stdout is to be redirected for the attach call. Defaults to true.
+        :param: bool tty: TTY if true indicates that a tty will be allocated for the attach call. This is passed through the container runtime so the tty is allocated on the worker node by the container runtime. Defaults to false.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3874,15 +3874,15 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_pod_exec(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str command: Command is the remote command to execute. argv array. Not executed within a shell.
-        :param str container: Container in which to execute the command. Defaults to only container if there is only one container in the pod.
-        :param bool stderr: Redirect the standard error stream of the pod for this call. Defaults to true.
-        :param bool stdin: Redirect the standard input stream of the pod for this call. Defaults to false.
-        :param bool stdout: Redirect the standard output stream of the pod for this call. Defaults to true.
-        :param bool tty: TTY if true indicates that a tty will be allocated for the exec call. Defaults to false.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str command: Command is the remote command to execute. argv array. Not executed within a shell.
+        :param: str container: Container in which to execute the command. Defaults to only container if there is only one container in the pod.
+        :param: bool stderr: Redirect the standard error stream of the pod for this call. Defaults to true.
+        :param: bool stdin: Redirect the standard input stream of the pod for this call. Defaults to false.
+        :param: bool stdout: Redirect the standard output stream of the pod for this call. Defaults to true.
+        :param: bool tty: TTY if true indicates that a tty will be allocated for the exec call. Defaults to false.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3903,15 +3903,15 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_pod_exec_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str command: Command is the remote command to execute. argv array. Not executed within a shell.
-        :param str container: Container in which to execute the command. Defaults to only container if there is only one container in the pod.
-        :param bool stderr: Redirect the standard error stream of the pod for this call. Defaults to true.
-        :param bool stdin: Redirect the standard input stream of the pod for this call. Defaults to false.
-        :param bool stdout: Redirect the standard output stream of the pod for this call. Defaults to true.
-        :param bool tty: TTY if true indicates that a tty will be allocated for the exec call. Defaults to false.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str command: Command is the remote command to execute. argv array. Not executed within a shell.
+        :param: str container: Container in which to execute the command. Defaults to only container if there is only one container in the pod.
+        :param: bool stderr: Redirect the standard error stream of the pod for this call. Defaults to true.
+        :param: bool stdin: Redirect the standard input stream of the pod for this call. Defaults to false.
+        :param: bool stdout: Redirect the standard output stream of the pod for this call. Defaults to true.
+        :param: bool tty: TTY if true indicates that a tty will be allocated for the exec call. Defaults to false.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4004,10 +4004,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_pod_portforward(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param int ports: List of ports to forward Required when using WebSockets
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: int ports: List of ports to forward Required when using WebSockets
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4028,10 +4028,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_pod_portforward_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param int ports: List of ports to forward Required when using WebSockets
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: int ports: List of ports to forward Required when using WebSockets
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4114,10 +4114,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_pod_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4138,10 +4138,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_pod_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4224,11 +4224,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_pod_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4249,11 +4249,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_pod_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4342,10 +4342,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_service_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4366,10 +4366,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_service_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4452,11 +4452,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_service_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4477,11 +4477,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_namespaced_service_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4570,9 +4570,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_node_proxy(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4593,9 +4593,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_node_proxy_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4672,10 +4672,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_node_proxy_with_path(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4696,10 +4696,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_post_node_proxy_with_path_with_http_info(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4782,10 +4782,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_put_namespaced_pod_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4806,10 +4806,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_put_namespaced_pod_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4892,11 +4892,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_put_namespaced_pod_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4917,11 +4917,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_put_namespaced_pod_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to pod.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to pod.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5010,10 +5010,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_put_namespaced_service_proxy(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5034,10 +5034,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_put_namespaced_service_proxy_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5120,11 +5120,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_put_namespaced_service_proxy_with_path(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5145,11 +5145,11 @@ class CoreV1Api(object):
         >>> thread = api.connect_put_namespaced_service_proxy_with_path_with_http_info(name, namespace, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5238,9 +5238,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_put_node_proxy(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5261,9 +5261,9 @@ class CoreV1Api(object):
         >>> thread = api.connect_put_node_proxy_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5340,10 +5340,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_put_node_proxy_with_path(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5364,10 +5364,10 @@ class CoreV1Api(object):
         >>> thread = api.connect_put_node_proxy_with_path_with_http_info(name, path, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str path: path to the resource (required)
-        :param str path2: Path is the URL path to use for the current proxy request to node.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str path: path to the resource (required)
+        :param: str path2: Path is the URL path to use for the current proxy request to node.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5450,9 +5450,9 @@ class CoreV1Api(object):
         >>> thread = api.create_namespace(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1Namespace body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1Namespace body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5473,9 +5473,9 @@ class CoreV1Api(object):
         >>> thread = api.create_namespace_with_http_info(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1Namespace body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1Namespace body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5552,10 +5552,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_binding(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Binding body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Binding body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Binding
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5576,10 +5576,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_binding_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Binding body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Binding body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Binding
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5662,10 +5662,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_config_map(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ConfigMap body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ConfigMap body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ConfigMap
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5686,10 +5686,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_config_map_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ConfigMap body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ConfigMap body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ConfigMap
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5772,10 +5772,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_endpoints(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Endpoints body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Endpoints body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Endpoints
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5796,10 +5796,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_endpoints_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Endpoints body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Endpoints body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Endpoints
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5882,10 +5882,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_event(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Event body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Event body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Event
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5906,10 +5906,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_event_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Event body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Event body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Event
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5992,10 +5992,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_limit_range(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1LimitRange body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1LimitRange body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1LimitRange
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6016,10 +6016,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_limit_range_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1LimitRange body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1LimitRange body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1LimitRange
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6102,10 +6102,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_persistent_volume_claim(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1PersistentVolumeClaim body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1PersistentVolumeClaim body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6126,10 +6126,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_persistent_volume_claim_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1PersistentVolumeClaim body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1PersistentVolumeClaim body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6212,10 +6212,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_pod(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Pod body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Pod body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6236,10 +6236,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_pod_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Pod body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Pod body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6322,11 +6322,11 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_pod_binding(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Binding (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Binding body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Binding (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Binding body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Binding
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6347,11 +6347,11 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_pod_binding_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Binding (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Binding body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Binding (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Binding body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Binding
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6440,11 +6440,11 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_pod_eviction(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Eviction (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1beta1Eviction body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Eviction (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1beta1Eviction body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Eviction
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6465,11 +6465,11 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_pod_eviction_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Eviction (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1beta1Eviction body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Eviction (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1beta1Eviction body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1Eviction
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6558,10 +6558,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_pod_template(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1PodTemplate body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1PodTemplate body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PodTemplate
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6582,10 +6582,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_pod_template_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1PodTemplate body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1PodTemplate body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PodTemplate
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6668,10 +6668,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_replication_controller(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ReplicationController body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ReplicationController body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6692,10 +6692,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_replication_controller_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ReplicationController body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ReplicationController body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6778,10 +6778,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_resource_quota(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ResourceQuota body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ResourceQuota body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6802,10 +6802,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_resource_quota_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ResourceQuota body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ResourceQuota body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6888,10 +6888,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_secret(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Secret body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Secret body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Secret
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6912,10 +6912,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_secret_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Secret body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Secret body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Secret
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6998,10 +6998,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_service(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Service body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Service body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7022,10 +7022,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_service_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Service body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Service body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7108,10 +7108,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_service_account(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ServiceAccount body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ServiceAccount body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ServiceAccount
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7132,10 +7132,10 @@ class CoreV1Api(object):
         >>> thread = api.create_namespaced_service_account_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ServiceAccount body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ServiceAccount body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ServiceAccount
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7218,9 +7218,9 @@ class CoreV1Api(object):
         >>> thread = api.create_node(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1Node body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1Node body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7241,9 +7241,9 @@ class CoreV1Api(object):
         >>> thread = api.create_node_with_http_info(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1Node body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1Node body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7320,9 +7320,9 @@ class CoreV1Api(object):
         >>> thread = api.create_persistent_volume(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1PersistentVolume body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1PersistentVolume body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7343,9 +7343,9 @@ class CoreV1Api(object):
         >>> thread = api.create_persistent_volume_with_http_info(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1PersistentVolume body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1PersistentVolume body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7422,17 +7422,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_config_map(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7453,17 +7453,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_config_map_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7556,17 +7556,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_endpoints(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7587,17 +7587,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_endpoints_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7690,17 +7690,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_event(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7721,17 +7721,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_event_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7824,17 +7824,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_limit_range(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7855,17 +7855,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_limit_range_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7958,17 +7958,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_persistent_volume_claim(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7989,17 +7989,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_persistent_volume_claim_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8092,17 +8092,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_pod(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8123,17 +8123,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_pod_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8226,17 +8226,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_pod_template(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8257,17 +8257,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_pod_template_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8360,17 +8360,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_replication_controller(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8391,17 +8391,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_replication_controller_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8494,17 +8494,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_resource_quota(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8525,17 +8525,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_resource_quota_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8628,17 +8628,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_secret(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8659,17 +8659,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_secret_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8762,17 +8762,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_service_account(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8793,17 +8793,17 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_namespaced_service_account_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8896,16 +8896,16 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_node(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8926,16 +8926,16 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_node_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9022,16 +9022,16 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_persistent_volume(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9052,16 +9052,16 @@ class CoreV1Api(object):
         >>> thread = api.delete_collection_persistent_volume_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9148,13 +9148,13 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespace(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9175,13 +9175,13 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespace_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9270,14 +9270,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_config_map(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ConfigMap (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the ConfigMap (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9298,14 +9298,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_config_map_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ConfigMap (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the ConfigMap (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9400,14 +9400,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_endpoints(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Endpoints (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Endpoints (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9428,14 +9428,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_endpoints_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Endpoints (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Endpoints (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9530,14 +9530,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_event(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Event (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Event (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9558,14 +9558,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_event_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Event (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Event (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9660,14 +9660,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_limit_range(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the LimitRange (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the LimitRange (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9688,14 +9688,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_limit_range_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the LimitRange (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the LimitRange (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9790,14 +9790,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_persistent_volume_claim(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9818,14 +9818,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_persistent_volume_claim_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9920,14 +9920,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_pod(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9948,14 +9948,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_pod_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10050,14 +10050,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_pod_template(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PodTemplate (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the PodTemplate (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10078,14 +10078,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_pod_template_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PodTemplate (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the PodTemplate (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10180,14 +10180,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_replication_controller(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10208,14 +10208,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_replication_controller_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10310,14 +10310,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_resource_quota(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10338,14 +10338,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_resource_quota_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10440,14 +10440,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_secret(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Secret (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Secret (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10468,14 +10468,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_secret_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Secret (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Secret (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10570,14 +10570,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_service(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10598,14 +10598,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_service_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10700,14 +10700,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_service_account(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ServiceAccount (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the ServiceAccount (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10728,14 +10728,14 @@ class CoreV1Api(object):
         >>> thread = api.delete_namespaced_service_account_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ServiceAccount (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the ServiceAccount (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10830,13 +10830,13 @@ class CoreV1Api(object):
         >>> thread = api.delete_node(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10857,13 +10857,13 @@ class CoreV1Api(object):
         >>> thread = api.delete_node_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10952,13 +10952,13 @@ class CoreV1Api(object):
         >>> thread = api.delete_persistent_volume(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10979,13 +10979,13 @@ class CoreV1Api(object):
         >>> thread = api.delete_persistent_volume_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param V1DeleteOptions body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: V1DeleteOptions body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.
         :return: V1Status
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11074,7 +11074,7 @@ class CoreV1Api(object):
         >>> thread = api.get_api_resources(async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param: async bool
         :return: V1APIResourceList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11095,7 +11095,7 @@ class CoreV1Api(object):
         >>> thread = api.get_api_resources_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param: async bool
         :return: V1APIResourceList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11164,16 +11164,16 @@ class CoreV1Api(object):
         >>> thread = api.list_component_status(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ComponentStatusList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11194,16 +11194,16 @@ class CoreV1Api(object):
         >>> thread = api.list_component_status_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ComponentStatusList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11290,16 +11290,16 @@ class CoreV1Api(object):
         >>> thread = api.list_config_map_for_all_namespaces(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ConfigMapList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11320,16 +11320,16 @@ class CoreV1Api(object):
         >>> thread = api.list_config_map_for_all_namespaces_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ConfigMapList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11416,16 +11416,16 @@ class CoreV1Api(object):
         >>> thread = api.list_endpoints_for_all_namespaces(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1EndpointsList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11446,16 +11446,16 @@ class CoreV1Api(object):
         >>> thread = api.list_endpoints_for_all_namespaces_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1EndpointsList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11542,16 +11542,16 @@ class CoreV1Api(object):
         >>> thread = api.list_event_for_all_namespaces(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1EventList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11572,16 +11572,16 @@ class CoreV1Api(object):
         >>> thread = api.list_event_for_all_namespaces_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1EventList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11668,16 +11668,16 @@ class CoreV1Api(object):
         >>> thread = api.list_limit_range_for_all_namespaces(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1LimitRangeList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11698,16 +11698,16 @@ class CoreV1Api(object):
         >>> thread = api.list_limit_range_for_all_namespaces_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1LimitRangeList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11794,16 +11794,16 @@ class CoreV1Api(object):
         >>> thread = api.list_namespace(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1NamespaceList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11824,16 +11824,16 @@ class CoreV1Api(object):
         >>> thread = api.list_namespace_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1NamespaceList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11920,17 +11920,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_config_map(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ConfigMapList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -11951,17 +11951,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_config_map_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ConfigMapList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12054,17 +12054,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_endpoints(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1EndpointsList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12085,17 +12085,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_endpoints_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1EndpointsList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12188,17 +12188,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_event(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1EventList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12219,17 +12219,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_event_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1EventList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12322,17 +12322,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_limit_range(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1LimitRangeList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12353,17 +12353,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_limit_range_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1LimitRangeList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12456,17 +12456,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_persistent_volume_claim(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PersistentVolumeClaimList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12487,17 +12487,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_persistent_volume_claim_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PersistentVolumeClaimList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12590,17 +12590,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_pod(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PodList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12621,17 +12621,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_pod_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PodList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12724,17 +12724,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_pod_template(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PodTemplateList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12755,17 +12755,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_pod_template_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PodTemplateList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12858,17 +12858,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_replication_controller(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ReplicationControllerList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12889,17 +12889,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_replication_controller_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ReplicationControllerList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12992,17 +12992,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_resource_quota(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ResourceQuotaList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13023,17 +13023,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_resource_quota_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ResourceQuotaList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13126,17 +13126,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_secret(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1SecretList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13157,17 +13157,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_secret_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1SecretList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13260,17 +13260,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_service(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ServiceList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13291,17 +13291,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_service_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ServiceList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13394,17 +13394,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_service_account(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ServiceAccountList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13425,17 +13425,17 @@ class CoreV1Api(object):
         >>> thread = api.list_namespaced_service_account_with_http_info(namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ServiceAccountList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13528,16 +13528,16 @@ class CoreV1Api(object):
         >>> thread = api.list_node(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1NodeList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13558,16 +13558,16 @@ class CoreV1Api(object):
         >>> thread = api.list_node_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1NodeList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13654,16 +13654,16 @@ class CoreV1Api(object):
         >>> thread = api.list_persistent_volume(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PersistentVolumeList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13684,16 +13684,16 @@ class CoreV1Api(object):
         >>> thread = api.list_persistent_volume_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PersistentVolumeList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13780,16 +13780,16 @@ class CoreV1Api(object):
         >>> thread = api.list_persistent_volume_claim_for_all_namespaces(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PersistentVolumeClaimList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13810,16 +13810,16 @@ class CoreV1Api(object):
         >>> thread = api.list_persistent_volume_claim_for_all_namespaces_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PersistentVolumeClaimList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13906,16 +13906,16 @@ class CoreV1Api(object):
         >>> thread = api.list_pod_for_all_namespaces(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PodList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -13936,16 +13936,16 @@ class CoreV1Api(object):
         >>> thread = api.list_pod_for_all_namespaces_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PodList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14032,16 +14032,16 @@ class CoreV1Api(object):
         >>> thread = api.list_pod_template_for_all_namespaces(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PodTemplateList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14062,16 +14062,16 @@ class CoreV1Api(object):
         >>> thread = api.list_pod_template_for_all_namespaces_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1PodTemplateList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14158,16 +14158,16 @@ class CoreV1Api(object):
         >>> thread = api.list_replication_controller_for_all_namespaces(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ReplicationControllerList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14188,16 +14188,16 @@ class CoreV1Api(object):
         >>> thread = api.list_replication_controller_for_all_namespaces_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ReplicationControllerList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14284,16 +14284,16 @@ class CoreV1Api(object):
         >>> thread = api.list_resource_quota_for_all_namespaces(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ResourceQuotaList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14314,16 +14314,16 @@ class CoreV1Api(object):
         >>> thread = api.list_resource_quota_for_all_namespaces_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ResourceQuotaList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14410,16 +14410,16 @@ class CoreV1Api(object):
         >>> thread = api.list_secret_for_all_namespaces(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1SecretList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14440,16 +14440,16 @@ class CoreV1Api(object):
         >>> thread = api.list_secret_for_all_namespaces_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1SecretList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14536,16 +14536,16 @@ class CoreV1Api(object):
         >>> thread = api.list_service_account_for_all_namespaces(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ServiceAccountList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14566,16 +14566,16 @@ class CoreV1Api(object):
         >>> thread = api.list_service_account_for_all_namespaces_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ServiceAccountList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14662,16 +14662,16 @@ class CoreV1Api(object):
         >>> thread = api.list_service_for_all_namespaces(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ServiceList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14692,16 +14692,16 @@ class CoreV1Api(object):
         >>> thread = api.list_service_for_all_namespaces_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param bool include_uninitialized: If true, partially initialized resources are included in the response.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+        :param: async bool
+        :param: str _continue: The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+        :param: str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :param: bool include_uninitialized: If true, partially initialized resources are included in the response.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: int limit: limit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
         :return: V1ServiceList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14788,10 +14788,10 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespace(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14812,10 +14812,10 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespace_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14898,10 +14898,10 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespace_status(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -14922,10 +14922,10 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespace_status_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15008,11 +15008,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_config_map(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ConfigMap (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ConfigMap (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ConfigMap
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15033,11 +15033,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_config_map_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ConfigMap (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ConfigMap (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ConfigMap
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15126,11 +15126,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_endpoints(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Endpoints (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Endpoints (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Endpoints
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15151,11 +15151,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_endpoints_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Endpoints (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Endpoints (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Endpoints
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15244,11 +15244,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_event(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Event (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Event (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Event
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15269,11 +15269,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_event_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Event (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Event (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Event
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15362,11 +15362,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_limit_range(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the LimitRange (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the LimitRange (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1LimitRange
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15387,11 +15387,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_limit_range_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the LimitRange (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the LimitRange (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1LimitRange
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15480,11 +15480,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_persistent_volume_claim(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15505,11 +15505,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_persistent_volume_claim_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15598,11 +15598,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_persistent_volume_claim_status(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15623,11 +15623,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_persistent_volume_claim_status_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15716,11 +15716,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_pod(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15741,11 +15741,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_pod_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15834,11 +15834,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_pod_status(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15859,11 +15859,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_pod_status_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15952,11 +15952,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_pod_template(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PodTemplate (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PodTemplate (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PodTemplate
                  If the method is called asynchronously,
                  returns the request thread.
@@ -15977,11 +15977,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_pod_template_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PodTemplate (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PodTemplate (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PodTemplate
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16070,11 +16070,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_replication_controller(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16095,11 +16095,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_replication_controller_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16188,11 +16188,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_replication_controller_scale(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Scale (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Scale (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Scale
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16213,11 +16213,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_replication_controller_scale_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Scale (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Scale (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Scale
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16306,11 +16306,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_replication_controller_status(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16331,11 +16331,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_replication_controller_status_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16424,11 +16424,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_resource_quota(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16449,11 +16449,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_resource_quota_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16542,11 +16542,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_resource_quota_status(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16567,11 +16567,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_resource_quota_status_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16660,11 +16660,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_secret(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Secret (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Secret (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Secret
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16685,11 +16685,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_secret_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Secret (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Secret (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Secret
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16778,11 +16778,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_service(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16803,11 +16803,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_service_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16896,11 +16896,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_service_account(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ServiceAccount (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ServiceAccount (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ServiceAccount
                  If the method is called asynchronously,
                  returns the request thread.
@@ -16921,11 +16921,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_service_account_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ServiceAccount (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ServiceAccount (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ServiceAccount
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17014,11 +17014,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_service_status(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17039,11 +17039,11 @@ class CoreV1Api(object):
         >>> thread = api.patch_namespaced_service_status_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17132,10 +17132,10 @@ class CoreV1Api(object):
         >>> thread = api.patch_node(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17156,10 +17156,10 @@ class CoreV1Api(object):
         >>> thread = api.patch_node_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17242,10 +17242,10 @@ class CoreV1Api(object):
         >>> thread = api.patch_node_status(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17266,10 +17266,10 @@ class CoreV1Api(object):
         >>> thread = api.patch_node_status_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17352,10 +17352,10 @@ class CoreV1Api(object):
         >>> thread = api.patch_persistent_volume(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17376,10 +17376,10 @@ class CoreV1Api(object):
         >>> thread = api.patch_persistent_volume_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17462,10 +17462,10 @@ class CoreV1Api(object):
         >>> thread = api.patch_persistent_volume_status(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17486,10 +17486,10 @@ class CoreV1Api(object):
         >>> thread = api.patch_persistent_volume_status_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param object body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: object body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17572,9 +17572,9 @@ class CoreV1Api(object):
         >>> thread = api.read_component_status(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ComponentStatus (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ComponentStatus (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ComponentStatus
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17595,9 +17595,9 @@ class CoreV1Api(object):
         >>> thread = api.read_component_status_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ComponentStatus (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ComponentStatus (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ComponentStatus
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17674,11 +17674,11 @@ class CoreV1Api(object):
         >>> thread = api.read_namespace(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17699,11 +17699,11 @@ class CoreV1Api(object):
         >>> thread = api.read_namespace_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17784,9 +17784,9 @@ class CoreV1Api(object):
         >>> thread = api.read_namespace_status(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17807,9 +17807,9 @@ class CoreV1Api(object):
         >>> thread = api.read_namespace_status_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17886,12 +17886,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_config_map(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ConfigMap (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the ConfigMap (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1ConfigMap
                  If the method is called asynchronously,
                  returns the request thread.
@@ -17912,12 +17912,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_config_map_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ConfigMap (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the ConfigMap (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1ConfigMap
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18004,12 +18004,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_endpoints(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Endpoints (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Endpoints (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Endpoints
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18030,12 +18030,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_endpoints_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Endpoints (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Endpoints (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Endpoints
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18122,12 +18122,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_event(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Event (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Event (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Event
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18148,12 +18148,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_event_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Event (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Event (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Event
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18240,12 +18240,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_limit_range(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the LimitRange (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the LimitRange (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1LimitRange
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18266,12 +18266,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_limit_range_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the LimitRange (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the LimitRange (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1LimitRange
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18358,12 +18358,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_persistent_volume_claim(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18384,12 +18384,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_persistent_volume_claim_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18476,10 +18476,10 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_persistent_volume_claim_status(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18500,10 +18500,10 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_persistent_volume_claim_status_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18586,12 +18586,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_pod(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18612,12 +18612,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_pod_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18704,17 +18704,17 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_pod_log(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str container: The container for which to stream logs. Defaults to only container if there is one container in the pod.
-        :param bool follow: Follow the log stream of the pod. Defaults to false.
-        :param int limit_bytes: If set, the number of bytes to read from the server before terminating the log output. This may not display a complete final line of logging, and may return slightly more or slightly less than the specified limit.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool previous: Return previous terminated container logs. Defaults to false.
-        :param int since_seconds: A relative time in seconds before the current time from which to show logs. If this value precedes the time a pod was started, only logs since the pod start will be returned. If this value is in the future, no logs will be returned. Only one of sinceSeconds or sinceTime may be specified.
-        :param int tail_lines: If set, the number of lines from the end of the logs to show. If not specified, logs are shown from the creation of the container or sinceSeconds or sinceTime
-        :param bool timestamps: If true, add an RFC3339 or RFC3339Nano timestamp at the beginning of every line of log output. Defaults to false.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str container: The container for which to stream logs. Defaults to only container if there is one container in the pod.
+        :param: bool follow: Follow the log stream of the pod. Defaults to false.
+        :param: int limit_bytes: If set, the number of bytes to read from the server before terminating the log output. This may not display a complete final line of logging, and may return slightly more or slightly less than the specified limit.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool previous: Return previous terminated container logs. Defaults to false.
+        :param: int since_seconds: A relative time in seconds before the current time from which to show logs. If this value precedes the time a pod was started, only logs since the pod start will be returned. If this value is in the future, no logs will be returned. Only one of sinceSeconds or sinceTime may be specified.
+        :param: int tail_lines: If set, the number of lines from the end of the logs to show. If not specified, logs are shown from the creation of the container or sinceSeconds or sinceTime
+        :param: bool timestamps: If true, add an RFC3339 or RFC3339Nano timestamp at the beginning of every line of log output. Defaults to false.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18735,17 +18735,17 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_pod_log_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str container: The container for which to stream logs. Defaults to only container if there is one container in the pod.
-        :param bool follow: Follow the log stream of the pod. Defaults to false.
-        :param int limit_bytes: If set, the number of bytes to read from the server before terminating the log output. This may not display a complete final line of logging, and may return slightly more or slightly less than the specified limit.
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool previous: Return previous terminated container logs. Defaults to false.
-        :param int since_seconds: A relative time in seconds before the current time from which to show logs. If this value precedes the time a pod was started, only logs since the pod start will be returned. If this value is in the future, no logs will be returned. Only one of sinceSeconds or sinceTime may be specified.
-        :param int tail_lines: If set, the number of lines from the end of the logs to show. If not specified, logs are shown from the creation of the container or sinceSeconds or sinceTime
-        :param bool timestamps: If true, add an RFC3339 or RFC3339Nano timestamp at the beginning of every line of log output. Defaults to false.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str container: The container for which to stream logs. Defaults to only container if there is one container in the pod.
+        :param: bool follow: Follow the log stream of the pod. Defaults to false.
+        :param: int limit_bytes: If set, the number of bytes to read from the server before terminating the log output. This may not display a complete final line of logging, and may return slightly more or slightly less than the specified limit.
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool previous: Return previous terminated container logs. Defaults to false.
+        :param: int since_seconds: A relative time in seconds before the current time from which to show logs. If this value precedes the time a pod was started, only logs since the pod start will be returned. If this value is in the future, no logs will be returned. Only one of sinceSeconds or sinceTime may be specified.
+        :param: int tail_lines: If set, the number of lines from the end of the logs to show. If not specified, logs are shown from the creation of the container or sinceSeconds or sinceTime
+        :param: bool timestamps: If true, add an RFC3339 or RFC3339Nano timestamp at the beginning of every line of log output. Defaults to false.
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18842,10 +18842,10 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_pod_status(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18866,10 +18866,10 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_pod_status_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18952,12 +18952,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_pod_template(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PodTemplate (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the PodTemplate (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1PodTemplate
                  If the method is called asynchronously,
                  returns the request thread.
@@ -18978,12 +18978,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_pod_template_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PodTemplate (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the PodTemplate (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1PodTemplate
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19070,12 +19070,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_replication_controller(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19096,12 +19096,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_replication_controller_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19188,10 +19188,10 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_replication_controller_scale(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Scale (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Scale (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Scale
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19212,10 +19212,10 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_replication_controller_scale_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Scale (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Scale (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Scale
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19298,10 +19298,10 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_replication_controller_status(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19322,10 +19322,10 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_replication_controller_status_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19408,12 +19408,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_resource_quota(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19434,12 +19434,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_resource_quota_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19526,10 +19526,10 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_resource_quota_status(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19550,10 +19550,10 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_resource_quota_status_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19636,12 +19636,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_secret(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Secret (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Secret (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Secret
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19662,12 +19662,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_secret_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Secret (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Secret (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Secret
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19754,12 +19754,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_service(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19780,12 +19780,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_service_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19872,12 +19872,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_service_account(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ServiceAccount (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the ServiceAccount (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1ServiceAccount
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19898,12 +19898,12 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_service_account_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ServiceAccount (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the ServiceAccount (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1ServiceAccount
                  If the method is called asynchronously,
                  returns the request thread.
@@ -19990,10 +19990,10 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_service_status(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20014,10 +20014,10 @@ class CoreV1Api(object):
         >>> thread = api.read_namespaced_service_status_with_http_info(name, namespace, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20100,11 +20100,11 @@ class CoreV1Api(object):
         >>> thread = api.read_node(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20125,11 +20125,11 @@ class CoreV1Api(object):
         >>> thread = api.read_node_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20210,9 +20210,9 @@ class CoreV1Api(object):
         >>> thread = api.read_node_status(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20233,9 +20233,9 @@ class CoreV1Api(object):
         >>> thread = api.read_node_status_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20312,11 +20312,11 @@ class CoreV1Api(object):
         >>> thread = api.read_persistent_volume(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20337,11 +20337,11 @@ class CoreV1Api(object):
         >>> thread = api.read_persistent_volume_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
-        :param bool export: Should this value be exported.  Export strips fields that a user can not specify.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: bool exact: Should the export be exact.  Exact export maintains cluster-specific fields like 'Namespace'.
+        :param: bool export: Should this value be exported.  Export strips fields that a user can not specify.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20422,9 +20422,9 @@ class CoreV1Api(object):
         >>> thread = api.read_persistent_volume_status(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20445,9 +20445,9 @@ class CoreV1Api(object):
         >>> thread = api.read_persistent_volume_status_with_http_info(name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20524,10 +20524,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespace(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param V1Namespace body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: V1Namespace body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20548,10 +20548,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespace_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param V1Namespace body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: V1Namespace body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20634,10 +20634,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespace_finalize(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param V1Namespace body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: V1Namespace body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20658,10 +20658,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespace_finalize_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param V1Namespace body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: V1Namespace body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20744,10 +20744,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespace_status(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param V1Namespace body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: V1Namespace body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20768,10 +20768,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespace_status_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Namespace (required)
-        :param V1Namespace body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Namespace (required)
+        :param: V1Namespace body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Namespace
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20854,11 +20854,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_config_map(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ConfigMap (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ConfigMap body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ConfigMap (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ConfigMap body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ConfigMap
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20879,11 +20879,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_config_map_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ConfigMap (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ConfigMap body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ConfigMap (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ConfigMap body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ConfigMap
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20972,11 +20972,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_endpoints(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Endpoints (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Endpoints body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Endpoints (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Endpoints body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Endpoints
                  If the method is called asynchronously,
                  returns the request thread.
@@ -20997,11 +20997,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_endpoints_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Endpoints (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Endpoints body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Endpoints (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Endpoints body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Endpoints
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21090,11 +21090,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_event(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Event (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Event body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Event (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Event body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Event
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21115,11 +21115,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_event_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Event (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Event body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Event (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Event body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Event
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21208,11 +21208,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_limit_range(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the LimitRange (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1LimitRange body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the LimitRange (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1LimitRange body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1LimitRange
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21233,11 +21233,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_limit_range_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the LimitRange (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1LimitRange body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the LimitRange (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1LimitRange body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1LimitRange
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21326,11 +21326,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_persistent_volume_claim(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1PersistentVolumeClaim body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1PersistentVolumeClaim body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21351,11 +21351,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_persistent_volume_claim_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1PersistentVolumeClaim body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1PersistentVolumeClaim body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21444,11 +21444,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_persistent_volume_claim_status(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1PersistentVolumeClaim body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1PersistentVolumeClaim body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21469,11 +21469,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_persistent_volume_claim_status_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolumeClaim (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1PersistentVolumeClaim body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolumeClaim (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1PersistentVolumeClaim body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolumeClaim
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21562,11 +21562,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_pod(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Pod body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Pod body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21587,11 +21587,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_pod_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Pod body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Pod body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21680,11 +21680,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_pod_status(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Pod body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Pod body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21705,11 +21705,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_pod_status_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Pod (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Pod body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Pod (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Pod body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Pod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21798,11 +21798,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_pod_template(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PodTemplate (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1PodTemplate body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PodTemplate (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1PodTemplate body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PodTemplate
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21823,11 +21823,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_pod_template_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PodTemplate (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1PodTemplate body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PodTemplate (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1PodTemplate body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PodTemplate
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21916,11 +21916,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_replication_controller(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ReplicationController body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ReplicationController body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -21941,11 +21941,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_replication_controller_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ReplicationController body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ReplicationController body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22034,11 +22034,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_replication_controller_scale(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Scale (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Scale body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Scale (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Scale body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Scale
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22059,11 +22059,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_replication_controller_scale_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Scale (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Scale body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Scale (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Scale body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Scale
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22152,11 +22152,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_replication_controller_status(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ReplicationController body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ReplicationController body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22177,11 +22177,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_replication_controller_status_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ReplicationController (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ReplicationController body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ReplicationController (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ReplicationController body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ReplicationController
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22270,11 +22270,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_resource_quota(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ResourceQuota body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ResourceQuota body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22295,11 +22295,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_resource_quota_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ResourceQuota body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ResourceQuota body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22388,11 +22388,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_resource_quota_status(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ResourceQuota body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ResourceQuota body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22413,11 +22413,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_resource_quota_status_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ResourceQuota (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ResourceQuota body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ResourceQuota (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ResourceQuota body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ResourceQuota
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22506,11 +22506,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_secret(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Secret (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Secret body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Secret (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Secret body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Secret
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22531,11 +22531,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_secret_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Secret (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Secret body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Secret (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Secret body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Secret
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22624,11 +22624,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_service(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Service body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Service body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22649,11 +22649,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_service_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Service body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Service body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22742,11 +22742,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_service_account(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ServiceAccount (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ServiceAccount body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ServiceAccount (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ServiceAccount body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ServiceAccount
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22767,11 +22767,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_service_account_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the ServiceAccount (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1ServiceAccount body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the ServiceAccount (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1ServiceAccount body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1ServiceAccount
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22860,11 +22860,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_service_status(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Service body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Service body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22885,11 +22885,11 @@ class CoreV1Api(object):
         >>> thread = api.replace_namespaced_service_status_with_http_info(name, namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Service (required)
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1Service body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Service (required)
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1Service body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Service
                  If the method is called asynchronously,
                  returns the request thread.
@@ -22978,10 +22978,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_node(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param V1Node body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: V1Node body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23002,10 +23002,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_node_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param V1Node body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: V1Node body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23088,10 +23088,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_node_status(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param V1Node body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: V1Node body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23112,10 +23112,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_node_status_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the Node (required)
-        :param V1Node body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the Node (required)
+        :param: V1Node body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1Node
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23198,10 +23198,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_persistent_volume(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param V1PersistentVolume body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: V1PersistentVolume body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23222,10 +23222,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_persistent_volume_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param V1PersistentVolume body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: V1PersistentVolume body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23308,10 +23308,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_persistent_volume_status(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param V1PersistentVolume body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: V1PersistentVolume body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.
@@ -23332,10 +23332,10 @@ class CoreV1Api(object):
         >>> thread = api.replace_persistent_volume_status_with_http_info(name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str name: name of the PersistentVolume (required)
-        :param V1PersistentVolume body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str name: name of the PersistentVolume (required)
+        :param: V1PersistentVolume body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1PersistentVolume
                  If the method is called asynchronously,
                  returns the request thread.

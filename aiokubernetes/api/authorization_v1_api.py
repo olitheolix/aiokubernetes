@@ -42,10 +42,10 @@ class AuthorizationV1Api(object):
         >>> thread = api.create_namespaced_local_subject_access_review(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1LocalSubjectAccessReview body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1LocalSubjectAccessReview body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1LocalSubjectAccessReview
                  If the method is called asynchronously,
                  returns the request thread.
@@ -66,10 +66,10 @@ class AuthorizationV1Api(object):
         >>> thread = api.create_namespaced_local_subject_access_review_with_http_info(namespace, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str namespace: object name and auth scope, such as for teams and projects (required)
-        :param V1LocalSubjectAccessReview body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str namespace: object name and auth scope, such as for teams and projects (required)
+        :param: V1LocalSubjectAccessReview body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1LocalSubjectAccessReview
                  If the method is called asynchronously,
                  returns the request thread.
@@ -152,9 +152,9 @@ class AuthorizationV1Api(object):
         >>> thread = api.create_self_subject_access_review(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1SelfSubjectAccessReview body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1SelfSubjectAccessReview body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1SelfSubjectAccessReview
                  If the method is called asynchronously,
                  returns the request thread.
@@ -175,9 +175,9 @@ class AuthorizationV1Api(object):
         >>> thread = api.create_self_subject_access_review_with_http_info(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1SelfSubjectAccessReview body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1SelfSubjectAccessReview body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1SelfSubjectAccessReview
                  If the method is called asynchronously,
                  returns the request thread.
@@ -254,9 +254,9 @@ class AuthorizationV1Api(object):
         >>> thread = api.create_self_subject_rules_review(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1SelfSubjectRulesReview body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1SelfSubjectRulesReview body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1SelfSubjectRulesReview
                  If the method is called asynchronously,
                  returns the request thread.
@@ -277,9 +277,9 @@ class AuthorizationV1Api(object):
         >>> thread = api.create_self_subject_rules_review_with_http_info(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1SelfSubjectRulesReview body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1SelfSubjectRulesReview body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1SelfSubjectRulesReview
                  If the method is called asynchronously,
                  returns the request thread.
@@ -356,9 +356,9 @@ class AuthorizationV1Api(object):
         >>> thread = api.create_subject_access_review(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1SubjectAccessReview body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1SubjectAccessReview body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1SubjectAccessReview
                  If the method is called asynchronously,
                  returns the request thread.
@@ -379,9 +379,9 @@ class AuthorizationV1Api(object):
         >>> thread = api.create_subject_access_review_with_http_info(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1SubjectAccessReview body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1SubjectAccessReview body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1SubjectAccessReview
                  If the method is called asynchronously,
                  returns the request thread.
@@ -458,7 +458,7 @@ class AuthorizationV1Api(object):
         >>> thread = api.get_api_resources(async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param: async bool
         :return: V1APIResourceList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -479,7 +479,7 @@ class AuthorizationV1Api(object):
         >>> thread = api.get_api_resources_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param: async bool
         :return: V1APIResourceList
                  If the method is called asynchronously,
                  returns the request thread.
