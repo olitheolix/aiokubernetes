@@ -42,12 +42,12 @@ class CustomObjectsApi(object):
         >>> thread = api.create_cluster_custom_object(group, version, plural, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: The custom resource's group name (required)
-        :param str version: The custom resource's version (required)
-        :param str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param object body: The JSON schema of the Resource to create. (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str group: The custom resource's group name (required)
+        :param: str version: The custom resource's version (required)
+        :param: str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: object body: The JSON schema of the Resource to create. (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -68,12 +68,12 @@ class CustomObjectsApi(object):
         >>> thread = api.create_cluster_custom_object_with_http_info(group, version, plural, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: The custom resource's group name (required)
-        :param str version: The custom resource's version (required)
-        :param str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param object body: The JSON schema of the Resource to create. (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str group: The custom resource's group name (required)
+        :param: str version: The custom resource's version (required)
+        :param: str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: object body: The JSON schema of the Resource to create. (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -164,13 +164,13 @@ class CustomObjectsApi(object):
         >>> thread = api.create_namespaced_custom_object(group, version, namespace, plural, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: The custom resource's group name (required)
-        :param str version: The custom resource's version (required)
-        :param str namespace: The custom resource's namespace (required)
-        :param str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param object body: The JSON schema of the Resource to create. (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str group: The custom resource's group name (required)
+        :param: str version: The custom resource's version (required)
+        :param: str namespace: The custom resource's namespace (required)
+        :param: str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: object body: The JSON schema of the Resource to create. (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -191,13 +191,13 @@ class CustomObjectsApi(object):
         >>> thread = api.create_namespaced_custom_object_with_http_info(group, version, namespace, plural, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: The custom resource's group name (required)
-        :param str version: The custom resource's version (required)
-        :param str namespace: The custom resource's namespace (required)
-        :param str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param object body: The JSON schema of the Resource to create. (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: str group: The custom resource's group name (required)
+        :param: str version: The custom resource's version (required)
+        :param: str namespace: The custom resource's namespace (required)
+        :param: str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: object body: The JSON schema of the Resource to create. (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -294,15 +294,15 @@ class CustomObjectsApi(object):
         >>> thread = api.delete_cluster_custom_object(group, version, plural, name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
-        :param V1DeleteOptions body: (required)
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
+        :param: V1DeleteOptions body: (required)
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -323,15 +323,15 @@ class CustomObjectsApi(object):
         >>> thread = api.delete_cluster_custom_object_with_http_info(group, version, plural, name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
-        :param V1DeleteOptions body: (required)
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
+        :param: V1DeleteOptions body: (required)
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -436,16 +436,16 @@ class CustomObjectsApi(object):
         >>> thread = api.delete_namespaced_custom_object(group, version, namespace, plural, name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str namespace: The custom resource's namespace (required)
-        :param str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
-        :param V1DeleteOptions body: (required)
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str namespace: The custom resource's namespace (required)
+        :param: str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
+        :param: V1DeleteOptions body: (required)
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -466,16 +466,16 @@ class CustomObjectsApi(object):
         >>> thread = api.delete_namespaced_custom_object_with_http_info(group, version, namespace, plural, name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str namespace: The custom resource's namespace (required)
-        :param str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
-        :param V1DeleteOptions body: (required)
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str namespace: The custom resource's namespace (required)
+        :param: str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
+        :param: V1DeleteOptions body: (required)
+        :param: int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :param: bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :param: str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -586,11 +586,11 @@ class CustomObjectsApi(object):
         >>> thread = api.get_cluster_custom_object(group, version, plural, name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -611,11 +611,11 @@ class CustomObjectsApi(object):
         >>> thread = api.get_cluster_custom_object_with_http_info(group, version, plural, name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -708,12 +708,12 @@ class CustomObjectsApi(object):
         >>> thread = api.get_namespaced_custom_object(group, version, namespace, plural, name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str namespace: The custom resource's namespace (required)
-        :param str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str namespace: The custom resource's namespace (required)
+        :param: str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -734,12 +734,12 @@ class CustomObjectsApi(object):
         >>> thread = api.get_namespaced_custom_object_with_http_info(group, version, namespace, plural, name, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str namespace: The custom resource's namespace (required)
-        :param str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str namespace: The custom resource's namespace (required)
+        :param: str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -838,14 +838,14 @@ class CustomObjectsApi(object):
         >>> thread = api.list_cluster_custom_object(group, version, plural, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: The custom resource's group name (required)
-        :param str version: The custom resource's version (required)
-        :param str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :param: async bool
+        :param: str group: The custom resource's group name (required)
+        :param: str version: The custom resource's version (required)
+        :param: str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -866,14 +866,14 @@ class CustomObjectsApi(object):
         >>> thread = api.list_cluster_custom_object_with_http_info(group, version, plural, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: The custom resource's group name (required)
-        :param str version: The custom resource's version (required)
-        :param str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :param: async bool
+        :param: str group: The custom resource's group name (required)
+        :param: str version: The custom resource's version (required)
+        :param: str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -968,15 +968,15 @@ class CustomObjectsApi(object):
         >>> thread = api.list_namespaced_custom_object(group, version, namespace, plural, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: The custom resource's group name (required)
-        :param str version: The custom resource's version (required)
-        :param str namespace: The custom resource's namespace (required)
-        :param str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :param: async bool
+        :param: str group: The custom resource's group name (required)
+        :param: str version: The custom resource's version (required)
+        :param: str namespace: The custom resource's namespace (required)
+        :param: str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -997,15 +997,15 @@ class CustomObjectsApi(object):
         >>> thread = api.list_namespaced_custom_object_with_http_info(group, version, namespace, plural, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: The custom resource's group name (required)
-        :param str version: The custom resource's version (required)
-        :param str namespace: The custom resource's namespace (required)
-        :param str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str pretty: If 'true', then the output is pretty printed.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :param: async bool
+        :param: str group: The custom resource's group name (required)
+        :param: str version: The custom resource's version (required)
+        :param: str namespace: The custom resource's namespace (required)
+        :param: str plural: The custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
+        :param: str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :param: str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :param: bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1106,12 +1106,12 @@ class CustomObjectsApi(object):
         >>> thread = api.patch_cluster_custom_object(group, version, plural, name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
-        :param object body: The JSON schema of the Resource to patch. (required)
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
+        :param: object body: The JSON schema of the Resource to patch. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1132,12 +1132,12 @@ class CustomObjectsApi(object):
         >>> thread = api.patch_cluster_custom_object_with_http_info(group, version, plural, name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
-        :param object body: The JSON schema of the Resource to patch. (required)
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
+        :param: object body: The JSON schema of the Resource to patch. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1236,13 +1236,13 @@ class CustomObjectsApi(object):
         >>> thread = api.patch_namespaced_custom_object(group, version, namespace, plural, name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str namespace: The custom resource's namespace (required)
-        :param str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
-        :param object body: The JSON schema of the Resource to patch. (required)
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str namespace: The custom resource's namespace (required)
+        :param: str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
+        :param: object body: The JSON schema of the Resource to patch. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1263,13 +1263,13 @@ class CustomObjectsApi(object):
         >>> thread = api.patch_namespaced_custom_object_with_http_info(group, version, namespace, plural, name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str namespace: The custom resource's namespace (required)
-        :param str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
-        :param object body: The JSON schema of the Resource to patch. (required)
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str namespace: The custom resource's namespace (required)
+        :param: str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
+        :param: object body: The JSON schema of the Resource to patch. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1374,12 +1374,12 @@ class CustomObjectsApi(object):
         >>> thread = api.replace_cluster_custom_object(group, version, plural, name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
-        :param object body: The JSON schema of the Resource to replace. (required)
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
+        :param: object body: The JSON schema of the Resource to replace. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1400,12 +1400,12 @@ class CustomObjectsApi(object):
         >>> thread = api.replace_cluster_custom_object_with_http_info(group, version, plural, name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
-        :param object body: The JSON schema of the Resource to replace. (required)
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str plural: the custom object's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
+        :param: object body: The JSON schema of the Resource to replace. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1504,13 +1504,13 @@ class CustomObjectsApi(object):
         >>> thread = api.replace_namespaced_custom_object(group, version, namespace, plural, name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str namespace: The custom resource's namespace (required)
-        :param str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
-        :param object body: The JSON schema of the Resource to replace. (required)
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str namespace: The custom resource's namespace (required)
+        :param: str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
+        :param: object body: The JSON schema of the Resource to replace. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1531,13 +1531,13 @@ class CustomObjectsApi(object):
         >>> thread = api.replace_namespaced_custom_object_with_http_info(group, version, namespace, plural, name, body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str group: the custom resource's group (required)
-        :param str version: the custom resource's version (required)
-        :param str namespace: The custom resource's namespace (required)
-        :param str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
-        :param str name: the custom object's name (required)
-        :param object body: The JSON schema of the Resource to replace. (required)
+        :param: async bool
+        :param: str group: the custom resource's group (required)
+        :param: str version: the custom resource's version (required)
+        :param: str namespace: The custom resource's namespace (required)
+        :param: str plural: the custom resource's plural name. For TPRs this would be lowercase plural kind. (required)
+        :param: str name: the custom object's name (required)
+        :param: object body: The JSON schema of the Resource to replace. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.

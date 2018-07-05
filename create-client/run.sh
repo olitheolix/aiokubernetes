@@ -43,7 +43,10 @@ pushd "$AIOK8S_DIR/aiokubernetes/"
 # Remove the `async=params.get('async')` parameter from the calls to `self.api_client.call_api`.
 sed -i '/^ *async=params\.get.*/d' api/*.py
 
-# These import are technically unnecessary but are convenient for end users.
+# Fix a template error in the doc-strings: ':param ' -> ':param:'
+sed -i 's/:param /:param: /g' api/*.py
+
+# These imports are technically unnecessary but are convenient for end users.
 cat >>"__init__.py" <<EOF
 
 # These import are technically unnecessary but are convenient for end users.

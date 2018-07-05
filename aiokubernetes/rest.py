@@ -66,17 +66,17 @@ class RESTClientObject(object):
                       _request_timeout=None):
         """Execute request
 
-        :param method: http request method
-        :param url: http request url
-        :param query_params: query parameters in the url
-        :param headers: http request headers
-        :param body: request json body, for `application/json`
-        :param post_params: request post parameters,
+        :param: method: http request method
+        :param: url: http request url
+        :param: query_params: query parameters in the url
+        :param: headers: http request headers
+        :param: body: request json body, for `application/json`
+        :param: post_params: request post parameters,
                             `application/x-www-form-urlencoded`
                             and `multipart/form-data`
-        :param _preload_content: this is a non-applicable field for
+        :param: _preload_content: this is a non-applicable field for
                                  the AiohttpClient.
-        :param _request_timeout: timeout setting for this request. If one
+        :param: _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.

@@ -41,8 +41,8 @@ class LogsApi(object):
         >>> thread = api.log_file_handler(logpath, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str logpath: path to the log (required)
+        :param: async bool
+        :param: str logpath: path to the log (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -62,8 +62,8 @@ class LogsApi(object):
         >>> thread = api.log_file_handler_with_http_info(logpath, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param str logpath: path to the log (required)
+        :param: async bool
+        :param: str logpath: path to the log (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -129,7 +129,7 @@ class LogsApi(object):
         >>> thread = api.log_file_list_handler(async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param: async bool
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -149,7 +149,7 @@ class LogsApi(object):
         >>> thread = api.log_file_list_handler_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param: async bool
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

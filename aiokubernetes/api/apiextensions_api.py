@@ -42,7 +42,7 @@ class ApiextensionsApi(object):
         >>> thread = api.get_api_group(async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param: async bool
         :return: V1APIGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -63,7 +63,7 @@ class ApiextensionsApi(object):
         >>> thread = api.get_api_group_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param: async bool
         :return: V1APIGroup
                  If the method is called asynchronously,
                  returns the request thread.

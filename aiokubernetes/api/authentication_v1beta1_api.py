@@ -42,9 +42,9 @@ class AuthenticationV1beta1Api(object):
         >>> thread = api.create_token_review(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1beta1TokenReview body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1beta1TokenReview body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1TokenReview
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,9 +65,9 @@ class AuthenticationV1beta1Api(object):
         >>> thread = api.create_token_review_with_http_info(body, async=True)
         >>> result = thread.get()
 
-        :param async bool
-        :param V1beta1TokenReview body: (required)
-        :param str pretty: If 'true', then the output is pretty printed.
+        :param: async bool
+        :param: V1beta1TokenReview body: (required)
+        :param: str pretty: If 'true', then the output is pretty printed.
         :return: V1beta1TokenReview
                  If the method is called asynchronously,
                  returns the request thread.
@@ -144,7 +144,7 @@ class AuthenticationV1beta1Api(object):
         >>> thread = api.get_api_resources(async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param: async bool
         :return: V1APIResourceList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -165,7 +165,7 @@ class AuthenticationV1beta1Api(object):
         >>> thread = api.get_api_resources_with_http_info(async=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param: async bool
         :return: V1APIResourceList
                  If the method is called asynchronously,
                  returns the request thread.

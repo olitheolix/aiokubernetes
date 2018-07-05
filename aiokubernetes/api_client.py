@@ -40,11 +40,11 @@ class ApiClient(object):
     Ref: https://github.com/swagger-api/swagger-codegen
     Do not edit the class manually.
 
-    :param configuration: .Configuration object for this client
-    :param header_name: a header to pass when making calls to the API.
-    :param header_value: a header value to pass when making calls to
+    :param: configuration: .Configuration object for this client
+    :param: header_name: a header to pass when making calls to the API.
+    :param: header_value: a header value to pass when making calls to
         the API.
-    :param cookie: a cookie to include in the header when making calls
+    :param: cookie: a cookie to include in the header when making calls
         to the API
     """
 
@@ -94,27 +94,27 @@ class ApiClient(object):
             _preload_content=True, _request_timeout=None):
         """Makes the HTTP request (synchronous) and returns deserialized data.
 
-        :param resource_path: Path to method endpoint.
-        :param method: Method to call.
-        :param path_params: Path parameters in the url.
-        :param query_params: Query parameters in the url.
-        :param header_params: Header parameters to be
+        :param: resource_path: Path to method endpoint.
+        :param: method: Method to call.
+        :param: path_params: Path parameters in the url.
+        :param: query_params: Query parameters in the url.
+        :param: header_params: Header parameters to be
             placed in the request header.
-        :param body: Request body.
-        :param post_params dict: Request post form parameters,
+        :param: body: Request body.
+        :param: post_params dict: Request post form parameters,
             for `application/x-www-form-urlencoded`, `multipart/form-data`.
-        :param auth_settings list: Auth Settings names for the request.
-        :param response: Response data type.
-        :param files dict: key -> filename, value -> filepath,
+        :param: auth_settings list: Auth Settings names for the request.
+        :param: response: Response data type.
+        :param: files dict: key -> filename, value -> filepath,
             for `multipart/form-data`.
-        :param _return_http_data_only: response data without head status code
+        :param: _return_http_data_only: response data without head status code
                                        and headers
-        :param collection_formats: dict of collection formats for path, query,
+        :param: collection_formats: dict of collection formats for path, query,
             header, and post parameters.
-        :param _preload_content: if False, the urllib3.HTTPResponse object will
+        :param: _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
-        :param _request_timeout: timeout setting for this request. If one
+        :param: _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
@@ -205,7 +205,7 @@ class ApiClient(object):
         If obj is dict, return the dict.
         If obj is swagger model, return the properties dict.
 
-        :param obj: The data to serialize.
+        :param: obj: The data to serialize.
         :return: The serialized form of data.
         """
         if obj is None:
@@ -239,8 +239,8 @@ class ApiClient(object):
     def deserialize(self, response, response_type):
         """Deserializes response into an object.
 
-        :param response: RESTResponse object to be deserialized.
-        :param response_type: class literal for
+        :param: response: RESTResponse object to be deserialized.
+        :param: response_type: class literal for
             deserialized object, or string of class name.
 
         :return: deserialized object.
@@ -261,8 +261,8 @@ class ApiClient(object):
     def __deserialize(self, data, klass):
         """Deserializes dict, list, str into an object.
 
-        :param data: dict, list or str.
-        :param klass: class literal, or string of class name.
+        :param: data: dict, list or str.
+        :param: klass: class literal, or string of class name.
 
         :return: object.
         """
@@ -361,8 +361,8 @@ class ApiClient(object):
     def parameters_to_tuples(self, params, collection_formats):
         """Get parameters as list of tuples, formatting collections.
 
-        :param params: Parameters as dict or list of two-tuples
-        :param dict collection_formats: Parameter collection formats
+        :param: params: Parameters as dict or list of two-tuples
+        :param: dict collection_formats: Parameter collection formats
         :return: Parameters as list of tuples, collections formatted
         """
         new_params = []
@@ -391,8 +391,8 @@ class ApiClient(object):
     def prepare_post_parameters(self, post_params=None, files=None):
         """Builds form parameters.
 
-        :param post_params: Normal form parameters.
-        :param files: File parameters.
+        :param: post_params: Normal form parameters.
+        :param: files: File parameters.
         :return: Form parameters with files.
         """
         params = []
@@ -419,7 +419,7 @@ class ApiClient(object):
     def select_header_accept(self, accepts):
         """Returns `Accept` based on an array of accepts provided.
 
-        :param accepts: List of headers.
+        :param: accepts: List of headers.
         :return: Accept (e.g. application/json).
         """
         if not accepts:
@@ -435,7 +435,7 @@ class ApiClient(object):
     def select_header_content_type(self, content_types):
         """Returns `Content-Type` based on an array of content_types provided.
 
-        :param content_types: List of content-types.
+        :param: content_types: List of content-types.
         :return: Content-Type (e.g. application/json).
         """
         if not content_types:
@@ -451,9 +451,9 @@ class ApiClient(object):
     def update_params_for_auth(self, headers, querys, auth_settings):
         """Updates header and query params based on authentication setting.
 
-        :param headers: Header parameters dict to be updated.
-        :param querys: Query parameters tuple list to be updated.
-        :param auth_settings: Authentication setting identifiers list.
+        :param: headers: Header parameters dict to be updated.
+        :param: querys: Query parameters tuple list to be updated.
+        :param: auth_settings: Authentication setting identifiers list.
         """
         if not auth_settings:
             return
@@ -478,7 +478,7 @@ class ApiClient(object):
         Saves response body into a file in a temporary folder,
         using the filename from the `Content-Disposition` header if provided.
 
-        :param response:  RESTResponse.
+        :param: response:  RESTResponse.
         :return: file path.
         """
         fd, path = tempfile.mkstemp(dir=self.configuration.temp_folder_path)
@@ -499,8 +499,8 @@ class ApiClient(object):
     def __deserialize_primitive(self, data, klass):
         """Deserializes string to primitive type.
 
-        :param data: str.
-        :param klass: class literal.
+        :param: data: str.
+        :param: klass: class literal.
 
         :return: int, long, float, str, bool.
         """
@@ -521,7 +521,7 @@ class ApiClient(object):
     def __deserialize_date(self, string):
         """Deserializes string to date.
 
-        :param string: str.
+        :param: string: str.
         :return: date.
         """
         try:
@@ -540,7 +540,7 @@ class ApiClient(object):
 
         The string should be in iso8601 datetime format.
 
-        :param string: str.
+        :param: string: str.
         :return: datetime.
         """
         try:
@@ -560,8 +560,8 @@ class ApiClient(object):
     def __deserialize_model(self, data, klass):
         """Deserializes list or dict to model.
 
-        :param data: dict, list.
-        :param klass: class literal.
+        :param: data: dict, list.
+        :param: klass: class literal.
         :return: model object.
         """
 
