@@ -286,10 +286,10 @@ class ApiClient(object):
             else:
                 klass = getattr(aiokubernetes.models, klass)
 
-        if klass in self.PRIMITIVE_TYPES:
+        if klass == object:
+            return data
+        elif klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)
-        elif klass == object:
-            return self.__deserialize_object(data)
         elif klass == datetime.date:
             return self.__deserialize_date(data)
         elif klass == datetime.datetime:
@@ -452,13 +452,6 @@ class ApiClient(object):
             return six.text_type(data)
         except TypeError:
             return data
-
-    def __deserialize_object(self, value):
-        """Return a original value.
-
-        :return: object.
-        """
-        return value
 
     def __deserialize_date(self, string):
         """Deserializes string to date.
