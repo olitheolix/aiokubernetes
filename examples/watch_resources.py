@@ -29,7 +29,7 @@ async def setup():
     await asyncio.gather(*tasks)
 
     # Terminate the connection pool for a clean shutdown.
-    await api_client.pool_manager.close()
+    await api_client.session.close()
 
 
 def main():

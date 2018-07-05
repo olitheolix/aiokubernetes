@@ -71,7 +71,7 @@ class WSClientTest(TestCase):
         m_rest.ws_connect.return_value = m_ws
 
         api_client = WebsocketApiClient()
-        api_client.pool_manager = m_rest
+        api_client.session = m_rest
 
         # Make the websocket request through our Mock.
         ws = k8s.CoreV1Api(api_client=api_client)
@@ -114,10 +114,10 @@ class WSClientTest(TestCase):
         m_rest = mock.MagicMock()
         m_rest.ws_connect.return_value = m_ws
 
-        # Create an ApiClient instance with a stubbed pool_manager.
+        # Create an ApiClient instance with a stubbed session.
         queue = asyncio.Queue()
         api_client = WebsocketApiClient(queue=queue)
-        api_client.pool_manager = m_rest
+        api_client.session = m_rest
 
         # Make the websocket request through our Mock. Pass our Queue along to
         # the WebsocketClient to receive message immediately.

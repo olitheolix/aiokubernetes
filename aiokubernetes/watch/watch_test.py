@@ -98,7 +98,7 @@ class WatchTest(TestCase):
             _preload_content=False, watch=True, resource_version='123')
 
         # For a clean shutdown of the test.
-        await api_client.pool_manager.close()
+        await api_client.session.close()
 
     async def test_watch_k8s_empty_response(self):
         """Stop the iterator when the response is empty.
