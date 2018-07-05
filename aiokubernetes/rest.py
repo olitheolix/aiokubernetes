@@ -51,15 +51,7 @@ class RESTClientObject(object):
         )
 
         # https pool manager
-        if configuration.proxy:
-            self.pool_manager = aiohttp.ClientSession(
-                connector=connector,
-                proxy=configuration.proxy
-            )
-        else:
-            self.pool_manager = aiohttp.ClientSession(
-                connector=connector
-            )
+        self.pool_manager = aiohttp.ClientSession(connector=connector)
 
     async def request(self, method, url, query_params=None, headers=None,
                       body=None, post_params=None, _preload_content=True,

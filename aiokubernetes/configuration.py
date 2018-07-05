@@ -96,8 +96,6 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         # cpu_count * 5 is used as default value to increase performance.
         self.connection_pool_maxsize = multiprocessing.cpu_count() * 5
 
-        # Proxy URL
-        self.proxy = None
         # Safe chars for path_param
         self.safe_chars_for_path_param = ''
 
