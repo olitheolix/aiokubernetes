@@ -24,7 +24,7 @@ class TestLogsApi(unittest.TestCase):
     """LogsApi unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.logs_api.LogsApi()  # noqa: E501
+        self.api = aiokubernetes.api.logs_api.LogsApi(None)  # noqa: E501
 
     def tearDown(self):
         pass

@@ -24,7 +24,7 @@ class TestSettingsApi(unittest.TestCase):
     """SettingsApi unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.settings_api.SettingsApi()  # noqa: E501
+        self.api = aiokubernetes.api.settings_api.SettingsApi(None)  # noqa: E501
 
     def tearDown(self):
         pass

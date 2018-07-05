@@ -24,7 +24,7 @@ class TestEventsApi(unittest.TestCase):
     """EventsApi unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.events_api.EventsApi()  # noqa: E501
+        self.api = aiokubernetes.api.events_api.EventsApi(None)  # noqa: E501
 
     def tearDown(self):
         pass

@@ -24,7 +24,7 @@ class TestAuthenticationApi(unittest.TestCase):
     """AuthenticationApi unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.authentication_api.AuthenticationApi()  # noqa: E501
+        self.api = aiokubernetes.api.authentication_api.AuthenticationApi(None)  # noqa: E501
 
     def tearDown(self):
         pass

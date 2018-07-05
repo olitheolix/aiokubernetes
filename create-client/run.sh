@@ -53,6 +53,11 @@ sed -i 's/api_client=None/api_client/g' api/*.py
 sed -i '/^ *if api_client is None/d' api/*.py
 sed -i '/^ *api_client = ApiClient\(\)/d' api/*.py
 
+# Pass default value for ApiClient instance (not actually used in the tests, so
+# we can pass a None).
+# Example: "self.api = foo.VersionApi()" -> self.api = foo.VersionApi(None)
+sed -i 's/\(^ *self\.api = .*\)()\(.*\)/\1(None)\2/' ../test/*.py
+
 # These imports are technically unnecessary but are convenient for end users.
 cat >>"__init__.py" <<EOF
 

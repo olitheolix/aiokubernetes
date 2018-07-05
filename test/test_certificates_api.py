@@ -24,7 +24,7 @@ class TestCertificatesApi(unittest.TestCase):
     """CertificatesApi unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.certificates_api.CertificatesApi()  # noqa: E501
+        self.api = aiokubernetes.api.certificates_api.CertificatesApi(None)  # noqa: E501
 
     def tearDown(self):
         pass

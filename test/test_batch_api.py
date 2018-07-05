@@ -24,7 +24,7 @@ class TestBatchApi(unittest.TestCase):
     """BatchApi unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.batch_api.BatchApi()  # noqa: E501
+        self.api = aiokubernetes.api.batch_api.BatchApi(None)  # noqa: E501
 
     def tearDown(self):
         pass

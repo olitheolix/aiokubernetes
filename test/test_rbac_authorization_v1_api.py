@@ -24,7 +24,7 @@ class TestRbacAuthorizationV1Api(unittest.TestCase):
     """RbacAuthorizationV1Api unit test stubs"""
 
     def setUp(self):
-        self.api = aiokubernetes.api.rbac_authorization_v1_api.RbacAuthorizationV1Api()  # noqa: E501
+        self.api = aiokubernetes.api.rbac_authorization_v1_api.RbacAuthorizationV1Api(None)  # noqa: E501
 
     def tearDown(self):
         pass
