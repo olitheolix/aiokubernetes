@@ -28,9 +28,7 @@ class CoreV1Api(object):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def __init__(self, api_client=None):
-        if api_client is None:
-            api_client = ApiClient()
+    def __init__(self, api_client):
         self.api_client = api_client
 
     def connect_delete_namespaced_pod_proxy(self, name, namespace, **kwargs):  # noqa: E501
