@@ -28,9 +28,7 @@ class ApiregistrationV1Api(object):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def __init__(self, api_client=None):
-        if api_client is None:
-            api_client = ApiClient()
+    def __init__(self, api_client):
         self.api_client = api_client
 
     def create_api_service(self, body, **kwargs):  # noqa: E501

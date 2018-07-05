@@ -45,6 +45,14 @@ sed -i '/^ *async=params\.get.*/d' api/*.py
 # Fix a template error in the doc-strings: ':param ' -> ':param:'
 sed -i 's/:param /:param: /g' api/*.py
 
+# Make the api_client argument mandator.
+sed -i 's/api_client=None/api_client/g' api/*.py
+
+# Remove the code that would automatically create an ApiClient instance if none
+# was provided because aiokubernetes' philosophy is to provide it explicitly.
+sed -i '/^ *if api_client is None/d' api/*.py
+sed -i '/^ *api_client = ApiClient\(\)/d' api/*.py
+
 # These imports are technically unnecessary but are convenient for end users.
 cat >>"__init__.py" <<EOF
 
