@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import asyncio
 from types import SimpleNamespace
 
 import aiohttp
@@ -54,37 +53,20 @@ class WSClientTest(TestCase):
     async def test_exec_ws(self):
         """Verify the Websocket connection sends the correct headers."""
 
-        # Mocked async iterator to simulate the message streaming in from a
-        # websocket connection. We must also turn this mock into an async
-        # context managers because this is what `aiohttp` does and our
-        # WebsocketApiClient assumes it deals with `aiohttp`.
-        m_ws = asynctest.mock.MagicMock()
-        m_ws.__aiter__.return_value = [
-            SimpleNamespace(data=(b'\x01message1 '), type=aiohttp.WSMsgType.BINARY),
-            SimpleNamespace(data=(b'\x01message2 '), type=aiohttp.WSMsgType.BINARY),
-        ]
-        m_ws.__aenter__.return_value = m_ws.__aexit__.return_value = m_ws
-
-        # Stub out the Rest client that will ultimately be called on to create
-        # the Websocket connection.
-        m_rest = mock.MagicMock()
-        m_rest.ws_connect.return_value = m_ws
-
+        # Create our ApiClient instance but stub out the session because we
+        # want to verify it will be called correctly.
         api_client = WebsocketApiClient(k8s.configuration.Configuration())
-        api_client.session = m_rest
+        api_client.session = mock.MagicMock()
 
         # Make the websocket request through our Mock.
-        ws = k8s.CoreV1Api(api_client=api_client)
-        resp = await ws.connect_get_namespaced_pod_exec(
+        core_api = k8s.CoreV1Api(api_client=api_client)
+        resp = await core_api.connect_get_namespaced_pod_exec(
             'pod', 'namespace', command="mock-command",
             stderr=True, stdin=False, stdout=True, tty=False
         )
 
-        # Must have returned the payload we specified in the async iterator above.
-        self.assertEqual(resp.parsed, 'message1 message2 ')
-
-        # The WS connection must have received the correct headers automatically.
-        m_rest.ws_connect.assert_called_once_with(
+        # The WS connection must have received the correct headers.
+        api_client.session.ws_connect.assert_called_once_with(
             'wss://localhost/api/v1/namespaces/namespace/pods/pod/exec?'
             'command=mock-command&stderr=True&stdin=False&stdout=True&tty=False',
             headers={
@@ -95,42 +77,10 @@ class WSClientTest(TestCase):
             }
         )
 
-    async def test_ws_put_messages_into_queue(self):
-        """Messages must go into a queue as they stream in."""
-
-        # Mocked async iterator to simulate the message streaming in from a
-        # websocket connection. We must also turn this mock into an async
-        # context managers because this is what `aiohttp` does and our
-        # WebsocketApiClient assumes it deals with `aiohttp`.
-        m_ws = asynctest.mock.MagicMock()
-        m_ws.__aiter__.return_value = [
-            SimpleNamespace(data=(b'\x01message1 '), type=aiohttp.WSMsgType.BINARY),
-            SimpleNamespace(data=(b'\x01message2 '), type=aiohttp.WSMsgType.BINARY),
-        ]
-        m_ws.__aenter__.return_value = m_ws.__aexit__.return_value = m_ws
-
-        # Stub out the Rest client that will ultimately be called on to create
-        # the Websocket connection.
-        m_rest = mock.MagicMock()
-        m_rest.ws_connect.return_value = m_ws
-
-        # Create an ApiClient instance with a stubbed session.
-        queue = asyncio.Queue()
-        api_client = WebsocketApiClient(k8s.configuration.Configuration(), queue=queue)
-        api_client.session = m_rest
-
-        # Make the websocket request through our Mock. Pass our Queue along to
-        # the WebsocketClient to receive message immediately.
-        ws = k8s.CoreV1Api(api_client=api_client)
-        await ws.connect_get_namespaced_pod_exec(
-            'pod', 'namespace', command="mock-command",
-            stderr=True, stdin=False, stdout=True, tty=False
-        )
-
-        # Messages must also have been pushed into the queue as they came in.
-        assert queue.qsize() == 2
-        self.assertEqual(await queue.get(), b'\x01message1 ')
-        self.assertEqual(await queue.get(), b'\x01message2 ')
+        # The response must contain the verbatim response from the Websocket
+        # session and no parsed data.
+        http = api_client.session.ws_connect.return_value
+        self.assertEqual(resp, SimpleNamespace(http=http, parsed=None))
 
 
 if __name__ == '__main__':
