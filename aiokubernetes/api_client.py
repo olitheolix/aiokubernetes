@@ -19,7 +19,7 @@ from types import SimpleNamespace
 
 import aiohttp
 import certifi
-from six.moves.urllib.parse import quote, urlencode
+from urllib.parse import quote, urlencode
 
 import aiokubernetes as k8s
 
