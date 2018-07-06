@@ -266,7 +266,7 @@ class KubeConfigLoader(object):
 
         client = ApiClient(configuration=config)
 
-        response = client.request(
+        response = client.http_request(
             method="GET",
             url="%s/.well-known/openid-configuration"
             % provider['config']['idp-issuer-url']

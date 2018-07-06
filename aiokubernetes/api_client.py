@@ -195,11 +195,11 @@ class ApiClient(object):
         # use it as a context manager to process the Websocket data as it
         # streams in.
         if url.lower().endswith('/exec'):
-            response = await self._ws_request(self.session, url, **kwargs)
+            response = await self.websocket_request(self.session, url, **kwargs)
             return ApiResponse(http=response, obj=None)
 
         # Make the request and wait for a response.
-        response_data = await self._rest_request(self.session, method, url, **kwargs)
+        response_data = await self.http_request(self.session, method, url, **kwargs)
 
         # Deserialize the response if the caller requested it. This is almost
         # always True, the only notable exception being the Watch class, which
@@ -219,33 +219,19 @@ class ApiClient(object):
 
         return ApiResponse(http=response_data, obj=return_data)
 
-    async def request(self, method, url, **kwargs):
-        """Execute request
+    @staticmethod
+    async def websocket_request(session, url, query_params=None, headers=None, **kw):
+        """Create Websocket connection to `url` and return it.
 
-        :param: method: http request method
+        NOTE: the `kw` arguments are meaningless and will be ignored. They only
+        exist for compatibility with the `http_request` method.
+
+        :param: session: An `aiohttp` session object.
         :param: url: http request url
         :param: query_params: query parameters in the url
         :param: headers: http request headers
-        :param: body: request json body, for `application/json`
-        :param: post_params: request post parameters,
-                            `application/x-www-form-urlencoded`
-                            and `multipart/form-data`
-        :param: _preload_content: this is a non-applicable field for
-                                 the AiohttpClient.
-        :param: _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        """
-        if url.lower().endswith('/exec'):
-            return await self._ws_request(self.session, url, **kwargs)
-        else:
-            return await self._rest_request(self.session, method, url, **kwargs)
 
-    @staticmethod
-    async def _ws_request(session, url, query_params=None, headers=None,
-                          post_params=None, body=None, _preload_content=True,
-                          _request_timeout=None):
+        """
 
         # Expand command parameter list to individual command params
         if query_params:
@@ -269,9 +255,23 @@ class ApiClient(object):
         return session.ws_connect(url, headers=headers)
 
     @staticmethod
-    async def _rest_request(session, method, url, query_params=None, headers=None,
-                            body=None, post_params=None, _preload_content=True,
-                            _request_timeout=None):
+    async def http_request(session, method, url, query_params=None, headers=None,
+                           body=None, post_params=None, _request_timeout=None):
+        """Make HTTP request to `url` and return its response.
+
+        :param: method: http request method
+        :param: url: http request url
+        :param: query_params: query parameters in the url
+        :param: headers: http request headers
+        :param: body: request json body, for `application/json`
+        :param: post_params: request post parameters,
+                            `application/x-www-form-urlencoded`
+                            and `multipart/form-data`
+        :param: _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        """
         method = method.upper()
         assert method in ['GET', 'HEAD', 'DELETE', 'POST', 'PUT', 'PATCH', 'OPTIONS']
 
