@@ -140,11 +140,11 @@ class WatchTest(TestCase):
         api_client = k8s.api_client.ApiClient(k8s.configuration.Configuration())
 
         w = k8s.watch.Watch(k8s.api.CoreV1Api(api_client).list_namespace)
-        event = w.unmarshal_event('{"type": "ADDED", "object": 1}', 'float')
+        event = w.unmarshal_event('{"type": "ADDED", "object": 1.2}', 'float')
         self.assertEqual("ADDED", event['type'])
-        self.assertEqual(1.0, event['object'])
+        self.assertEqual(1.2, event['object'])
         self.assertTrue(isinstance(event['object'], float))
-        self.assertEqual(1, event['raw_object'])
+        self.assertEqual(1.2, event['raw_object'])
 
     def test_unmarshal_with_no_return_type(self):
         # Dummy ApiClient instance.
