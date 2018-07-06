@@ -6,8 +6,7 @@ import aiokubernetes as k8s
 
 async def watch_resource(resource, **kwargs):
     async for event in k8s.Watch(resource, **kwargs):
-        etype, obj = event['type'], event['object']
-        print(f"{etype} {obj.kind} {obj.metadata.name}")
+        print(f"{event.name} {event.obj.kind} {event.obj.metadata.name}")
 
 
 async def setup():
