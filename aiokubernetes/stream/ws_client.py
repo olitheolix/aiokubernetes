@@ -10,10 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from types import SimpleNamespace
 from urllib.parse import urlencode, urlparse, urlunparse
-
-import aiohttp
 
 import aiokubernetes
 
@@ -35,6 +32,10 @@ class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
     def __init__(self, *args, **kwargs):
         self.queue = kwargs.pop('queue', None)
         super().__init__(*args, **kwargs)
+
+        # Indicate that we will use a Websocket connection and do not want our
+        # responses parsed in any way but returned varbatim to the caller.
+        self._is_websocket = True
 
     async def request(self, method, url, query_params=None, headers=None,
                       post_params=None, body=None, _preload_content=True,
@@ -59,44 +60,4 @@ class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
             url += '?' + urlencode(query_params)
 
         url = get_websocket_url(url)
-
-        if _preload_content:
-            resp_all = ''
-            async with self.session.ws_connect(url, headers=headers) as ws:
-                async for msg in ws:
-                    # The messages are of type `aiohttp.WSMessage`.
-                    # We currently only allow binary content.
-                    # fixup: graceful handling of alternative content; stream
-                    # raw content through queue?
-                    assert msg.type == aiohttp.WSMsgType.BINARY, 'Wrong message type'
-                    msg = msg.data
-
-                    # Ignore empty messages.
-                    if len(msg) == 0:
-                        continue
-
-                    # Put the message verbatim into the user supplied queue.
-                    if self.queue is not None:
-                        await self.queue.put(msg)
-
-                    # The first byte determines if the message was printed on
-                    # STDOUT or STDERR. Ignore the messages that were neither
-                    # (ie ERROR_CHANNEL).
-                    # fixup: when do we actually get an ERROR_CHANNEL? Add test.
-                    channel, data = msg[0], msg[1:]
-                    if len(data) > 0 and channel in [STDOUT_CHANNEL, STDERR_CHANNEL]:
-                        resp_all += data.decode('utf8')
-
-            # fixme: Make this an aiohttp response.
-            async def data_json():
-                return resp_all
-            return SimpleNamespace(
-                data=resp_all,
-                json=data_json,
-                status=200,
-                response_type=None,
-                method='WEBSOCKET',
-                url=url,
-            )
-        else:
-            return self.session.ws_connect(url)
+        return self.session.ws_connect(url, headers=headers)

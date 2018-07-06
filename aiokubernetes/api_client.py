@@ -62,6 +62,14 @@ class ApiClient(object):
 
     def __init__(self, configuration, header_name=None, header_value=None,
                  cookie=None):
+
+        # We will use normal HTTP, not Websocket. This flag determines whether
+        # or not the `call_api` method will make an attempt to de-serialise the
+        # object or if it will pass the object back to the caller verbatim.
+        # This flag does not change during the lifetime of the instance. See
+        # `WebsocketApiClient` for an example where it is True.
+        self._is_websocket = False
+
         self.default_headers = {}
         if header_name is not None:
             self.default_headers[header_name] = header_value
@@ -197,6 +205,13 @@ class ApiClient(object):
             post_params=post_params, body=body,
             _request_timeout=_request_timeout
         )
+
+        # For Websockets, return the raw HTTP response immediately. The
+        # returned object is a `_WSRequestContextManager` and the caller can
+        # use it as a context manager to process the Websocket data as it
+        # streams in.
+        if self._is_websocket:
+            return SimpleNamespace(http=response_data, parsed=None)
 
         # Deserialize the response if the caller requested it. This is almost
         # always True, the only notable exception being the Watch class, which
