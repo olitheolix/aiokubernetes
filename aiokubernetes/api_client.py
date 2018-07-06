@@ -511,6 +511,7 @@ class ApiClient(object):
         """
 
         if not (klass.swagger_types or hasattr(klass, 'get_real_child_model')):
+            # fixup: debug log message about unrecognised Swagger type?
             return None
 
         # Do nothing unless we have data and a Swagger type.
@@ -519,15 +520,18 @@ class ApiClient(object):
             for attr, attr_type in klass.swagger_types.items():
                 try:
                     value = data[klass.attribute_map[attr]]
-                    kwargs[attr] = self.__deserialize(value, attr_type)
                 except KeyError:
                     # fixup: log message here.
                     pass
+                else:
+                    # Recursively de-serialise the object.
+                    kwargs[attr] = self.__deserialize(value, attr_type)
 
+        # Construct the complete class from the de-serialised arguments.
         instance = klass(**kwargs)
 
-        if hasattr(instance, 'get_real_child_model'):
-            klass_name = instance.get_real_child_model(data)
-            if klass_name:
-                instance = self.__deserialize(data, klass_name)
+        # fixup: no idea what this is.
+        klass_name = getattr(instance, 'get_real_child_model', None)
+        if klass_name is not None:
+            instance = self.__deserialize(data, klass_name)
         return instance
