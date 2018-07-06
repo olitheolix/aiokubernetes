@@ -16,7 +16,7 @@ import os
 import re
 import ssl
 from collections import namedtuple
-from urllib.parse import quote, urlencode
+from urllib.parse import quote, urlencode, urlparse, urlunparse
 
 import aiohttp
 import certifi
@@ -25,6 +25,13 @@ import aiokubernetes as k8s
 
 # All API responses will be wrapped into this tuple.
 ApiResponse = namedtuple('ApiResponse', 'http obj')
+
+
+def get_websocket_url(url):
+    parts = urlparse(url)
+    assert parts.scheme in ('http', 'https'), f'Unknown scheme <{parts.scheme}>'
+    new_scheme = 'ws' if parts.scheme == 'http' else 'wss'
+    return urlunparse(parts._replace(scheme=new_scheme))
 
 
 class ApiClient(object):
@@ -51,13 +58,6 @@ class ApiClient(object):
 
     def __init__(self, configuration, header_name=None, header_value=None,
                  cookie=None):
-
-        # We will use normal HTTP, not Websocket. This flag determines whether
-        # or not the `call_api` method will make an attempt to de-serialise the
-        # object or if it will pass the object back to the caller verbatim.
-        # This flag does not change during the lifetime of the instance. See
-        # `WebsocketApiClient` for an example where it is True.
-        self._is_websocket = False
 
         self.default_headers = {}
         if header_name is not None:
@@ -182,19 +182,24 @@ class ApiClient(object):
         # request url
         url = self.configuration.host + resource_path
 
-        # Make the request and wait for a response.
-        response_data = await self.request(
-            method, url, query_params=query_params, headers=header_params,
-            post_params=post_params, body=body,
-            _request_timeout=_request_timeout
-        )
+        kwargs = {
+            'query_params': query_params,
+            'headers': header_params,
+            'post_params': post_params,
+            'body': body,
+            '_request_timeout': _request_timeout
+        }
 
         # For Websockets, return the raw HTTP response immediately. The
         # returned object is a `_WSRequestContextManager` and the caller can
         # use it as a context manager to process the Websocket data as it
         # streams in.
-        if self._is_websocket:
-            return ApiResponse(http=response_data, obj=None)
+        if url.lower().endswith('/exec'):
+            response = await self._ws_request(url, **kwargs)
+            return ApiResponse(http=response, obj=None)
+
+        # Make the request and wait for a response.
+        response_data = await self._rest_request(method, url, **kwargs)
 
         # Deserialize the response if the caller requested it. This is almost
         # always True, the only notable exception being the Watch class, which
@@ -214,9 +219,7 @@ class ApiClient(object):
 
         return ApiResponse(http=response_data, obj=return_data)
 
-    async def request(self, method, url, query_params=None, headers=None,
-                      body=None, post_params=None, _preload_content=True,
-                      _request_timeout=None):
+    async def request(self, method, url, **kwargs):
         """Execute request
 
         :param: method: http request method
@@ -234,6 +237,39 @@ class ApiClient(object):
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
         """
+        if url.lower().endswith('/exec'):
+            return await self._ws_request(url, **kwargs)
+        else:
+            return await self._rest_request(method, url, **kwargs)
+
+    async def _ws_request(self, url, query_params=None, headers=None,
+                          post_params=None, body=None, _preload_content=True,
+                          _request_timeout=None):
+
+        # Expand command parameter list to individual command params
+        if query_params:
+            new_query_params = []
+            for key, value in query_params.items():
+                if key == 'command' and isinstance(value, list):
+                    for command in value:
+                        new_query_params.append((key, command))
+                else:
+                    new_query_params.append((key, value))
+            query_params = new_query_params
+
+        headers = headers or {}
+        if 'sec-websocket-protocol' not in headers:
+            headers['sec-websocket-protocol'] = 'v4.channel.k8s.io'
+
+        if query_params:
+            url += '?' + urlencode(query_params)
+
+        url = get_websocket_url(url)
+        return self.session.ws_connect(url, headers=headers)
+
+    async def _rest_request(self, method, url, query_params=None, headers=None,
+                            body=None, post_params=None, _preload_content=True,
+                            _request_timeout=None):
         method = method.upper()
         assert method in ['GET', 'HEAD', 'DELETE', 'POST', 'PUT', 'PATCH', 'OPTIONS']
 
