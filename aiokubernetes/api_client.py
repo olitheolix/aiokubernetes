@@ -399,28 +399,7 @@ class ApiClient(object):
         :param: dict collection_formats: Parameter collection formats
         :return: Parameters as list of tuples, collections formatted
         """
-        new_params = []
-        if collection_formats is None:
-            collection_formats = {}
-        for k, v in six.iteritems(params) if isinstance(params, dict) else params:  # noqa: E501
-            if k in collection_formats:
-                collection_format = collection_formats[k]
-                if collection_format == 'multi':
-                    new_params.extend((k, value) for value in v)
-                else:
-                    if collection_format == 'ssv':
-                        delimiter = ' '
-                    elif collection_format == 'tsv':
-                        delimiter = '\t'
-                    elif collection_format == 'pipes':
-                        delimiter = '|'
-                    else:  # csv is the default
-                        delimiter = ','
-                    new_params.append(
-                        (k, delimiter.join(str(value) for value in v)))
-            else:
-                new_params.append((k, v))
-        return new_params
+        return list(dict(params).items())
 
     def prepare_post_parameters(self, post_params=None, files=None):
         """Builds form parameters.
