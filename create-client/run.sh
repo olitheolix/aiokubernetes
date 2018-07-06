@@ -45,7 +45,7 @@ sed -i '/^ *async=params\.get.*/d' api/*.py
 # Fix a template error in the doc-strings: ':param ' -> ':param:'
 sed -i 's/:param /:param: /g' api/*.py
 
-# Make the api_client argument mandator.
+# Make the api_client argument mandatory.
 sed -i 's/api_client=None/api_client/g' api/*.py
 
 # Remove the code that would automatically create an ApiClient instance if none
@@ -58,11 +58,14 @@ sed -i '/^ *api_client = ApiClient\(\)/d' api/*.py
 # Example: "self.api = foo.VersionApi()" -> self.api = foo.VersionApi(None)
 sed -i 's/\(^ *self\.api = .*\)()\(.*\)/\1(None)\2/' ../test/*.py
 
-# Drop Python 2.x support: "six.iteritems(foo):" -> "foo.items():"
+# ----------------------------------------------------------------------
+# Drop Python 2.x compatibility code
+# ----------------------------------------------------------------------
+# Replace: "six.iteritems(foo):" -> "foo.items():".
 sed -i 's/six\.iteritems(\(.*\)):/\1.items():/g' api/*.py
 sed -i 's/six\.iteritems(\(.*\)):/\1.items():/g' models/*.py
 
-# Remove "import six"
+# Remove "import six".
 sed -i '/^import six/d' api/*.py
 sed -i '/^import six/d' models/*.py
 
