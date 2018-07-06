@@ -366,6 +366,8 @@ class ApiClient(object):
 
         post_params = post_params or {}
         headers = headers or {}
+
+        # fixup: where is this used?
         timeout = _request_timeout or 5 * 60
 
         if 'Content-Type' not in headers:
@@ -381,6 +383,7 @@ class ApiClient(object):
         if query_params:
             args["url"] += '?' + urlencode(query_params)
 
+        # Automatically encode the data to Json if the headers indicate it is Json.
         # For `POST`, `PUT`, `PATCH`, `OPTIONS`, `DELETE`
         if method in ['POST', 'PUT', 'PATCH', 'OPTIONS', 'DELETE']:
             if re.search('json', headers['Content-Type'], re.IGNORECASE):
