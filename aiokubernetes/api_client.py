@@ -467,6 +467,10 @@ class ApiClient(object):
             else:
                 assert False, f'Unknown type <{klass}>'
 
+        # Convert `data` to whatever type `klass` says it is. The only
+        # interesting case is where `klass` is not a native Python type like
+        # `str` but is a class itself and has a `swagger_types` attributes. If
+        # it does it can be parsed into a Swagger generated container class.
         if hasattr(klass, 'swagger_types'):
             return self.__deserialize_model(data, klass)
         elif klass == datetime.date:
@@ -519,9 +523,21 @@ class ApiClient(object):
             # fixup: debug log message about unrecognised Swagger type?
             return None
 
+        # This is unusual but has happened when there was an error.
+        # fixup: reproduce with all_in_one (run it twice back-to-back, then the
+        # error will materialise the second time, most likely because the
+        # deployment cannot be created since it has not been deleted yet from
+        # the previous run - this is speculation at this point).
+        if isinstance(data, str):
+            return klass()
+
+        # Since we are parsing JSON data returned from K8s it must be either a
+        # dict or a list (K8s never returns just a scalar).
+        assert isinstance(data, (list, dict)), f'Bug: invalid type <{type(data)}>'
+
         # Do nothing unless we have data and a Swagger type.
         kwargs = {}
-        if all((data, klass.swagger_types)) and isinstance(data, (list, dict)):
+        if all((data, klass.swagger_types)):
             for attr, attr_type in klass.swagger_types.items():
                 try:
                     value = data[klass.attribute_map[attr]]
