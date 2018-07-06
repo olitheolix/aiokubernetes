@@ -93,9 +93,6 @@ class Watch(object):
         return self
 
     async def __anext__(self):
-        return await self.next()
-
-    async def next(self):
         # Set the response object to the user supplied function (eg
         # `list_namespaced_pods`) if this is the first iteration.
         if self.resp is None:
