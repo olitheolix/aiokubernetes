@@ -14,13 +14,10 @@
 
 from types import SimpleNamespace
 
-import aiohttp
 import asynctest
 from asynctest import TestCase, mock
 
 import aiokubernetes as k8s
-from aiokubernetes.stream import WebsocketApiClient
-from aiokubernetes.stream.ws_client import get_websocket_url
 
 
 class WSClientTest(TestCase):
@@ -37,6 +34,7 @@ class WSClientTest(TestCase):
             ('https://api.domain.com/', 'wss://api.domain.com/'),
         ]
 
+        get_websocket_url = k8s.stream.ws_client.get_websocket_url
         for url, ws_url in in_out:
             self.assertEqual(get_websocket_url(url), ws_url)
 
@@ -55,7 +53,7 @@ class WSClientTest(TestCase):
 
         # Create our ApiClient instance but stub out the session because we
         # want to verify it will be called correctly.
-        api_client = WebsocketApiClient(k8s.configuration.Configuration())
+        api_client = k8s.stream.WebsocketApiClient(k8s.configuration.Configuration())
         api_client.session = mock.MagicMock()
 
         # Make the websocket request through our Mock.
