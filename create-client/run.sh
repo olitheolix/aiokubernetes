@@ -64,6 +64,7 @@ cat >>"__init__.py" <<EOF
 # These import are technically unnecessary but are convenient for end users.
 import aiokubernetes.config as config
 import aiokubernetes.stream as stream
+import aiokubernetes.swagger as swagger
 
 from aiokubernetes.watch import Watch
 EOF
