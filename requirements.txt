@@ -7,6 +7,6 @@ python_dateutil >= 2.5.3
 pyyaml
 requests
 requests-oauthlib # ISC
-setuptools >= 21.0.0
-urllib3 >= 1.15.1
+setuptools
+urllib3
 websocket-client
