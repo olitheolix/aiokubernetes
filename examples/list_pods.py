@@ -18,7 +18,7 @@ async def main():
     assert ret.http.status == 200
 
     # Print the pod names.
-    for i in ret.parsed.items:
+    for i in ret.obj.items:
         print(f"{i.metadata.namespace} {i.metadata.name}")
 
     # Terminate the connection pool for a clean shutdown.

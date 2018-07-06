@@ -12,12 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from types import SimpleNamespace
-
 import asynctest
 from asynctest import TestCase, mock
 
 import aiokubernetes as k8s
+from aiokubernetes.api_client import ApiResponse
 
 
 class WSClientTest(TestCase):
@@ -78,7 +77,7 @@ class WSClientTest(TestCase):
         # The response must contain the verbatim response from the Websocket
         # session and no parsed data.
         http = api_client.session.ws_connect.return_value
-        self.assertEqual(resp, SimpleNamespace(http=http, parsed=None))
+        self.assertEqual(resp, ApiResponse(http=http, obj=None))
 
 
 if __name__ == '__main__':

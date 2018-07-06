@@ -18,6 +18,7 @@ from types import SimpleNamespace
 from asynctest import CoroutineMock, Mock, TestCase
 
 import aiokubernetes as k8s
+from aiokubernetes.api_client import ApiResponse
 
 
 class WatchTest(TestCase):
@@ -77,7 +78,7 @@ class WatchTest(TestCase):
 
         fake_api = Mock()
         fake_api.get_namespaces = CoroutineMock(
-            return_value=SimpleNamespace(parsed=fake_resp))
+            return_value=ApiResponse(http=None, obj=fake_resp))
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
         fake_api.get_namespaces.__self__ = SimpleNamespace(api_client=api_client)
 
@@ -126,7 +127,7 @@ class WatchTest(TestCase):
         # Fake the K8s resource object to watch.
         fake_api = Mock()
         fake_api.get_namespaces = CoroutineMock(
-            return_value=SimpleNamespace(parsed=fake_resp))
+            return_value=ApiResponse(http=None, obj=fake_resp))
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
         fake_api.get_namespaces.__self__ = fake_api
 
@@ -190,7 +191,7 @@ class WatchTest(TestCase):
         fake_resp.content.readline.side_effect = KeyError("expected")
         fake_api = Mock()
         fake_api.get_namespaces = CoroutineMock(
-            return_value=SimpleNamespace(parsed=fake_resp))
+            return_value=ApiResponse(http=None, obj=fake_resp))
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
         fake_api.get_namespaces.__self__ = fake_api
 
