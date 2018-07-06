@@ -30,7 +30,6 @@ def get_websocket_url(url):
 
 class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
     def __init__(self, *args, **kwargs):
-        self.queue = kwargs.pop('queue', None)
         super().__init__(*args, **kwargs)
 
         # Indicate that we will use a Websocket connection and do not want our
