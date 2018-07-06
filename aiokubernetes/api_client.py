@@ -413,19 +413,7 @@ class ApiClient(object):
 
         :return: deserialized object.
         """
-        # K8s does not send files.
-        assert response_type != 'file'
-
-        # fetch data from response object
-        # fixup: any chance we can be sure it is Json? Or assume it is json and
-        # log an error otherwise? Decoding json if it works and the original if
-        # not seems... wrong.
-        try:
-            data = json.loads(response.data)
-        except ValueError:
-            data = response.data
-
-        return self.__deserialize(data, response_type)
+        return self.__deserialize(response, response_type)
 
     def __deserialize(self, data, klass):
         """Deserializes dict, list, str into an object.
