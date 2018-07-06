@@ -85,9 +85,9 @@ class WatchTest(TestCase):
         watch = k8s.watch.Watch(fake_api.get_namespaces, resource_version='123')
         count = 0
         async for e in watch:
-            self.assertEqual("ADDED", e['type'])
+            self.assertEqual("ADDED", e.name)
             # make sure decoder worked and we got a model with the right name
-            self.assertEqual("test%d" % count, e['object'].metadata.name)
+            self.assertEqual("test%d" % count, e.obj.metadata.name)
 
             # Stop the watch. This must not return the next event which would
             # be an AssertionError exception.
@@ -142,10 +142,10 @@ class WatchTest(TestCase):
 
         w = k8s.watch.Watch(k8s.api.CoreV1Api(api_client).list_namespace)
         event = w.unmarshal_event('{"type": "ADDED", "object": 1.2}', 'float')
-        self.assertEqual("ADDED", event['type'])
-        self.assertEqual(1.2, event['object'])
-        self.assertTrue(isinstance(event['object'], float))
-        self.assertEqual(1.2, event['raw_object'])
+        self.assertEqual("ADDED", event.name)
+        self.assertEqual(1.2, event.obj)
+        self.assertTrue(isinstance(event.obj, float))
+        self.assertEqual(1.2, event.raw)
 
     def test_unmarshal_with_no_return_type(self):
         # Dummy ApiClient instance.
@@ -154,9 +154,9 @@ class WatchTest(TestCase):
         w = k8s.watch.Watch(k8s.api.CoreV1Api(api_client).list_namespace)
         event = w.unmarshal_event(
             '{"type": "ADDED", "object": ["test1"]}', None)
-        self.assertEqual("ADDED", event['type'])
-        self.assertEqual(["test1"], event['object'])
-        self.assertEqual(["test1"], event['raw_object'])
+        self.assertEqual(event.name, "ADDED")
+        self.assertEqual(event.raw, ["test1"])
+        self.assertIsNone(event.obj)
 
     async def test_unmarshall_k8s_error_response(self):
         """Never parse messages of type ERROR.
@@ -181,9 +181,9 @@ class WatchTest(TestCase):
 
         watch = k8s.watch.Watch(k8s.api.CoreV1Api(api_client).list_namespace)
         ret = watch.unmarshal_event(json.dumps(k8s_err), None)
-        self.assertEqual(ret['type'], k8s_err['type'])
-        self.assertEqual(ret['object'], k8s_err['object'])
-        self.assertEqual(ret['object'], k8s_err['object'])
+        self.assertEqual(ret.name, k8s_err['type'])
+        self.assertEqual(ret.raw, k8s_err['object'])
+        self.assertIsNone(ret.obj)
 
     async def test_watch_with_exception(self):
         fake_resp = CoroutineMock()
