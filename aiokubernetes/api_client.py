@@ -483,7 +483,7 @@ class ApiClient(object):
         except ValueError:
             raise ApiException(
                 status=0,
-                reason=(f"Failed to parse `{string}` as datetime object")
+                reason=f"Failed to parse `{string}` as datetime object",
             )
 
     def __deserialize_datatime(self, string):
@@ -499,7 +499,7 @@ class ApiClient(object):
         except ValueError:
             raise ApiException(
                 status=0,
-                reason=(f"Failed to parse `{string}` as datetime object")
+                reason=f"Failed to parse `{string}` as datetime object",
             )
 
     def __deserialize_model(self, data, klass):
