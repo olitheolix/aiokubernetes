@@ -66,6 +66,13 @@ sed -i 's/six\.iteritems(\(.*\)):/\1.items():/g' models/*.py
 sed -i '/^import six/d' api/*.py
 sed -i '/^import six/d' models/*.py
 
+# Remove future imports.
+sed -i '/^from __future__ import absolute_import/d' **/*.py
+
+# ----------------------------------------------------------------------
+# User convenience.
+# ----------------------------------------------------------------------
+
 # These imports are technically unnecessary but are convenient for end users.
 cat >>"__init__.py" <<EOF
 
