@@ -15,7 +15,8 @@
 import functools
 import json
 import pydoc
-from types import SimpleNamespace
+
+import aiokubernetes as k8s
 
 
 def _find_return_type(func):
@@ -139,8 +140,8 @@ class Watch(object):
         # If possible, compile the JSON response into a Python native response
         # type, eg `V1Namespace` or `V1Pod`,`ExtensionsV1beta1Deployment`, ...
         if response_type is not None:
-            js['object'] = self._api_client.deserialize(
-                response=js['raw_object'],
-                response_type=response_type
+            js['object'] = k8s.swagger.deserialize(
+                data=js['raw_object'],
+                klass=response_type,
             )
         return js
