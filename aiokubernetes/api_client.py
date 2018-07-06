@@ -321,7 +321,7 @@ class ApiClient(object):
         if klass == object:
             return data
         elif klass in self.PRIMITIVE_TYPES:
-            return self.__deserialize_primitive(data, klass)
+            return data
         elif klass == datetime.date:
             return self.__deserialize_date(data)
         elif klass == datetime.datetime:
@@ -469,21 +469,6 @@ class ApiClient(object):
                     raise ValueError(
                         'Authentication token must be in `query` or `header`'
                     )
-
-    def __deserialize_primitive(self, data, klass):
-        """Deserializes string to primitive type.
-
-        :param: data: str.
-        :param: klass: class literal.
-
-        :return: int, long, float, str, bool.
-        """
-        try:
-            return klass(data)
-        except UnicodeEncodeError:
-            return six.text_type(data)
-        except TypeError:
-            return data
 
     def __deserialize_date(self, string):
         """Deserializes string to date.
