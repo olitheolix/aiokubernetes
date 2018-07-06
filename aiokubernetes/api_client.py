@@ -195,11 +195,11 @@ class ApiClient(object):
         # use it as a context manager to process the Websocket data as it
         # streams in.
         if url.lower().endswith('/exec'):
-            response = await self._ws_request(url, **kwargs)
+            response = await self._ws_request(self.session, url, **kwargs)
             return ApiResponse(http=response, obj=None)
 
         # Make the request and wait for a response.
-        response_data = await self._rest_request(method, url, **kwargs)
+        response_data = await self._rest_request(self.session, method, url, **kwargs)
 
         # Deserialize the response if the caller requested it. This is almost
         # always True, the only notable exception being the Watch class, which
@@ -238,11 +238,12 @@ class ApiClient(object):
                                  (connection, read) timeouts.
         """
         if url.lower().endswith('/exec'):
-            return await self._ws_request(url, **kwargs)
+            return await self._ws_request(self.session, url, **kwargs)
         else:
-            return await self._rest_request(method, url, **kwargs)
+            return await self._rest_request(self.session, method, url, **kwargs)
 
-    async def _ws_request(self, url, query_params=None, headers=None,
+    @staticmethod
+    async def _ws_request(session, url, query_params=None, headers=None,
                           post_params=None, body=None, _preload_content=True,
                           _request_timeout=None):
 
@@ -265,9 +266,10 @@ class ApiClient(object):
             url += '?' + urlencode(query_params)
 
         url = get_websocket_url(url)
-        return self.session.ws_connect(url, headers=headers)
+        return session.ws_connect(url, headers=headers)
 
-    async def _rest_request(self, method, url, query_params=None, headers=None,
+    @staticmethod
+    async def _rest_request(session, method, url, query_params=None, headers=None,
                             body=None, post_params=None, _preload_content=True,
                             _request_timeout=None):
         method = method.upper()
@@ -300,7 +302,7 @@ class ApiClient(object):
                 if body is not None:
                     body = json.dumps(body)
                 args["data"] = body
-        return await self.session.request(**args)
+        return await session.request(**args)
 
     def prepare_post_parameters(self, post_params=None, files=None):
         """Builds form parameters.
