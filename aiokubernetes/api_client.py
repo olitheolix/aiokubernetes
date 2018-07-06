@@ -508,18 +508,19 @@ class ApiClient(object):
         :return: model object.
         """
 
-        if not klass.swagger_types and not hasattr(klass,
-                                                   'get_real_child_model'):
-            return data
+        if not (klass.swagger_types or hasattr(klass, 'get_real_child_model')):
+            return None
 
+        # Do nothing unless we have data and a Swagger type.
         kwargs = {}
-        if klass.swagger_types is not None:
-            for attr, attr_type in six.iteritems(klass.swagger_types):
-                if (data is not None and
-                        klass.attribute_map[attr] in data and
-                        isinstance(data, (list, dict))):
+        if all((data, klass.swagger_types)) and isinstance(data, (list, dict)):
+            for attr, attr_type in klass.swagger_types.items():
+                try:
                     value = data[klass.attribute_map[attr]]
                     kwargs[attr] = self.__deserialize(value, attr_type)
+                except KeyError:
+                    # fixup: log message here.
+                    pass
 
         instance = klass(**kwargs)
 
