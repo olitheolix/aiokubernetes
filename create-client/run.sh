@@ -58,6 +58,14 @@ sed -i '/^ *api_client = ApiClient\(\)/d' api/*.py
 # Example: "self.api = foo.VersionApi()" -> self.api = foo.VersionApi(None)
 sed -i 's/\(^ *self\.api = .*\)()\(.*\)/\1(None)\2/' ../test/*.py
 
+# Drop Python 2.x support: "six.iteritems(foo):" -> "foo.items():"
+sed -i 's/six\.iteritems(\(.*\)):/\1.items():/g' api/*.py
+sed -i 's/six\.iteritems(\(.*\)):/\1.items():/g' models/*.py
+
+# Remove "import six"
+sed -i '/^import six/d' api/*.py
+sed -i '/^import six/d' models/*.py
+
 # These imports are technically unnecessary but are convenient for end users.
 cat >>"__init__.py" <<EOF
 

@@ -14,7 +14,6 @@
 import pprint
 import re  # noqa: F401
 
-import six
 
 from aiokubernetes.models.v1_object_meta import V1ObjectMeta  # noqa: F401,E501
 from aiokubernetes.models.v1_persistent_volume_claim_spec import V1PersistentVolumeClaimSpec  # noqa: F401,E501
@@ -190,7 +189,7 @@ class V1PersistentVolumeClaim(object):
         """Returns the model properties as a dict"""
         result = {}
 
-        for attr, _ in six.iteritems(self.swagger_types):
+        for attr, _ in self.swagger_types.items():
             value = getattr(self, attr)
             if isinstance(value, list):
                 result[attr] = list(map(

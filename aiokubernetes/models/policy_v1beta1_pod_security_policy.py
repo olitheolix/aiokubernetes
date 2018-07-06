@@ -14,7 +14,6 @@
 import pprint
 import re  # noqa: F401
 
-import six
 
 from aiokubernetes.models.policy_v1beta1_pod_security_policy_spec import PolicyV1beta1PodSecurityPolicySpec  # noqa: F401,E501
 from aiokubernetes.models.v1_object_meta import V1ObjectMeta  # noqa: F401,E501
@@ -161,7 +160,7 @@ class PolicyV1beta1PodSecurityPolicy(object):
         """Returns the model properties as a dict"""
         result = {}
 
-        for attr, _ in six.iteritems(self.swagger_types):
+        for attr, _ in self.swagger_types.items():
             value = getattr(self, attr)
             if isinstance(value, list):
                 result[attr] = list(map(

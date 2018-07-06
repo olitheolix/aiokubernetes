@@ -14,7 +14,6 @@
 import pprint
 import re  # noqa: F401
 
-import six
 
 from aiokubernetes.models.v2alpha1_job_template_spec import V2alpha1JobTemplateSpec  # noqa: F401,E501
 
@@ -246,7 +245,7 @@ class V2alpha1CronJobSpec(object):
         """Returns the model properties as a dict"""
         result = {}
 
-        for attr, _ in six.iteritems(self.swagger_types):
+        for attr, _ in self.swagger_types.items():
             value = getattr(self, attr)
             if isinstance(value, list):
                 result[attr] = list(map(

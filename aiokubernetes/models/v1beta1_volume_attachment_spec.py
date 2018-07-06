@@ -14,7 +14,6 @@
 import pprint
 import re  # noqa: F401
 
-import six
 
 from aiokubernetes.models.v1beta1_volume_attachment_source import V1beta1VolumeAttachmentSource  # noqa: F401,E501
 
@@ -135,7 +134,7 @@ class V1beta1VolumeAttachmentSpec(object):
         """Returns the model properties as a dict"""
         result = {}
 
-        for attr, _ in six.iteritems(self.swagger_types):
+        for attr, _ in self.swagger_types.items():
             value = getattr(self, attr)
             if isinstance(value, list):
                 result[attr] = list(map(

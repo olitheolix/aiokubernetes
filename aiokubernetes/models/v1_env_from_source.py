@@ -14,7 +14,6 @@
 import pprint
 import re  # noqa: F401
 
-import six
 
 from aiokubernetes.models.v1_config_map_env_source import V1ConfigMapEnvSource  # noqa: F401,E501
 from aiokubernetes.models.v1_secret_env_source import V1SecretEnvSource  # noqa: F401,E501
@@ -133,7 +132,7 @@ class V1EnvFromSource(object):
         """Returns the model properties as a dict"""
         result = {}
 
-        for attr, _ in six.iteritems(self.swagger_types):
+        for attr, _ in self.swagger_types.items():
             value = getattr(self, attr)
             if isinstance(value, list):
                 result[attr] = list(map(

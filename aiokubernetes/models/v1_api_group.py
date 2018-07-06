@@ -14,7 +14,6 @@
 import pprint
 import re  # noqa: F401
 
-import six
 
 from aiokubernetes.models.v1_group_version_for_discovery import V1GroupVersionForDiscovery  # noqa: F401,E501
 from aiokubernetes.models.v1_server_address_by_client_cidr import V1ServerAddressByClientCIDR  # noqa: F401,E501
@@ -220,7 +219,7 @@ class V1APIGroup(object):
         """Returns the model properties as a dict"""
         result = {}
 
-        for attr, _ in six.iteritems(self.swagger_types):
+        for attr, _ in self.swagger_types.items():
             value = getattr(self, attr)
             if isinstance(value, list):
                 result[attr] = list(map(
