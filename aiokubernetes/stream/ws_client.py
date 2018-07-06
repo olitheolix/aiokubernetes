@@ -43,7 +43,7 @@ class WebsocketApiClient(aiokubernetes.api_client.ApiClient):
         # Expand command parameter list to individual command params
         if query_params:
             new_query_params = []
-            for key, value in query_params:
+            for key, value in query_params.items():
                 if key == 'command' and isinstance(value, list):
                     for command in value:
                         new_query_params.append((key, command))

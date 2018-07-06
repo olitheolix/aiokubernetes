@@ -162,16 +162,12 @@ class ApiClient(object):
         if self.cookie:
             header_params['Cookie'] = self.cookie
         if header_params:
-            header_params = self.sanitize_for_serialization(header_params)
-            header_params = dict(
-                self.parameters_to_tuples(header_params, collection_formats)
-            )
+            header_params = dict(self.sanitize_for_serialization(header_params))
 
         # path parameters
         if path_params:
-            path_params = self.sanitize_for_serialization(path_params)
-            path_params = self.parameters_to_tuples(path_params, collection_formats)
-            for k, v in path_params:
+            path_params = dict(self.sanitize_for_serialization(path_params))
+            for k, v in path_params.items():
                 # specified safe chars, encode everything
                 resource_path = resource_path.replace(
                     '{%s}' % k,
@@ -180,14 +176,12 @@ class ApiClient(object):
 
         # query parameters
         if query_params:
-            query_params = self.sanitize_for_serialization(query_params)
-            query_params = self.parameters_to_tuples(query_params, collection_formats)
+            query_params = dict(self.sanitize_for_serialization(query_params))
 
         # post parameters
         if post_params or files:
             post_params = self.prepare_post_parameters(post_params, files)
-            post_params = self.sanitize_for_serialization(post_params)
-            post_params = self.parameters_to_tuples(post_params, collection_formats)
+            post_params = dict(self.sanitize_for_serialization(post_params))
 
         # auth setting
         self.update_params_for_auth(header_params, query_params, auth_settings)
@@ -391,15 +385,6 @@ class ApiClient(object):
                     body = json.dumps(body)
                 args["data"] = body
         return await self.session.request(**args)
-
-    def parameters_to_tuples(self, params, collection_formats):
-        """Get parameters as list of tuples, formatting collections.
-
-        :param: params: Parameters as dict or list of two-tuples
-        :param: dict collection_formats: Parameter collection formats
-        :return: Parameters as list of tuples, collections formatted
-        """
-        return list(dict(params).items())
 
     def prepare_post_parameters(self, post_params=None, files=None):
         """Builds form parameters.
