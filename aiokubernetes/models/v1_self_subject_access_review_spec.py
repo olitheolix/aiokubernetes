@@ -14,7 +14,6 @@
 import pprint
 import re  # noqa: F401
 
-import six
 
 from aiokubernetes.models.v1_non_resource_attributes import V1NonResourceAttributes  # noqa: F401,E501
 from aiokubernetes.models.v1_resource_attributes import V1ResourceAttributes  # noqa: F401,E501
@@ -105,7 +104,7 @@ class V1SelfSubjectAccessReviewSpec(object):
         """Returns the model properties as a dict"""
         result = {}
 
-        for attr, _ in six.iteritems(self.swagger_types):
+        for attr, _ in self.swagger_types.items():
             value = getattr(self, attr)
             if isinstance(value, list):
                 result[attr] = list(map(

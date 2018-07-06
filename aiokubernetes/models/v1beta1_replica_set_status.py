@@ -14,7 +14,6 @@
 import pprint
 import re  # noqa: F401
 
-import six
 
 from aiokubernetes.models.v1beta1_replica_set_condition import V1beta1ReplicaSetCondition  # noqa: F401,E501
 
@@ -217,7 +216,7 @@ class V1beta1ReplicaSetStatus(object):
         """Returns the model properties as a dict"""
         result = {}
 
-        for attr, _ in six.iteritems(self.swagger_types):
+        for attr, _ in self.swagger_types.items():
             value = getattr(self, attr)
             if isinstance(value, list):
                 result[attr] = list(map(

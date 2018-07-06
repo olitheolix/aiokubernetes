@@ -14,7 +14,6 @@
 import pprint
 import re  # noqa: F401
 
-import six
 
 from aiokubernetes.models.v1_object_meta import V1ObjectMeta  # noqa: F401,E501
 from aiokubernetes.models.v1alpha1_aggregation_rule import V1alpha1AggregationRule  # noqa: F401,E501
@@ -191,7 +190,7 @@ class V1alpha1ClusterRole(object):
         """Returns the model properties as a dict"""
         result = {}
 
-        for attr, _ in six.iteritems(self.swagger_types):
+        for attr, _ in self.swagger_types.items():
             value = getattr(self, attr)
             if isinstance(value, list):
                 result[attr] = list(map(

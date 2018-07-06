@@ -14,7 +14,6 @@
 import pprint
 import re  # noqa: F401
 
-import six
 
 from aiokubernetes.models.v1beta1_custom_resource_subresource_scale import V1beta1CustomResourceSubresourceScale  # noqa: F401,E501
 
@@ -104,7 +103,7 @@ class V1beta1CustomResourceSubresources(object):
         """Returns the model properties as a dict"""
         result = {}
 
-        for attr, _ in six.iteritems(self.swagger_types):
+        for attr, _ in self.swagger_types.items():
             value = getattr(self, attr)
             if isinstance(value, list):
                 result[attr] = list(map(

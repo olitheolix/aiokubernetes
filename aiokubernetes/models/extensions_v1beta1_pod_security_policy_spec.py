@@ -14,7 +14,6 @@
 import pprint
 import re  # noqa: F401
 
-import six
 
 from aiokubernetes.models.extensions_v1beta1_allowed_flex_volume import ExtensionsV1beta1AllowedFlexVolume  # noqa: F401,E501
 from aiokubernetes.models.extensions_v1beta1_allowed_host_path import ExtensionsV1beta1AllowedHostPath  # noqa: F401,E501
@@ -562,7 +561,7 @@ class ExtensionsV1beta1PodSecurityPolicySpec(object):
         """Returns the model properties as a dict"""
         result = {}
 
-        for attr, _ in six.iteritems(self.swagger_types):
+        for attr, _ in self.swagger_types.items():
             value = getattr(self, attr)
             if isinstance(value, list):
                 result[attr] = list(map(
