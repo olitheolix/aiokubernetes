@@ -15,13 +15,16 @@ import mimetypes
 import os
 import re
 import ssl
-from types import SimpleNamespace
+from collections import namedtuple
 from urllib.parse import quote, urlencode
 
 import aiohttp
 import certifi
 
 import aiokubernetes as k8s
+
+# All API responses will be wrapped into this tuple.
+ApiResponse = namedtuple('ApiResponse', 'http obj')
 
 
 class ApiClient(object):
@@ -191,7 +194,7 @@ class ApiClient(object):
         # use it as a context manager to process the Websocket data as it
         # streams in.
         if self._is_websocket:
-            return SimpleNamespace(http=response_data, parsed=None)
+            return ApiResponse(http=response_data, obj=None)
 
         # Deserialize the response if the caller requested it. This is almost
         # always True, the only notable exception being the Watch class, which
@@ -209,7 +212,7 @@ class ApiClient(object):
         else:
             return_data = response_data
 
-        return SimpleNamespace(http=response_data, parsed=return_data)
+        return ApiResponse(http=response_data, obj=return_data)
 
     async def request(self, method, url, query_params=None, headers=None,
                       body=None, post_params=None, _preload_content=True,

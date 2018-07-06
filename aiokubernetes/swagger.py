@@ -1,9 +1,10 @@
+import datetime
+import re
+
 from dateutil.parser import parse
+
 import aiokubernetes.models
 from aiokubernetes.rest import ApiException
-import re
-import datetime
-
 
 NATIVE_TYPES_MAPPING = {
     'int': int,

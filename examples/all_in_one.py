@@ -55,7 +55,7 @@ async def create_deployment(api_client, ws_api_client):
     print(f'\nConnecting to a login pod: ', end='', flush=True)
     for i in range(300):
         resp = await k8s.CoreV1Api(api_client).list_namespaced_pod(namespace)
-        pods = resp.parsed.items
+        pods = resp.obj.items
         pods = [_ for _ in pods if _.metadata.name.lower().startswith('login')]
         pods = [_ for _ in pods if _.status.phase.lower() == 'running']
 
