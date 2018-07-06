@@ -25,7 +25,6 @@ import oauthlib.oauth2
 import urllib3
 import yaml
 from requests_oauthlib import OAuth2Session
-from six import PY3
 
 from ..api_client import ApiClient
 from ..configuration import Configuration
@@ -231,14 +230,7 @@ class KubeConfigLoader(object):
         if len(parts) != 3:  # Not a valid JWT
             return None
 
-        if PY3:
-            jwt_attributes = json.loads(
-                base64.b64decode(parts[1]).decode('utf-8')
-            )
-        else:
-            jwt_attributes = json.loads(
-                base64.b64decode(parts[1] + "==")
-            )
+        jwt_attributes = json.loads(base64.b64decode(parts[1]).decode('utf-8'))
 
         expire = jwt_attributes.get('exp')
 
@@ -260,14 +252,9 @@ class KubeConfigLoader(object):
         if 'idp-certificate-authority-data' in provider['config']:
             ca_cert = tempfile.NamedTemporaryFile(delete=True)
 
-            if PY3:
-                cert = base64.b64decode(
-                    provider['config']['idp-certificate-authority-data']
-                ).decode('utf-8')
-            else:
-                cert = base64.b64decode(
-                    provider['config']['idp-certificate-authority-data'] + "=="
-                )
+            cert = base64.b64decode(
+                provider['config']['idp-certificate-authority-data']
+            ).decode('utf-8')
 
             with open(ca_cert.name, 'w') as fh:
                 fh.write(cert)
