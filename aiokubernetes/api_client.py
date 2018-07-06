@@ -16,10 +16,10 @@ import os
 import re
 import ssl
 from types import SimpleNamespace
+from urllib.parse import quote, urlencode
 
 import aiohttp
 import certifi
-from urllib.parse import quote, urlencode
 
 import aiokubernetes as k8s
 
@@ -232,19 +232,13 @@ class ApiClient(object):
                                  (connection, read) timeouts.
         """
         method = method.upper()
-        assert method in ['GET', 'HEAD', 'DELETE', 'POST', 'PUT',
-                          'PATCH', 'OPTIONS']
+        assert method in ['GET', 'HEAD', 'DELETE', 'POST', 'PUT', 'PATCH', 'OPTIONS']
 
         if post_params and body:
-            raise ValueError(
-                "body parameter cannot be used with post_params parameter."
-            )
+            raise ValueError("<body> and <post_params> cannot both be set.")
 
-        post_params = post_params or {}
         headers = headers or {}
-
-        # fixup: where is this used?
-        timeout = _request_timeout or 5 * 60
+        post_params = post_params or {}
 
         if 'Content-Type' not in headers:
             headers['Content-Type'] = 'application/json'
@@ -252,7 +246,8 @@ class ApiClient(object):
         args = {
             "method": method,
             "url": url,
-            "timeout": timeout,
+            # fixup: where is this used?
+            "timeout": _request_timeout or 5 * 60,
             "headers": headers
         }
 
