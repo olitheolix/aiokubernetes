@@ -514,7 +514,7 @@ class ApiClient(object):
         :return: model object.
         """
 
-        if not (klass.swagger_types or hasattr(klass, 'get_real_child_model')):
+        if getattr(klass, 'swagger_types', None) is None:
             # fixup: debug log message about unrecognised Swagger type?
             return None
 
@@ -531,11 +531,5 @@ class ApiClient(object):
                     # Recursively de-serialise the object.
                     kwargs[attr] = self.__deserialize(value, attr_type)
 
-        # Construct the complete class from the de-serialised arguments.
-        instance = klass(**kwargs)
-
-        # fixup: no idea what this is.
-        klass_name = getattr(instance, 'get_real_child_model', None)
-        if klass_name is not None:
-            instance = self.__deserialize(data, klass_name)
-        return instance
+        # Return an instance of the de-serialised class.
+        return klass(**kwargs)
