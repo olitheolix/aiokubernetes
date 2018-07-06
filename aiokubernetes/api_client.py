@@ -445,15 +445,19 @@ class ApiClient(object):
             return None
 
         if type(klass) == str:
+            # Unpack types like "list[V1ContainerStatus]".
             if klass.startswith('list['):
+                # "list[V1ContainerStatus]" -> "V1ContainerStatus"
                 sub_kls = re.match('list\[(.*)\]', klass).group(1)
-                return [self.__deserialize(sub_data, sub_kls)
-                        for sub_data in data]
+                return [self.__deserialize(sub_data, sub_kls) for sub_data in data]
 
+            # Unpack types like "dict(str, str)".
             if klass.startswith('dict('):
+                # "dict(str, int)" -> "int"
                 sub_kls = re.match('dict\(([^,]*), (.*)\)', klass).group(2)
-                return {k: self.__deserialize(v, sub_kls)
-                        for k, v in six.iteritems(data)}
+                # fixup: is this a bug? The key will not get de-serialised, only
+                # the value.
+                return {k: self.__deserialize(v, sub_kls) for k, v in data.items()}
 
             # convert str to class
             if klass in self.NATIVE_TYPES_MAPPING:
