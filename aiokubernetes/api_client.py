@@ -15,13 +15,13 @@ import mimetypes
 import os
 import re
 import ssl
-import tempfile
 from types import SimpleNamespace
 
 import aiohttp
 import certifi
 # python 2 and python 3 compatibility library
 import six
+from dateutil.parser import parse
 from six.moves.urllib.parse import quote, urlencode
 
 import aiokubernetes.models
@@ -477,14 +477,11 @@ class ApiClient(object):
         :return: date.
         """
         try:
-            from dateutil.parser import parse
             return parse(string).date()
-        except ImportError:
-            return string
         except ValueError:
             raise ApiException(
                 status=0,
-                reason="Failed to parse `{0}` as date object".format(string)
+                reason=(f"Failed to parse `{string}` as datetime object")
             )
 
     def __deserialize_datatime(self, string):
@@ -496,17 +493,11 @@ class ApiClient(object):
         :return: datetime.
         """
         try:
-            from dateutil.parser import parse
             return parse(string)
-        except ImportError:
-            return string
         except ValueError:
             raise ApiException(
                 status=0,
-                reason=(
-                    "Failed to parse `{0}` as datetime object"
-                    .format(string)
-                )
+                reason=(f"Failed to parse `{string}` as datetime object")
             )
 
     def __deserialize_model(self, data, klass):
