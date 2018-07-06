@@ -226,109 +226,6 @@ class ApiClient(object):
 
         return SimpleNamespace(http=response_data, parsed=return_data)
 
-    def sanitize_for_serialization(self, obj):
-        """Builds a JSON POST object.
-
-        If obj is None, return None.
-        If obj is str, int, long, float, bool, return directly.
-        If obj is datetime.datetime, datetime.date
-            convert to string in iso8601 format.
-        If obj is list, sanitize each element in the list.
-        If obj is dict, return the dict.
-        If obj is swagger model, return the properties dict.
-
-        :param: obj: The data to serialize.
-        :return: The serialized form of data.
-        """
-        if obj is None:
-            return None
-        elif isinstance(obj, self.PRIMITIVE_TYPES):
-            return obj
-        elif isinstance(obj, list):
-            return [self.sanitize_for_serialization(sub_obj)
-                    for sub_obj in obj]
-        elif isinstance(obj, tuple):
-            return tuple(self.sanitize_for_serialization(sub_obj)
-                         for sub_obj in obj)
-        elif isinstance(obj, (datetime.datetime, datetime.date)):
-            return obj.isoformat()
-
-        if isinstance(obj, dict):
-            obj_dict = obj
-        else:
-            # Convert model obj to dict except
-            # attributes `swagger_types`, `attribute_map`
-            # and attributes which value is not None.
-            # Convert attribute name to json key in
-            # model definition for request.
-            obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
-                        for attr, _ in six.iteritems(obj.swagger_types)
-                        if getattr(obj, attr) is not None}
-
-        return {key: self.sanitize_for_serialization(val)
-                for key, val in six.iteritems(obj_dict)}
-
-    def deserialize(self, response, response_type):
-        """Deserializes response into an object.
-
-        :param: response: RESTResponse object to be deserialized.
-        :param: response_type: class literal for
-            deserialized object, or string of class name.
-
-        :return: deserialized object.
-        """
-        # handle file downloading
-        # save response body into a tmp file and return the instance
-        if response_type == "file":
-            return self.__deserialize_file(response)
-
-        # fetch data from response object
-        try:
-            data = json.loads(response.data)
-        except ValueError:
-            data = response.data
-
-        return self.__deserialize(data, response_type)
-
-    def __deserialize(self, data, klass):
-        """Deserializes dict, list, str into an object.
-
-        :param: data: dict, list or str.
-        :param: klass: class literal, or string of class name.
-
-        :return: object.
-        """
-        if data is None:
-            return None
-
-        if type(klass) == str:
-            if klass.startswith('list['):
-                sub_kls = re.match('list\[(.*)\]', klass).group(1)
-                return [self.__deserialize(sub_data, sub_kls)
-                        for sub_data in data]
-
-            if klass.startswith('dict('):
-                sub_kls = re.match('dict\(([^,]*), (.*)\)', klass).group(2)
-                return {k: self.__deserialize(v, sub_kls)
-                        for k, v in six.iteritems(data)}
-
-            # convert str to class
-            if klass in self.NATIVE_TYPES_MAPPING:
-                klass = self.NATIVE_TYPES_MAPPING[klass]
-            else:
-                klass = getattr(aiokubernetes.models, klass)
-
-        if klass == object:
-            return data
-        elif klass in self.PRIMITIVE_TYPES:
-            return data
-        elif klass == datetime.date:
-            return self.__deserialize_date(data)
-        elif klass == datetime.datetime:
-            return self.__deserialize_datatime(data)
-        else:
-            return self.__deserialize_model(data, klass)
-
     async def request(self, method, url, query_params=None, headers=None,
                       body=None, post_params=None, _preload_content=True,
                       _request_timeout=None):
@@ -469,6 +366,111 @@ class ApiClient(object):
                     raise ValueError(
                         'Authentication token must be in `query` or `header`'
                     )
+
+    def sanitize_for_serialization(self, obj):
+        """Builds a JSON POST object.
+
+        If obj is None, return None.
+        If obj is str, int, long, float, bool, return directly.
+        If obj is datetime.datetime, datetime.date
+            convert to string in iso8601 format.
+        If obj is list, sanitize each element in the list.
+        If obj is dict, return the dict.
+        If obj is swagger model, return the properties dict.
+
+        :param: obj: The data to serialize.
+        :return: The serialized form of data.
+        """
+        if obj is None:
+            return None
+        elif isinstance(obj, self.PRIMITIVE_TYPES):
+            return obj
+        elif isinstance(obj, list):
+            return [self.sanitize_for_serialization(sub_obj)
+                    for sub_obj in obj]
+        elif isinstance(obj, tuple):
+            return tuple(self.sanitize_for_serialization(sub_obj)
+                         for sub_obj in obj)
+        elif isinstance(obj, (datetime.datetime, datetime.date)):
+            return obj.isoformat()
+
+        if isinstance(obj, dict):
+            obj_dict = obj
+        else:
+            # Convert model obj to dict except
+            # attributes `swagger_types`, `attribute_map`
+            # and attributes which value is not None.
+            # Convert attribute name to json key in
+            # model definition for request.
+            obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
+                        for attr, _ in six.iteritems(obj.swagger_types)
+                        if getattr(obj, attr) is not None}
+
+        return {key: self.sanitize_for_serialization(val)
+                for key, val in six.iteritems(obj_dict)}
+
+    def deserialize(self, response, response_type):
+        """Deserializes response into an object.
+
+        :param: response: RESTResponse object to be deserialized.
+        :param: response_type: class literal for
+            deserialized object, or string of class name.
+
+        :return: deserialized object.
+        """
+        # handle file downloading
+        # save response body into a tmp file and return the instance
+        assert response_type != 'file'
+
+        # fetch data from response object
+        # fixup: any chance we can be sure it is Json? Or assume it is json and
+        # log an error otherwise? Decoding json if it works and the original if
+        # not seems... wrong.
+        try:
+            data = json.loads(response.data)
+        except ValueError:
+            data = response.data
+
+        return self.__deserialize(data, response_type)
+
+    def __deserialize(self, data, klass):
+        """Deserializes dict, list, str into an object.
+
+        :param: data: dict, list or str.
+        :param: klass: class literal, or string of class name.
+
+        :return: object.
+        """
+        if data is None:
+            return None
+
+        if type(klass) == str:
+            if klass.startswith('list['):
+                sub_kls = re.match('list\[(.*)\]', klass).group(1)
+                return [self.__deserialize(sub_data, sub_kls)
+                        for sub_data in data]
+
+            if klass.startswith('dict('):
+                sub_kls = re.match('dict\(([^,]*), (.*)\)', klass).group(2)
+                return {k: self.__deserialize(v, sub_kls)
+                        for k, v in six.iteritems(data)}
+
+            # convert str to class
+            if klass in self.NATIVE_TYPES_MAPPING:
+                klass = self.NATIVE_TYPES_MAPPING[klass]
+            else:
+                klass = getattr(aiokubernetes.models, klass)
+
+        if klass == object:
+            return data
+        elif klass in self.PRIMITIVE_TYPES:
+            return data
+        elif klass == datetime.date:
+            return self.__deserialize_date(data)
+        elif klass == datetime.datetime:
+            return self.__deserialize_datatime(data)
+        else:
+            return self.__deserialize_model(data, klass)
 
     def __deserialize_date(self, string):
         """Deserializes string to date.
