@@ -15,8 +15,15 @@
 import functools
 import json
 import pydoc
+from collections import namedtuple
 
 import aiokubernetes as k8s
+
+# All API responses will be wrapped into this tuple.
+# The `name` will be 'ADDED', MODIFIED, etc, `raw` will the unprocessed but
+# Json decoded response from K8s and `obj` will be the Swagger object created
+# from `raw` (may be None if there was an error).
+WatchResponse = namedtuple('WatchResponse', 'name raw obj')
 
 
 def _find_return_type(func):
@@ -118,27 +125,20 @@ class Watch(object):
         self._stop = True
 
     def unmarshal_event(self, data: str, response_type):
-        """Return the K8s response `data` in JSON format.
+        """Return the K8s response `data` in a `WatchResponse` tuple.
 
         """
+        # Unpack the watched event and extract the event name (ADDED, MODIFIED,
+        # etc) and the raw event content.
         js = json.loads(data)
-
-        # Make a copy of the original object and save it under the
-        # `raw_object` key because we will replace the data under `object` with
-        # a Python native type shortly.
-        js['raw_object'] = js['object']
+        name, raw = js['type'], js['object']
 
         # Something went wrong. A typical example would be that the user
         # supplied a resource version that was too old. In that case K8s would
         # not send a conventional ADDED/DELETED/... event but an error.
-        if js['type'].lower() == 'error':
-            return js
+        if name.lower() == 'error' or response_type is None:
+            return WatchResponse(name=name, raw=raw, obj=None)
 
-        # If possible, compile the JSON response into a Python native response
-        # type, eg `V1Namespace` or `V1Pod`,`ExtensionsV1beta1Deployment`, ...
-        if response_type is not None:
-            js['object'] = k8s.swagger.deserialize(
-                data=js['raw_object'],
-                klass=response_type,
-            )
-        return js
+        # De-serialise the K8s response and return everything.
+        obj = k8s.swagger.deserialize(data=raw, klass=response_type)
+        return WatchResponse(name=name, raw=raw, obj=obj)
