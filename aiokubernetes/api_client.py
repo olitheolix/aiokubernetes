@@ -445,13 +445,13 @@ class ApiClient(object):
             return None
 
         if type(klass) == str:
-            # Unpack types like "list[V1ContainerStatus]".
+            # Recursively unpack types like "list[V1ContainerStatus]".
             if klass.startswith('list['):
                 # "list[V1ContainerStatus]" -> "V1ContainerStatus"
                 sub_kls = re.match('list\[(.*)\]', klass).group(1)
                 return [self.__deserialize(sub_data, sub_kls) for sub_data in data]
 
-            # Unpack types like "dict(str, str)".
+            # Recursively unpack types like "dict(str, str)".
             if klass.startswith('dict('):
                 # "dict(str, int)" -> "int"
                 sub_kls = re.match('dict\(([^,]*), (.*)\)', klass).group(2)
@@ -462,19 +462,20 @@ class ApiClient(object):
             # convert str to class
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
-            else:
+            elif hasattr(aiokubernetes.models, klass):
                 klass = getattr(aiokubernetes.models, klass)
+            else:
+                assert False, f'Unknown type <{klass}>'
 
-        if klass == object:
-            return data
-        elif klass in self.PRIMITIVE_TYPES:
-            return data
+        if hasattr(klass, 'swagger_types'):
+            return self.__deserialize_model(data, klass)
         elif klass == datetime.date:
             return self.__deserialize_date(data)
         elif klass == datetime.datetime:
             return self.__deserialize_datatime(data)
         else:
-            return self.__deserialize_model(data, klass)
+            # No further processing required.
+            return data
 
     def __deserialize_date(self, string):
         """Deserializes string to date.
