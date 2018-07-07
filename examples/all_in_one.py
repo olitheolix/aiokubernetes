@@ -121,7 +121,7 @@ async def create_deployment(api_client):
 
 
 async def setup():
-    # Create client API instances (Websocket and Http).
+    # Create a client instance and load the credentials from ~/.kube/kubeconfig
     api_client = k8s.config.new_client_from_config()
 
     # Specify and dispatch the tasks.

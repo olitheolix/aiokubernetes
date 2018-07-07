@@ -5,9 +5,7 @@ import aiokubernetes as k8s
 
 
 async def main():
-    # Create an API client instance based on the file specified in the
-    # KUBECONFIG environment variable (fall back `~/.kube/config` if KUBECONFIG
-    # variable does not exist).
+    # Create a client instance and load the credentials from ~/.kube/kubeconfig
     api_client = k8s.config.new_client_from_config()
 
     # Ask for all Pods.
