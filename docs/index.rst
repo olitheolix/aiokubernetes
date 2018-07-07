@@ -2,7 +2,7 @@
 Welcome to AIOKUBERNETES
 ========================
 
-Asynchronous Kubernetes Client for `asyncio <https://docs.python.org/3/library/asyncio.html>`_ and Python 3.6+.
+`AsyncIO <https://docs.python.org/3/library/asyncio.html>`_ Kubernetes Client for Python 3.6+.
 
 .. _GitHub: https://github.com/olitheolix/aiokubernetes
 
