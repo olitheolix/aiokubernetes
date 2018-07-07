@@ -127,7 +127,8 @@ class Watch(object):
     def stop(self):
         self._stop = True
 
-    def unmarshal_event(self, data: bytes, response_type):
+    @staticmethod
+    def unmarshal_event(data: bytes, response_type):
         """Return the K8s response `data` in a `WatchResponse` tuple.
 
         """

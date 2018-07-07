@@ -135,18 +135,16 @@ class WatchTest(TestCase):
         self.assertEqual(cnt, len(side_effects))
 
     def test_unmarshal_with_float_object(self):
-        w = k8s.watch.Watch(k8s.api.CoreV1Api(self.api_client).list_namespace)
         raw = b'{"type": "ADDED", "object": 1.2}'
-        event = w.unmarshal_event(raw, 'float')
+        event = k8s.watch.Watch.unmarshal_event(raw, 'float')
         self.assertEqual("ADDED", event.name)
         self.assertEqual(event.obj, 1.2)
         self.assertTrue(isinstance(event.obj, float))
         self.assertEqual(event.raw, raw)
 
     def test_unmarshal_with_no_return_type(self):
-        w = k8s.watch.Watch(k8s.api.CoreV1Api(self.api_client).list_namespace)
         raw = b'{"type": "ADDED", "object": ["test1"]}'
-        event = w.unmarshal_event(raw, None)
+        event = k8s.watch.Watch.unmarshal_event(raw, None)
         self.assertEqual(event.name, "ADDED")
         self.assertEqual(event.raw, raw)
         self.assertIsNone(event.obj)
@@ -170,16 +168,15 @@ class WatchTest(TestCase):
         }
         raw = json.dumps(k8s_err).encode('utf8')
 
-        watch = k8s.watch.Watch(k8s.api.CoreV1Api(self.api_client).list_namespace)
-        ret = watch.unmarshal_event(raw, None)
+        ret = k8s.watch.Watch.unmarshal_event(raw, None)
         self.assertEqual(ret.name, k8s_err['type'])
         self.assertEqual(ret.raw, raw)
         self.assertIsNone(ret.obj)
 
     async def test_watch_with_exception(self):
         fake_resp = CoroutineMock()
-        fake_resp.content.readline = CoroutineMock()
-        fake_resp.content.readline.side_effect = KeyError("expected")
+        fake_resp.content.readline = CoroutineMock(side_effect=KeyError("expected"))
+
         fake_api = Mock()
         fake_api.get_namespaces = CoroutineMock(
             return_value=ApiResponse(http=fake_resp, obj=None))
