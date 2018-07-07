@@ -46,7 +46,7 @@ async def main():
         print(f"{i.metadata.namespace} {i.metadata.name}")
 
     # Terminate the client connection for a clean shutdown.
-    await api_client.session.close()
+    await api_client.close()
 
 
 if __name__ == '__main__':
@@ -55,8 +55,8 @@ if __name__ == '__main__':
     loop.close()
 ```
 
-### Watch Multiple Resources (No Threads Required)
-Watch all resources for 5 seconds then shut down gracefully.
+### Concurrently Watch Multiple Resources
+Watch several Kubernetes resources for 5 seconds then shut down gracefully.
 
 ```python
 import asyncio
@@ -89,7 +89,7 @@ async def start():
     await asyncio.gather(*tasks)
 
     # Terminate the connection pool for a clean shutdown.
-    await api_client.session.close()
+    await api_client.close()
 
 
 def main():
