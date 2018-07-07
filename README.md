@@ -160,14 +160,15 @@ The primary difference is the increased emphasis on "Explicit is better than
 implicit" ([Zen of Python](https://www.python.org/dev/peps/pep-0020/)). To that
 end, `aiokubernetes` _never_ creates implicit HTTP session objects (the user
 must supply `ApiClient` instances) and the library _always_ returns the
-native HTTP response object. This response object is particularly useful for
-debugging because it provides trivial access to Url, method, path,
-headers, status code and raw Kubernetes response before it was de-serialised
-into a Swagger class.
+native HTTP response object.
+
+The HTTP response object is particularly useful for debugging because it
+provides trivial access to Url, method, path, headers, status code and raw
+response data before it was de-serialised into a Swagger class.
 
 The plan is to simplify the new `ApiClient` further and cover it with tests
-along the way. The auto-generated `ApiClient` and `RESTClientObject`
-unfortunately have none.
+along the way because the auto-generated `api_client.py` and `rest.py` classes
+have none, unfortunately.
 
 
 ## License
