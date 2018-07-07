@@ -100,6 +100,9 @@ class ApiClient(object):
     def user_agent(self, value):
         self.default_headers['User-Agent'] = value
 
+    async def close(self):
+        await self.session.close()
+
     def set_default_header(self, header_name, header_value):
         self.default_headers[header_name] = header_value
 
