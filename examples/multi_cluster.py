@@ -23,8 +23,8 @@ async def start(kubeconf_a, kubeconf_b):
     await asyncio.gather(*tasks)
 
     # Terminate the connection pool for a clean shutdown.
-    await api_client_a.session.close()
-    await api_client_b.session.close()
+    await api_client_a.close()
+    await api_client_b.close()
 
 
 def main():
