@@ -62,7 +62,7 @@ Table Of Contents
 
 .. toctree::
    :name: mastertoc
-   :maxdepth: 1
+   :maxdepth: 2
 
    quickstart.rst
    api_reference.rst
