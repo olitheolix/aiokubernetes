@@ -218,7 +218,7 @@ class ApiClient(object):
                 data = await response_data.json()
                 return_data = k8s.swagger.deserialize(data, response_type)
         else:
-            return_data = response_data
+            return_data = None
 
         return ApiResponse(http=response_data, obj=return_data)
 
