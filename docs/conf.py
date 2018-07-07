@@ -31,7 +31,6 @@ version = '0.4'
 # The full version, including alpha/beta/rc tags
 release = '0.4'
 
-
 # -- General configuration ---------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -78,9 +77,32 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
-html_theme = 'alabaster'
-html_theme = "sphinx_rtd_theme"
+
+html_theme = "alabaster"
+html_sidebars = {
+    "**": [
+        "about.html",
+        "navigation.html",
+        "relations.html",
+        "searchbox.html",
+        "donate.html",
+    ]
+}
+
+html_theme_options = {
+    'description': 'Async Kubernetes Client',
+    'fixed_sidebar': True,
+    'github_banner': True,
+    'github_user': 'olitheolix',
+    'github_repo': 'aiokubernetes',
+    'github_button': True,
+    'github_type': 'star',
+    'github_banner': True,
+    'travis_button': True,
+    'show_powered_by': True,
+    'sidebar_width': "250px",
+}
+
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
