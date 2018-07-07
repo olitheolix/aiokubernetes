@@ -7,11 +7,10 @@ import aiokubernetes as k8s
 
 async def watch_resource(cluster_name, resource, **kwargs):
     async for event in k8s.Watch(resource, **kwargs):
-        etype, obj = event['type'], event['object']
-        print(f"{cluster_name}: {etype} {obj.kind} {obj.metadata.name}")
+        print(f"{event.name} {event.obj.kind} {event.obj.metadata.name}")
 
 
-async def setup(kubeconf_a, kubeconf_b):
+async def start(kubeconf_a, kubeconf_b):
     # Create client API instances to each cluster.
     api_client_a = k8s.config.new_client_from_config(kubeconf_a)
     api_client_b = k8s.config.new_client_from_config(kubeconf_b)
@@ -39,7 +38,7 @@ def main():
     args = parser.parse_args()
 
     # Setup the main task.
-    task = setup(args.kubeconfig_a, args.kubeconfig_b)
+    task = start(args.kubeconfig_a, args.kubeconfig_b)
 
     # Setup event loop and setup the program.
     loop = asyncio.get_event_loop()
