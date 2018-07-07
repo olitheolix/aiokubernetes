@@ -101,6 +101,7 @@ html_theme_options = {
     'travis_button': True,
     'show_powered_by': True,
     'sidebar_width': "250px",
+    'page_width': "50%",
 }
 
 
