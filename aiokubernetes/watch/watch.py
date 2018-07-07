@@ -132,12 +132,22 @@ class Watch(object):
         """Return the K8s response `data` in a `WatchResponse` tuple.
 
         """
-        line = data.decode('utf8')
+        try:
+            line = data.decode('utf8')
+            js = json.loads(line)
 
-        # Unpack the watched event and extract the event name (ADDED, MODIFIED,
-        # etc) and the raw event content.
-        js = json.loads(line)
-        name, k8s_obj = js['type'], js['object']
+            # Unpack the watched event and extract the event name (ADDED, MODIFIED,
+            # etc) and the raw event content.
+            name, k8s_obj = js['type'], js['object']
+        except UnicodeDecodeError:
+            # fixup: log message
+            return WatchResponse(name=None, raw=data, obj=None)
+        except json.decoder.JSONDecodeError:
+            # fixup: log message
+            return WatchResponse(name=None, raw=data, obj=None)
+        except KeyError:
+            # fixup: log message
+            return WatchResponse(name=None, raw=data, obj=None)
 
         # Something went wrong. A typical example would be that the user
         # supplied a resource version that was too old. In that case K8s would

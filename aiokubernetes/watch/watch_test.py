@@ -163,6 +163,27 @@ class WatchTest(TestCase):
         self.assertEqual(event.raw, raw)
         self.assertIsNone(event.obj)
 
+    def test_unmarshal_with_invalid_data(self):
+        """The data is supposed to be utf8 encoded.
+
+        If this is not the case something is probably seriously wrong. The
+        Watch class must then return just the raw K8s response.
+
+        """
+        # Examples of invalid 'data' arguments.
+        invalid_data = [
+            bytes([200]),                 # Not utf8.
+            b'this is }not{ valid Json',  # Invalid Json.
+            b'{"typee": "foo}',           # Wrong content.
+        ]
+
+        # Unmarshal must gracefully intercept all possible error cases.
+        for raw in invalid_data:
+            event = k8s.watch.Watch.unmarshal_event(raw, 'int')
+            self.assertEqual(event.raw, raw)
+            self.assertIsNone(event.name)
+            self.assertIsNone(event.obj)
+
     async def test_unmarshall_k8s_error_response(self):
         """Never parse messages of type ERROR.
 
