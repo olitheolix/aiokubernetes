@@ -43,7 +43,6 @@ setup(
         'aiokubernetes',
         'aiokubernetes.api',
         'aiokubernetes.config',
-        'aiokubernetes.stream',
         'aiokubernetes.watch',
         'aiokubernetes.models',
     ],
