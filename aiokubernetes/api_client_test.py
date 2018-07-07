@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import asynctest
-from asynctest import TestCase, mock
+from asynctest import CoroutineMock, TestCase, mock
 
 import aiokubernetes as k8s
 from aiokubernetes.api_client import ApiResponse
@@ -47,12 +47,25 @@ class ApiClientTest(TestCase):
         with self.assertRaises(AssertionError):
             get_websocket_url('foo://bar.com')
 
+    async def test_close(self):
+        """The `close` method must terminate all aiohttp connections."""
+
+        # Create our ApiClient instance but stub out the session after closing
+        # the existing one created in the ctor.
+        api_client = k8s.api_client.ApiClient(k8s.configuration.Configuration())
+        await api_client.session.close()
+        api_client.session = mock.MagicMock(close=CoroutineMock())
+
+        self.assertIsNone(await api_client.close())
+        api_client.session.close.assert_called_once
+
     async def test_exec_ws(self):
         """Verify the Websocket connection sends the correct headers."""
 
-        # Create our ApiClient instance but stub out the session because we
-        # want to verify it will be called correctly.
+        # Create an ApiClient but close the aiohttp session created in the ctor
+        # and replace it with our own Mock.
         api_client = k8s.api_client.ApiClient(k8s.configuration.Configuration())
+        await api_client.close()
         api_client.session = mock.MagicMock()
 
         # Make the websocket request through our Mock.
