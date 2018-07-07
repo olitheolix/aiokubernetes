@@ -19,7 +19,7 @@ async def main():
     for i in ret.obj.items:
         print(f"{i.metadata.namespace} {i.metadata.name}")
 
-    # Terminate the connection pool for a clean shutdown.
+    # Close all pending connections.
     await api_client.close()
 
 

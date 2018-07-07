@@ -28,7 +28,7 @@ async def main():
     ]
     await asyncio.gather(*tasks)
 
-    # Terminate the connection pool for a clean shutdown.
+    # Close all pending connections.
     await api_client.close()
 
 
