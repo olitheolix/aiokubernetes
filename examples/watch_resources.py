@@ -29,7 +29,7 @@ async def main():
     await asyncio.gather(*tasks)
 
     # Terminate the connection pool for a clean shutdown.
-    await api_client.session.close()
+    await api_client.close()
 
 
 if __name__ == '__main__':

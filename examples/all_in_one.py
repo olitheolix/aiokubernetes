@@ -132,7 +132,7 @@ async def setup():
     await asyncio.gather(*tasks)
 
     print('\nShutting down')
-    await api_client.session.close()
+    await api_client.close()
 
 
 def main():
