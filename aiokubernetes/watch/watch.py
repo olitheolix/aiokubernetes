@@ -94,7 +94,7 @@ class Watch(object):
         kwargs['_preload_content'] = False
 
         self.api_func = functools.partial(api_func, *args, **kwargs)
-        self.resp = None
+        self.connection = None
 
     def __aiter__(self):
         return self
@@ -102,21 +102,24 @@ class Watch(object):
     async def __anext__(self):
         # Set the response object to the user supplied function (eg
         # `list_namespaced_pods`) if this is the first iteration.
-        if self.resp is None:
-            self.resp = await self.api_func()
+        if self.connection is None:
+            tmp = await self.api_func()
+            self.connection = tmp.http.content
+            del tmp
 
         # Abort at the current iteration if the user has called `stop` on this
         # stream instance.
         if self._stop:
             raise StopAsyncIteration
 
-        # Fetch the next K8s response.
-        line = await self.resp.obj.content.readline()
-        line = line.decode('utf8')
+        # Fetch the next K8s response. This is where the callee's async
+        # iterator will yield until K8s sends another Http chunk through the
+        # connection.
+        line = await self.connection.readline()
 
         # Stop the iterator if K8s sends an empty response. This happens when
         # eg the supplied timeout has expired.
-        if line == '':
+        if len(line) == 0:
             raise StopAsyncIteration
 
         return self.unmarshal_event(line, self.return_type)
@@ -124,21 +127,23 @@ class Watch(object):
     def stop(self):
         self._stop = True
 
-    def unmarshal_event(self, data: str, response_type):
+    def unmarshal_event(self, data: bytes, response_type):
         """Return the K8s response `data` in a `WatchResponse` tuple.
 
         """
+        line = data.decode('utf8')
+
         # Unpack the watched event and extract the event name (ADDED, MODIFIED,
         # etc) and the raw event content.
-        js = json.loads(data)
-        name, raw = js['type'], js['object']
+        js = json.loads(line)
+        name, k8s_obj = js['type'], js['object']
 
         # Something went wrong. A typical example would be that the user
         # supplied a resource version that was too old. In that case K8s would
         # not send a conventional ADDED/DELETED/... event but an error.
         if name.lower() == 'error' or response_type is None:
-            return WatchResponse(name=name, raw=raw, obj=None)
+            return WatchResponse(name=name, raw=data, obj=None)
 
         # De-serialise the K8s response and return everything.
-        obj = k8s.swagger.deserialize(data=raw, klass=response_type)
-        return WatchResponse(name=name, raw=raw, obj=obj)
+        obj = k8s.swagger.deserialize(data=k8s_obj, klass=response_type)
+        return WatchResponse(name=name, raw=data, obj=obj)

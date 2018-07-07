@@ -23,6 +23,11 @@ from aiokubernetes.api_client import ApiResponse
 
 class WatchTest(TestCase):
 
+    @classmethod
+    def setup_class(cls):
+        api_client = k8s.api_client.ApiClient(k8s.configuration.Configuration())
+        cls.api_client = api_client
+
     def test_find_return_type(self):
         """A few basic test cases to ensure it does what it says."""
         fun = k8s.watch.watch._find_return_type
@@ -72,15 +77,11 @@ class WatchTest(TestCase):
         side_effects.extend([AssertionError('Should not have been called')])
         fake_resp.content.readline.side_effect = side_effects
 
-        # Actual API client instance because we will need it to wrap the
-        # Json structure in `side_effects` into a Swagger generated Python object.
-        api_client = k8s.api_client.ApiClient(k8s.configuration.Configuration())
-
         fake_api = Mock()
         fake_api.get_namespaces = CoroutineMock(
-            return_value=ApiResponse(http=None, obj=fake_resp))
+            return_value=ApiResponse(http=fake_resp, obj=None))
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
-        fake_api.get_namespaces.__self__ = SimpleNamespace(api_client=api_client)
+        fake_api.get_namespaces.__self__ = SimpleNamespace(api_client=self.api_client)
 
         watch = k8s.watch.Watch(fake_api.get_namespaces, resource_version='123')
         count = 0
@@ -97,9 +98,6 @@ class WatchTest(TestCase):
 
         fake_api.get_namespaces.assert_called_once_with(
             _preload_content=False, watch=True, resource_version='123')
-
-        # For a clean shutdown of the test.
-        await api_client.session.close()
 
     async def test_watch_k8s_empty_response(self):
         """Stop the iterator when the response is empty.
@@ -127,7 +125,7 @@ class WatchTest(TestCase):
         # Fake the K8s resource object to watch.
         fake_api = Mock()
         fake_api.get_namespaces = CoroutineMock(
-            return_value=ApiResponse(http=None, obj=fake_resp))
+            return_value=ApiResponse(http=fake_resp, obj=None))
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
         fake_api.get_namespaces.__self__ = fake_api
 
@@ -137,25 +135,20 @@ class WatchTest(TestCase):
         self.assertEqual(cnt, len(side_effects))
 
     def test_unmarshal_with_float_object(self):
-        # Dummy ApiClient instance.
-        api_client = k8s.api_client.ApiClient(k8s.configuration.Configuration())
-
-        w = k8s.watch.Watch(k8s.api.CoreV1Api(api_client).list_namespace)
-        event = w.unmarshal_event('{"type": "ADDED", "object": 1.2}', 'float')
+        w = k8s.watch.Watch(k8s.api.CoreV1Api(self.api_client).list_namespace)
+        raw = b'{"type": "ADDED", "object": 1.2}'
+        event = w.unmarshal_event(raw, 'float')
         self.assertEqual("ADDED", event.name)
-        self.assertEqual(1.2, event.obj)
+        self.assertEqual(event.obj, 1.2)
         self.assertTrue(isinstance(event.obj, float))
-        self.assertEqual(1.2, event.raw)
+        self.assertEqual(event.raw, raw)
 
     def test_unmarshal_with_no_return_type(self):
-        # Dummy ApiClient instance.
-        api_client = k8s.api_client.ApiClient(k8s.configuration.Configuration())
-
-        w = k8s.watch.Watch(k8s.api.CoreV1Api(api_client).list_namespace)
-        event = w.unmarshal_event(
-            '{"type": "ADDED", "object": ["test1"]}', None)
+        w = k8s.watch.Watch(k8s.api.CoreV1Api(self.api_client).list_namespace)
+        raw = b'{"type": "ADDED", "object": ["test1"]}'
+        event = w.unmarshal_event(raw, None)
         self.assertEqual(event.name, "ADDED")
-        self.assertEqual(event.raw, ["test1"])
+        self.assertEqual(event.raw, raw)
         self.assertIsNone(event.obj)
 
     async def test_unmarshall_k8s_error_response(self):
@@ -175,14 +168,12 @@ class WatchTest(TestCase):
                 'reason': 'Gone', 'code': 410
             }
         }
+        raw = json.dumps(k8s_err).encode('utf8')
 
-        # Dummy ApiClient instance.
-        api_client = k8s.api_client.ApiClient(k8s.configuration.Configuration())
-
-        watch = k8s.watch.Watch(k8s.api.CoreV1Api(api_client).list_namespace)
-        ret = watch.unmarshal_event(json.dumps(k8s_err), None)
+        watch = k8s.watch.Watch(k8s.api.CoreV1Api(self.api_client).list_namespace)
+        ret = watch.unmarshal_event(raw, None)
         self.assertEqual(ret.name, k8s_err['type'])
-        self.assertEqual(ret.raw, k8s_err['object'])
+        self.assertEqual(ret.raw, raw)
         self.assertIsNone(ret.obj)
 
     async def test_watch_with_exception(self):
@@ -191,7 +182,7 @@ class WatchTest(TestCase):
         fake_resp.content.readline.side_effect = KeyError("expected")
         fake_api = Mock()
         fake_api.get_namespaces = CoroutineMock(
-            return_value=ApiResponse(http=None, obj=fake_resp))
+            return_value=ApiResponse(http=fake_resp, obj=None))
         fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
         fake_api.get_namespaces.__self__ = fake_api
 
