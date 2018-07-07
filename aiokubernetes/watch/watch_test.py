@@ -134,6 +134,20 @@ class WatchTest(TestCase):
         cnt = len([_ async for _ in watch])
         self.assertEqual(cnt, len(side_effects))
 
+    async def test_watch_with_exception(self):
+        fake_resp = CoroutineMock()
+        fake_resp.content.readline = CoroutineMock(side_effect=KeyError("expected"))
+
+        fake_api = Mock()
+        fake_api.get_namespaces = CoroutineMock(
+            return_value=ApiResponse(http=fake_resp, obj=None))
+        fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
+        fake_api.get_namespaces.__self__ = fake_api
+
+        with self.assertRaises(KeyError):
+            watch = k8s.watch.Watch(fake_api.get_namespaces, timeout_seconds=10)
+            [_ async for _ in watch]
+
     def test_unmarshal_with_float_object(self):
         raw = b'{"type": "ADDED", "object": 1.2}'
         event = k8s.watch.Watch.unmarshal_event(raw, 'float')
@@ -172,20 +186,6 @@ class WatchTest(TestCase):
         self.assertEqual(ret.name, k8s_err['type'])
         self.assertEqual(ret.raw, raw)
         self.assertIsNone(ret.obj)
-
-    async def test_watch_with_exception(self):
-        fake_resp = CoroutineMock()
-        fake_resp.content.readline = CoroutineMock(side_effect=KeyError("expected"))
-
-        fake_api = Mock()
-        fake_api.get_namespaces = CoroutineMock(
-            return_value=ApiResponse(http=fake_resp, obj=None))
-        fake_api.get_namespaces.__doc__ = ':return: V1NamespaceList'
-        fake_api.get_namespaces.__self__ = fake_api
-
-        with self.assertRaises(KeyError):
-            watch = k8s.watch.Watch(fake_api.get_namespaces, timeout_seconds=10)
-            [_ async for _ in watch]
 
 
 if __name__ == '__main__':
