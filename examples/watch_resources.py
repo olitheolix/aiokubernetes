@@ -5,12 +5,13 @@ import aiokubernetes as k8s
 
 
 async def watch_resource(resource, **kwargs):
+    # Consume and print the events as they stream in from the `resource`
     async for event in k8s.Watch(resource, **kwargs):
         print(f"{event.name} {event.obj.kind} {event.obj.metadata.name}")
 
 
-async def setup():
-    # Create client API instances (Websocket and Http).
+async def main():
+    # Create a client instance and load the credentials from ~/.kube/kubeconfig
     api_client = k8s.config.new_client_from_config()
 
     # Namespaces and Pods are part of the K8s Core API.
@@ -31,12 +32,8 @@ async def setup():
     await api_client.session.close()
 
 
-def main():
-    # Setup event loop and setup the program.
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(asyncio.ensure_future(setup()))
-    loop.close()
-
-
 if __name__ == '__main__':
-    main()
+    # Setup event loop and start the program.
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(asyncio.ensure_future(main()))
+    loop.close()
