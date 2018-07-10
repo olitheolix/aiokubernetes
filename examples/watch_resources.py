@@ -24,7 +24,9 @@ async def main():
     tasks = [
         watch_resource(corev1.list_namespace, timeout_seconds=5),
         watch_resource(corev1.list_pod_for_all_namespaces, timeout_seconds=5),
-        watch_resource(extv1beta.list_deployment_for_all_namespaces, timeout_seconds=5),
+        watch_resource(
+            extv1beta.list_deployment_for_all_namespaces, timeout_seconds=5
+        ),
     ]
     await asyncio.gather(*tasks)
 

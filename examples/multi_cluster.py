@@ -17,8 +17,12 @@ async def start(kubeconf_a, kubeconf_b):
 
     # Specify and dispatch the tasks.
     tasks = [
-        watch_resource("Cluster A: ", k8s.CoreV1Api(api_client_a).list_namespace),
-        watch_resource("Cluster B: ", k8s.CoreV1Api(api_client_b).list_namespace),
+        watch_resource(
+            "Cluster A: ", k8s.CoreV1Api(api_client_a).list_namespace
+        ),
+        watch_resource(
+            "Cluster B: ", k8s.CoreV1Api(api_client_b).list_namespace
+        ),
     ]
     await asyncio.gather(*tasks)
 
@@ -33,8 +37,12 @@ def main():
         description=("You can use the same kubeconfig file twice if you only "
                      "have one cluster.")
     )
-    parser.add_argument('kubeconfig_a', type=str, help='Path to kubeconfig file')
-    parser.add_argument('kubeconfig_b', type=str, help='Path to kubeconfig file')
+    parser.add_argument(
+        'kubeconfig_a', type=str, help='Path to kubeconfig file'
+    )
+    parser.add_argument(
+        'kubeconfig_b', type=str, help='Path to kubeconfig file'
+    )
     args = parser.parse_args()
 
     # Setup the main task.
