@@ -42,7 +42,9 @@ async def create_deployment(api_client):
     # -------------------------------------------------------------------------
     k8s_v1beta = k8s.ExtensionsV1beta1Api(api_client)
     print(f'Creating deployment {name}...')
-    resp = await k8s_v1beta.create_namespaced_deployment(body=body, namespace=namespace)
+    resp = await k8s_v1beta.create_namespaced_deployment(
+        body=body, namespace=namespace
+    )
     assert isinstance(resp.http, aiohttp.client_reqrep.ClientResponse)
     print(' ->', resp.http.method, resp.http.status, resp.http.url)
 
@@ -102,7 +104,9 @@ async def create_deployment(api_client):
             stderr=True, stdin=False,
             stdout=True, tty=False
         )
-        assert isinstance(websocket.http, aiohttp.client._WSRequestContextManager)
+        assert isinstance(
+            websocket.http, aiohttp.client._WSRequestContextManager
+        )
 
         # Consume the Websocket until all commands have finished and Kubernetes
         # closes the connection.
@@ -111,7 +115,7 @@ async def create_deployment(api_client):
                 print(f'  Websocket received: {msg.data}')
         break
     else:
-        print('No login has entered "running" state yet - skip connection test')
+        print('No login has entered "running" state yet: skip connection test')
 
     # -------------------------------------------------------------------------
     #                          Replace Deployment
@@ -151,7 +155,9 @@ async def setup():
     # Specify and dispatch the tasks.
     tasks = [
         create_deployment(api_client),
-        watch_resource(k8s.CoreV1Api(api_client).list_namespace, timeout_seconds=1),
+        watch_resource(
+            k8s.CoreV1Api(api_client).list_namespace, timeout_seconds=1
+        ),
     ]
     await asyncio.gather(*tasks)
 
