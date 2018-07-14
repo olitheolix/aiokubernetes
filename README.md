@@ -46,7 +46,7 @@ async def main():
         print(f"{i.metadata.namespace} {i.metadata.name}")
 
     # Terminate the client connection for a clean shutdown.
-    await api_client.session.close()
+    await api_client.close()
 
 
 if __name__ == '__main__':
@@ -89,7 +89,7 @@ async def start():
     await asyncio.gather(*tasks)
 
     # Terminate the connection pool for a clean shutdown.
-    await api_client.session.close()
+    await api_client.close()
 
 
 def main():
