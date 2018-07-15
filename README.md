@@ -2,6 +2,8 @@
 [![PyPI version](https://badge.fury.io/py/aiokubernetes.svg)](https://badge.fury.io/py/aiokubernetes)
 [![pypi supported versions](https://img.shields.io/pypi/pyversions/aiokubernetes.svg)](https://pypi.python.org/pypi/aiokubernetes)
 
+<p align="center"><img src="aiokubernetes.svg" width="50%"></p>
+
 # Async Kubernetes Client
 
 
