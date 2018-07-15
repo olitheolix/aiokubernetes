@@ -90,6 +90,8 @@ html_sidebars = {
 }
 
 html_theme_options = {
+    'logo': 'aiokubernetes.svg',
+    'logo_name': 'aiokubernetes',
     'description': 'Async Kubernetes Client',
     'fixed_sidebar': True,
     'github_banner': True,
