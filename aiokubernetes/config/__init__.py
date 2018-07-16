@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import aiokubernetes.config.incluster_config
 from .config_exception import ConfigException
-from .incluster_config import load_incluster_config
 from .kube_config import (list_kube_config_contexts, load_kube_config,
                           new_client_from_config)
