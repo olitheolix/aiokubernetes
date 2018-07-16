@@ -15,118 +15,120 @@
 import os
 import tempfile
 import unittest
+import unittest.mock
+
+import pytest
+
+import aiokubernetes.config
+import aiokubernetes.config.incluster_config as incluster_config
 
 from .config_exception import ConfigException
-from .incluster_config import (
-    SERVICE_HOST_ENV_NAME, SERVICE_PORT_ENV_NAME, InClusterConfigLoader,
-    _join_host_port,
-)
 
-_TEST_TOKEN = "temp_token"
-_TEST_CERT = "temp_cert"
-_TEST_HOST = "127.0.0.1"
-_TEST_PORT = "80"
-_TEST_HOST_PORT = "127.0.0.1:80"
-_TEST_IPV6_HOST = "::1"
-_TEST_IPV6_HOST_PORT = "[::1]:80"
-
-_TEST_ENVIRON = {SERVICE_HOST_ENV_NAME: _TEST_HOST,
-                 SERVICE_PORT_ENV_NAME: _TEST_PORT}
-_TEST_IPV6_ENVIRON = {SERVICE_HOST_ENV_NAME: _TEST_IPV6_HOST,
-                      SERVICE_PORT_ENV_NAME: _TEST_PORT}
+pjoin = os.path.join
 
 
-class InClusterConfigTest(unittest.TestCase):
+@unittest.mock.patch.object(incluster_config.os, 'getenv')
+class TestCreateConfigFromServiceAccount:
+    def test_join_host_port(self, m_env):
+        """Concatenate host and port for IPv4 and IPv6."""
+        assert incluster_config._join_host_port("127.0.0.1", "80") == "127.0.0.1:80"
+        assert incluster_config._join_host_port("::1", "80") == "[::1]:80"
 
-    def setUp(self):
-        self._temp_files = []
+    def test_success(self, m_env):
+        """Create service account credentials and correct env variables."""
 
-    def tearDown(self):
-        for f in self._temp_files:
-            os.remove(f)
+        # Make `os.getenv` return a valid set of environemnt variables.
+        env = {
+            "KUBERNETES_SERVICE_HOST": "hostname",
+            "KUBERNETES_SERVICE_PORT": "1234",
+        }
+        m_env.side_effect = lambda key, default: env[key] if key in env else default
 
-    def _create_file_with_temp_content(self, content=""):
-        handler, name = tempfile.mkstemp()
-        self._temp_files.append(name)
-        os.write(handler, str.encode(content))
-        os.close(handler)
-        return name
+        # Use a temporary folder to create dummy token- and certificate files.
+        with tempfile.TemporaryDirectory() as dirname:
+            # File names of token and cert file.
+            fname_token, fname_cert = pjoin(dirname, 'token'), pjoin(dirname, 'cert')
 
-    def get_test_loader(
-            self,
-            token_filename=None,
-            cert_filename=None,
-            environ=_TEST_ENVIRON):
-        if not token_filename:
-            token_filename = self._create_file_with_temp_content(_TEST_TOKEN)
-        if not cert_filename:
-            cert_filename = self._create_file_with_temp_content(_TEST_CERT)
-        return InClusterConfigLoader(
-            token_filename=token_filename,
-            cert_filename=cert_filename,
-            environ=environ)
+            # Create dummy content for the files.
+            open(fname_cert, 'w').write('my cert')
+            open(fname_token, 'w').write('my token')
 
-    def test_join_host_port(self):
-        self.assertEqual(_TEST_HOST_PORT,
-                         _join_host_port(_TEST_HOST, _TEST_PORT))
-        self.assertEqual(_TEST_IPV6_HOST_PORT,
-                         _join_host_port(_TEST_IPV6_HOST, _TEST_PORT))
+            # Compile the configuration using the service account tokens in the
+            # Pod and verify it got the correct file and compiled the correct host.
+            conf = incluster_config.load_service_account_config(fname_token, fname_cert)
+            assert isinstance(conf, aiokubernetes.configuration.Configuration)
+            assert conf.host == 'https://hostname:1234'
+            assert conf.ssl_ca_cert == fname_cert
+            assert conf.api_key['authorization'] == "bearer my token"
 
-    def test_load_config(self):
-        cert_filename = self._create_file_with_temp_content(_TEST_CERT)
-        loader = self.get_test_loader(cert_filename=cert_filename)
-        loader._load_config()
-        self.assertEqual("https://" + _TEST_HOST_PORT, loader.host)
-        self.assertEqual(cert_filename, loader.ssl_ca_cert)
-        self.assertEqual(_TEST_TOKEN, loader.token)
+    def test_missing_env(self, m_env):
+        """Pretend the environment variables are missing or empty."""
 
-    def _should_fail_load(self, config_loader, reason):
-        try:
-            config_loader.load_and_set()
-            self.fail("Should fail because %s" % reason)
-        except ConfigException:
-            # expected
-            pass
+        # List of invalid environment variable setups.
+        envs = [
+            {},
+            {"KUBERNETES_SERVICE_HOST": "hostname"},
+            {"KUBERNETES_SERVICE_PORT": "1234"},
+            {"KUBERNETES_SERVICE_HOST": ""},
+            {"KUBERNETES_SERVICE_PORT": ""},
+        ]
+        for env in envs:
+            m_env.side_effect = lambda key, default: env[key] if key in env else default
+            with pytest.raises(ConfigException):
+                incluster_config.load_service_account_config(None, None)
 
-    def test_no_port(self):
-        loader = self.get_test_loader(
-            environ={SERVICE_HOST_ENV_NAME: _TEST_HOST})
-        self._should_fail_load(loader, "no port specified")
+    def test_missing_token_or_cert(self, m_env):
+        """Certificate and/or token are missing."""
 
-    def test_empty_port(self):
-        loader = self.get_test_loader(
-            environ={SERVICE_HOST_ENV_NAME: _TEST_HOST,
-                     SERVICE_PORT_ENV_NAME: ""})
-        self._should_fail_load(loader, "empty port specified")
+        # Make `os.getenv` return a valid set of environemnt variables.
+        env = {
+            "KUBERNETES_SERVICE_HOST": "hostname",
+            "KUBERNETES_SERVICE_PORT": "1234",
+        }
+        m_env.side_effect = lambda key, default: env[key] if key in env else default
 
-    def test_no_host(self):
-        loader = self.get_test_loader(
-            environ={SERVICE_PORT_ENV_NAME: _TEST_PORT})
-        self._should_fail_load(loader, "no host specified")
+        # Use a temporary folder to create dummy token- and certificate files.
+        with tempfile.TemporaryDirectory() as dirname:
+            # File names of token and cert file.
+            fname_token, fname_cert = pjoin(dirname, 'token'), pjoin(dirname, 'cert')
 
-    def test_empty_host(self):
-        loader = self.get_test_loader(
-            environ={SERVICE_HOST_ENV_NAME: "",
-                     SERVICE_PORT_ENV_NAME: _TEST_PORT})
-        self._should_fail_load(loader, "empty host specified")
+            # Create dummy content for the files.
+            open(fname_cert, 'w').write('my cert')
+            open(fname_token, 'w').write('my token')
 
-    def test_no_cert_file(self):
-        loader = self.get_test_loader(cert_filename="not_exists_file_1123")
-        self._should_fail_load(loader, "cert file does not exists")
+            # Token file does not exist.
+            with pytest.raises(ConfigException):
+                incluster_config.load_service_account_config(fname_token, '/foo')
+            # Certificate file does not exist.
+            with pytest.raises(ConfigException):
+                incluster_config.load_service_account_config('/foo', fname_cert)
 
-    def test_empty_cert_file(self):
-        loader = self.get_test_loader(
-            cert_filename=self._create_file_with_temp_content())
-        self._should_fail_load(loader, "empty cert file provided")
+    def test_empty_token_or_cert(self, m_env):
+        """Certificate and/or token files are empty."""
 
-    def test_no_token_file(self):
-        loader = self.get_test_loader(token_filename="not_exists_file_1123")
-        self._should_fail_load(loader, "token file does not exists")
+        # Make `os.getenv` return a valid set of environemnt variables.
+        env = {
+            "KUBERNETES_SERVICE_HOST": "hostname",
+            "KUBERNETES_SERVICE_PORT": "1234",
+        }
+        m_env.side_effect = lambda key, default: env[key] if key in env else default
 
-    def test_empty_token_file(self):
-        loader = self.get_test_loader(
-            token_filename=self._create_file_with_temp_content())
-        self._should_fail_load(loader, "empty token file provided")
+        # Use a temporary folder to create dummy token- and certificate files.
+        with tempfile.TemporaryDirectory() as dirname:
+            # File names of token and cert file.
+            fname_token, fname_cert = pjoin(dirname, 'token'), pjoin(dirname, 'cert')
+
+            # Certificate file is empty.
+            open(fname_cert, 'w').write('')
+            open(fname_token, 'w').write('my token')
+            with pytest.raises(ConfigException):
+                incluster_config.load_service_account_config(fname_token, fname_cert)
+
+            # Token file is empty.
+            open(fname_cert, 'w').write('my cert')
+            open(fname_token, 'w').write('')
+            with pytest.raises(ConfigException):
+                incluster_config.load_service_account_config(fname_token, fname_cert)
 
 
 if __name__ == '__main__':

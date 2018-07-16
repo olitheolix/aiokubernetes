@@ -14,13 +14,14 @@
 
 import os
 
-from ..configuration import Configuration
+import aiokubernetes as k8s
+
 from .config_exception import ConfigException
 
-SERVICE_HOST_ENV_NAME = "KUBERNETES_SERVICE_HOST"
-SERVICE_PORT_ENV_NAME = "KUBERNETES_SERVICE_PORT"
-SERVICE_TOKEN_FILENAME = "/var/run/secrets/kubernetes.io/serviceaccount/token"
-SERVICE_CERT_FILENAME = "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
+# Location where Kubernetes will put the service account token and certificate
+# files inside a Pod.
+CERT_FNAME = "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
+TOKEN_FNAME = "/var/run/secrets/kubernetes.io/serviceaccount/token"
 
 
 def _join_host_port(host, port):
@@ -32,61 +33,49 @@ def _join_host_port(host, port):
     return template % (host, port)
 
 
-class InClusterConfigLoader(object):
+def load_service_account_config(token_filename=TOKEN_FNAME, cert_filename=CERT_FNAME):
+    """Return a client `Configuration` instance with service account credentials.
 
-    def __init__(self, token_filename,
-                 cert_filename, environ=os.environ):
-        self._token_filename = token_filename
-        self._cert_filename = cert_filename
-        self._environ = environ
+    Args:
+        token_filename: str
+            Leave blank to use the K8s default location inside pod.
+        cert_filename: str
+            Leave blank to use the K8s default location inside pod.
 
-    def load_and_set(self):
-        self._load_config()
-        self._set_config()
+    Returns:
+        Configuration
 
-    def _load_config(self):
-        if (SERVICE_HOST_ENV_NAME not in self._environ or
-                SERVICE_PORT_ENV_NAME not in self._environ):
-            raise ConfigException("Service host/port is not set.")
+    """
 
-        if (not self._environ[SERVICE_HOST_ENV_NAME] or
-                not self._environ[SERVICE_PORT_ENV_NAME]):
-            raise ConfigException("Service host/port is set but empty.")
+    # Extract the API location from the env variables K8s creates inside the Pod.
+    host = os.getenv("KUBERNETES_SERVICE_HOST", '')
+    port = os.getenv("KUBERNETES_SERVICE_PORT", '')
+    if host == '' or port == '':
+        raise ConfigException("Service host/port is either empty or not set.")
 
-        self.host = (
-            "https://" + _join_host_port(self._environ[SERVICE_HOST_ENV_NAME],
-                                         self._environ[SERVICE_PORT_ENV_NAME]))
+    # Compile the full host name with scheme and port.
+    host = "https://" + _join_host_port(host, port)
 
-        if not os.path.isfile(self._token_filename):
-            raise ConfigException("Service token file does not exists.")
+    # Token and certificate files must exist.
+    if not os.path.isfile(token_filename):
+        raise ConfigException(f"Token file <{token_filename}> does not exists.")
+    if not os.path.isfile(cert_filename):
+        raise ConfigException(f"Certificate file <{cert_filename}> does not exists.")
 
-        with open(self._token_filename) as f:
-            self.token = f.read()
-            if not self.token:
-                raise ConfigException("Token file exists but empty.")
+    # Load the token.
+    token = open(token_filename).read()
+    if len(token) == 0:
+        raise ConfigException(f"Token file <{token_filename}> exists but is empty.")
 
-        if not os.path.isfile(self._cert_filename):
-            raise ConfigException(
-                "Service certification file does not exists.")
+    # Verify the cert is not empty. NOTE: we will not actually need the
+    # certificate itself, just the file name.
+    cert = open(cert_filename).read()
+    if len(cert) == 0:
+        raise ConfigException(f"Cert file <{cert_filename}> exists but is empty.")
 
-        with open(self._cert_filename) as f:
-            if not f.read():
-                raise ConfigException("Cert file exists but empty.")
-
-        self.ssl_ca_cert = self._cert_filename
-
-    def _set_config(self):
-        configuration = Configuration()
-        configuration.host = self.host
-        configuration.ssl_ca_cert = self.ssl_ca_cert
-        configuration.api_key['authorization'] = "bearer " + self.token
-        Configuration.set_default(configuration)
-
-
-def load_incluster_config():
-    """Use the service account kubernetes gives to pods to connect to kubernetes
-    cluster. It's intended for clients that expect to be running inside a pod
-    running on kubernetes. It will raise an exception if called from a process
-    not running in a kubernetes environment."""
-    InClusterConfigLoader(token_filename=SERVICE_TOKEN_FILENAME,
-                          cert_filename=SERVICE_CERT_FILENAME).load_and_set()
+    # Compile and return the Configuration instance.
+    config = k8s.configuration.Configuration()
+    config.host = host
+    config.ssl_ca_cert = cert_filename
+    config.api_key['authorization'] = "bearer " + token
+    return config
