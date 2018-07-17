@@ -218,7 +218,10 @@ class ApiClient(object):
                 data = await response_data.json()
 
                 # fixup: intercept ValueError (data may be none because request failed)
-                return_data = k8s.swagger.deserialize(data, response_type)
+                try:
+                    return_data = k8s.swagger.deserialize(data, response_type)
+                except ValueError:
+                    return_data = None
         else:
             return_data = None
 
