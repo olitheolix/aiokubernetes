@@ -10,11 +10,12 @@ from urllib.parse import quote, urlencode
 
 
 class ApiDummy:
-    def __init__(self, *args, **kwargs):
+    def __init__(self, config, *args, **kwargs):
+        self.config = config
         self.args, self.kwargs = args, kwargs
 
     def call_api(self, *args, **kwargs):
-        return (args, kwargs)
+        return convert(self.config, args, kwargs)
 
     def select_header_accept(self, accepts):
         """Returns `Accept` based on an array of accepts provided.
@@ -214,10 +215,8 @@ async def main():
     )
     client = make_client(client_config)
 
-    api_dummy = ApiDummy()
-    v1 = k8s.api.CoreV1Api(api_dummy)
-    args, kwargs = v1.list_namespace(watch=False)
-    client_args = convert(client_config, args, kwargs)
+    api_dummy = ApiDummy(client_config)
+    client_args = k8s.api.CoreV1Api(api_dummy).list_namespace(watch=False)
     ret = await client.request(**client_args)
     js = await ret.json()
     print([_['metadata']['name'] for _ in js['items']])
