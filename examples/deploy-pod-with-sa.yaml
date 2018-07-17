@@ -1,0 +1,114 @@
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+# Launch a Pod with a service account that grants it Kubernetes access.
+#
+# The pod will launch into the dedicated `aiokubernetes` namespace so as to
+# not accidentally overwrite existing roles or deployments.
+#
+# Create: `kubectl apply -f deploy-pod-with-sa.yaml`
+# Delete: `kubectl delete -f deploy-pod-with-sa.yaml`
+# -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+# Create the "aiokubernetes" namespace.
+# -----------------------------------------------------------------------------
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: aiokubernetes
+
+---
+
+# -----------------------------------------------------------------------------
+# Define the `aiokubernetes-role` role and give it permission to query
+# information about namespaces, deployments, etc in the entire cluster.
+# -----------------------------------------------------------------------------
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: aiokubernetes-role
+
+rules:
+- apiGroups: ["", "extensions"]
+  resources:
+  - deployments
+  - namespaces
+  - pods
+  - replicasets
+  verbs: ["get", "list", "watch"]
+
+- apiGroups: ["batch", "extensions"]
+  resources:
+  - jobs
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+
+---
+
+# -----------------------------------------------------------------------------
+# Create the "aiokubernetes-sa" service account. By itself this is useless
+# because it does not grant access to anything. In the next step we will make
+# it useful and associate it with the above defined above, but here we really
+# just create the service account named `aiokubernetes-sa`.
+# -----------------------------------------------------------------------------
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: aiokubernetes-sa
+  namespace: aiokubernetes
+
+---
+
+# -----------------------------------------------------------------------------
+# Grant the service account `aiokubernetes-sa` the permissions defined for
+# `aiokubernetes-role`. Now the service account credentials will actually
+# become useful for the pod that has access to it (next step).
+# -----------------------------------------------------------------------------
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: aiokubernetes-binding
+
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: aiokubernetes-role
+
+subjects:
+- kind: ServiceAccount
+  name: aiokubernetes-sa
+  namespace: aiokubernetes
+
+---
+
+# -----------------------------------------------------------------------------
+# Create a Python pod with the service account we just configured.
+# -----------------------------------------------------------------------------
+apiVersion: extensions/v1beta1
+kind: Deployment
+
+metadata:
+  name: login
+  namespace: aiokubernetes
+
+spec:
+  replicas: 1
+
+  template:
+    metadata:
+      labels:
+        app: login
+
+    spec:
+      # Allow these container to use the Service Account credentials we
+      # configured earlier.
+      serviceAccountName: aiokubernetes-sa
+  
+      # Launch a Python 3.6 container that waits for a long time. This #
+      # "trick" will keep the Pod alive and we can `exec` into the pod and run
+      # commands ourselves.
+      containers:
+        - name: login
+          image: python:3.6
+          command: ["sleep", "10000d"]
+          imagePullPolicy: IfNotPresent
