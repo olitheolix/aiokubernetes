@@ -158,3 +158,78 @@ class Watch(object):
         # De-serialise the K8s response and return everything.
         obj = k8s.swagger.deserialize(data=k8s_obj, klass=response_type)
         return WatchResponse(name=name, raw=data, obj=obj)
+
+
+class Watch2(object):
+
+    def __init__(self, request):
+        self.request = request
+        self.connection = None
+        self._stop = False
+#        self.return_type = _find_return_type(api_func)
+
+    def __aiter__(self):
+        return self
+
+    async def __anext__(self):
+        # Set the response object to the user supplied function (eg
+        # `list_namespaced_pods`) if this is the first iteration.
+        if self.connection is None:
+            self.connection = await self.request
+
+        # Abort at the current iteration if the user has called `stop` on this
+        # stream instance.
+        if self._stop:
+            raise StopAsyncIteration
+
+        # Fetch the next K8s response. This is where the callee's async
+        # iterator will yield until K8s sends another Http chunk through the
+        # connection.
+        line = await self.connection.content.readline()
+
+        # Stop the iterator if K8s sends an empty response. This happens when
+        # eg the supplied timeout has expired.
+        if len(line) == 0:
+            raise StopAsyncIteration
+
+        return self.unmarshal_event(line)
+
+    def stop(self):
+        self._stop = True
+
+    @staticmethod
+    def unmarshal_event(data: bytes):
+        """Return the K8s response `data` in a `WatchResponse` tuple.
+
+        """
+        try:
+            line = data.decode('utf8')
+            js = json.loads(line)
+
+            # Unpack the watched event and extract the event name (ADDED, MODIFIED,
+            # etc) and the raw event content.
+            name, k8s_obj = js['type'], js['object']
+        except UnicodeDecodeError:
+            # fixup: log message
+            return WatchResponse(name=None, raw=data, obj=None)
+        except json.decoder.JSONDecodeError:
+            # fixup: log message
+            return WatchResponse(name=None, raw=data, obj=None)
+        except KeyError:
+            # fixup: log message
+            return WatchResponse(name=None, raw=data, obj=None)
+
+        api, kind = k8s_obj['apiVersion'], k8s_obj['kind']
+        api = str.join('', [_.capitalize() for _ in api.split('/')])
+        kind = kind.capitalize()
+        klass = f'{api}{kind}'
+
+        # Something went wrong. A typical example would be that the user
+        # supplied a resource version that was too old. In that case K8s would
+        # not send a conventional ADDED/DELETED/... event but an error.
+        if name.lower() == 'error' or klass is None:
+            return WatchResponse(name=name, raw=data, obj=None)
+
+        # De-serialise the K8s response and return everything.
+        obj = k8s.swagger.deserialize(data=k8s_obj, klass=klass)
+        return WatchResponse(name=name, raw=data, obj=obj)
