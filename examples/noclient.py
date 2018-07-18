@@ -1,6 +1,7 @@
 """Print the name of all pods in the cluster."""
 import asyncio
 import datetime
+import json
 import os
 import ssl
 import warnings
@@ -200,10 +201,22 @@ def convert(config, args, kwargs):
         client_args["url"] += '?' + urlencode(query_params)
 
     if kwargs['body'] is not None:
-        import json
         body = json.dumps(kwargs['body'])
         client_args["data"] = body
     return client_args
+
+
+async def watch(request):
+    ret = await request
+    while True:
+        line = await ret.content.readline()
+        if len(line) == 0:
+            break
+        print(json.loads(line)['object']['metadata']['name'])
+    print('done')
+
+    # async for event in k8s.Watch(resource, **kwargs):
+    #     print(f"{event.name} {event.obj.kind} {event.obj.metadata.name}")
 
 
 async def main():
@@ -222,6 +235,12 @@ async def main():
     ret = await client.request(**client_args)
     js = await ret.json()
     print([_['metadata']['name'] for _ in js['items']])
+
+    print('\n----\n')
+    cargs = k8s.api.CoreV1Api(api_dummy).list_namespace(watch=True, timeout_seconds=10)
+    await watch(client.request(**cargs))
+
+    ret.close()
     await client.close()
 
 
