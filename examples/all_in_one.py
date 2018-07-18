@@ -9,6 +9,8 @@ more concise feature demonstrations.
 """
 import asyncio
 import os
+import warnings
+import noclient
 
 import aiohttp
 import yaml
@@ -16,12 +18,12 @@ import yaml
 import aiokubernetes as k8s
 
 
-async def watch_resource(resource, **kwargs):
-    async for event in k8s.Watch(resource, **kwargs):
+async def watch_resource(request):
+    async for event in k8s.watch.watch.Watch2(request):
         print(f"{event.name} {event.obj.kind} {event.obj.metadata.name}")
 
 
-async def create_deployment(api_client):
+async def create_deployment(api_dummy, client):
     img_alpine_34, img_alpine_35 = 'alpine:3.4', 'alpine:3.5'
     time_between_steps = 3
 
@@ -40,16 +42,15 @@ async def create_deployment(api_client):
     # -------------------------------------------------------------------------
     #                           Create Deployment
     # -------------------------------------------------------------------------
-    k8s_v1beta = k8s.ExtensionsV1beta1Api(api_client)
+    k8s_v1beta = k8s.ExtensionsV1beta1Api(api_dummy)
     print(f'Creating deployment {name}...')
-    resp = await k8s_v1beta.create_namespaced_deployment(
-        body=body, namespace=namespace
-    )
-    assert isinstance(resp.http, aiohttp.client_reqrep.ClientResponse)
-    print(' ->', resp.http.method, resp.http.status, resp.http.url)
+    cargs = k8s_v1beta.create_namespaced_deployment(body=body, namespace=namespace)
+    http = await client.request(**cargs)
+    print(' ->', http.method, http.status, http.url)
+    del cargs, http
 
     # -------------------------------------------------------------------------
-    #                            Path Deployment
+    #                            Patch Deployment
     # -------------------------------------------------------------------------
     # print(f'Patching deployment {name}...')
     # fname = os.path.join(base_path, 'manifests/patch-deployment.yaml')
@@ -67,21 +68,22 @@ async def create_deployment(api_client):
     # only just created the pod and it takes a few seconds until it is ready.
     for i in range(300):
         # Get a list of all pods.
-        resp = await k8s.CoreV1Api(api_client).list_namespaced_pod(namespace)
-        assert isinstance(resp.http, aiohttp.client_reqrep.ClientResponse)
+        cargs = k8s.CoreV1Api(api_dummy).list_namespaced_pod(namespace)
+        http = await client.request(**cargs)
+        pods = k8s.watch.watch.Watch2.unmarshal_response(await http.read())
 
         # Find all running pods whose name starts with 'login'.
-        pods = resp.obj.items
-        pods = [_ for _ in pods if _.metadata.name.lower().startswith('login')]
+        pods = [_ for _ in pods.items if _.metadata.name.lower().startswith('login')]
         pods = [_ for _ in pods if _.status.phase.lower() == 'running']
 
         # Wait, rinse and repeat if Kubernetes returned an error or we found no
         # running login Pod.
-        if resp.http.status != 200 or len(pods) == 0:
+        if http.status != 200 or len(pods) == 0:
             print('.', end='', flush=True)
             await asyncio.sleep(0.1)
             continue
-        print('\n ->', resp.http.method, resp.http.status, resp.http.url, '\n')
+        print('\n ->', http.method, http.status, http.url, '\n')
+        del cargs, http
 
         # Could be a stale deployment - not a problem, but let user know.
         if len(pods) > 1:
@@ -93,24 +95,30 @@ async def create_deployment(api_client):
 
         # Connect to the pod and run a few shell commands. This will return a
         # Websocket connection that we will consume afterwards.
-        v1_ws = k8s.CoreV1Api(api_client=api_client)
-        exec_command = [
-            '/bin/sh', '-c',
-            'echo This is stderr >&2; sleep 0s; echo This is stdout'
-        ]
-        websocket = await v1_ws.connect_get_namespaced_pod_exec(
+        exec_command = ['/bin/sh']
+        #exec_command = ['/bin/sh', '-c', 'echo This is stderr ; sleep 0s']
+
+        wargs = k8s.CoreV1Api(api_client=api_dummy).connect_get_namespaced_pod_exec(
             pod_name, namespace,
             command=exec_command,
-            stderr=True, stdin=False,
-            stdout=True, tty=False
+            stderr=True, stdin=True,
+            stdout=True, tty=True
         )
-        assert isinstance(
-            websocket.http, aiohttp.client._WSRequestContextManager
-        )
+        print('----')
+        for k, v in sorted(wargs.items()):
+            print(f'{k.upper()}: {v}')
+        print('----')
+        assert 'headers' in wargs
+        wargs['headers']['sec-websocket-protocol'] = 'v4.channel.k8s.io'
+        url = k8s.api_client.get_websocket_url(wargs['url'])
+        wargs['url'] = url
+
+        ws_session = client.ws_connect(url, headers=wargs['headers'])
 
         # Consume the Websocket until all commands have finished and Kubernetes
         # closes the connection.
-        async with websocket.http as ws:
+        async with ws_session as ws:
+            await ws.send_bytes(b'\x00ls\nexit\n')
             async for msg in ws:
                 print(f'  Websocket received: {msg.data}')
         break
@@ -126,10 +134,11 @@ async def create_deployment(api_client):
     print(f'Replaced <{img_orig}> with <{img_new}>')
 
     print(f'\nReplacing deployment {name}...')
-    resp = await k8s_v1beta.replace_namespaced_deployment(
-        name=name, namespace=namespace, body=body)
-    assert isinstance(resp.http, aiohttp.client_reqrep.ClientResponse)
-    print(' ->', resp.http.method, resp.http.status, resp.http.url)
+    cargs = k8s_v1beta.replace_namespaced_deployment(name=name, namespace=namespace, body=body)
+    http = await client.request(**cargs)
+    assert isinstance(http, aiohttp.client_reqrep.ClientResponse)
+    print(' ->', http.method, http.status, http.url)
+    del cargs, http
 
     # -------------------------------------------------------------------------
     #                           Delete Deployment
@@ -140,24 +149,48 @@ async def create_deployment(api_client):
         api_version='v1', kind='DeleteOptions', grace_period_seconds=0,
         propagation_policy='Foreground',
     )
-    resp = await k8s_v1beta.delete_namespaced_deployment(
-        name=name, namespace=namespace, body=del_opts)
-    assert isinstance(resp.http, aiohttp.client_reqrep.ClientResponse)
-    print(' ->', resp.http.method, resp.http.status, resp.http.url)
+    cargs = k8s_v1beta.delete_namespaced_deployment(name=name, namespace=namespace, body=del_opts)
+    http = await client.request(**cargs)
+    assert isinstance(http, aiohttp.client_reqrep.ClientResponse)
+    print(' ->', http.method, http.status, http.url)
+    del cargs, http
 
     print('------------ End of Demo ------------')
 
 
 async def setup():
-    # Create a client instance and load the credentials from ~/.kube/kubeconfig
-    api_client = k8s.config.new_client_from_config()
+    kubeconf = os.path.expanduser(os.environ.get('KUBECONFIG', '~/.kube/config'))
+    client_config = k8s.configuration.Configuration()
+    with warnings.catch_warnings(record=True):
+        k8s.config.kube_config.load_kube_config(
+            config_file=kubeconf,
+            client_configuration=client_config,
+            persist_config=False
+        )
+    api_client = noclient.make_client(client_config)
+    api_dummy = noclient.ApiDummy(client_config)
+
+    # ***********
+    # wargs = k8s.CoreV1Api(api_client=api_dummy).connect_get_namespaced_pod_exec(
+    #     'pod_name', 'namespace',
+    #     command=['ls', '-l'],
+    #     stderr=True, stdin=False,
+    #     stdout=True, tty=False
+    # )
+    # print('----')
+    # for k, v in sorted(wargs.items()):
+    #     print(f'{k.upper()}: {v}')
+    # print('----')
+    # await api_client.close()
+    # await asyncio.sleep(0.2)
+    # return
+    # ***********
 
     # Specify and dispatch the tasks.
+    cargs = k8s.CoreV1Api(api_dummy).list_namespace(watch=True, timeout_seconds=1)
     tasks = [
-        create_deployment(api_client),
-        watch_resource(
-            k8s.CoreV1Api(api_client).list_namespace, timeout_seconds=1
-        ),
+        create_deployment(api_dummy, api_client),
+        watch_resource(api_client.request(**cargs)),
     ]
     await asyncio.gather(*tasks)
 
