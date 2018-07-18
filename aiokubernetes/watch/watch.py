@@ -211,11 +211,14 @@ class Watch2(object):
             name, k8s_obj = js['type'], js['object']
         except UnicodeDecodeError:
             # fixup: log message
+            print('unicode error')
             return WatchResponse(name=None, raw=data, obj=None)
         except json.decoder.JSONDecodeError:
             # fixup: log message
+            print('json error')
             return WatchResponse(name=None, raw=data, obj=None)
         except KeyError:
+            print('key error')
             # fixup: log message
             return WatchResponse(name=None, raw=data, obj=None)
 
@@ -233,3 +236,34 @@ class Watch2(object):
         # De-serialise the K8s response and return everything.
         obj = k8s.swagger.deserialize(data=k8s_obj, klass=klass)
         return WatchResponse(name=name, raw=data, obj=obj)
+
+    @staticmethod
+    def unmarshal_response(data: bytes):
+        """Return the K8s response `data` in a `WatchResponse` tuple.
+
+        """
+        try:
+            line = data.decode('utf8')
+            k8s_obj = json.loads(line)
+        except UnicodeDecodeError:
+            # fixup: log message
+            print('unicode error')
+            return WatchResponse(name=None, raw=data, obj=None)
+        except json.decoder.JSONDecodeError:
+            # fixup: log message
+            print('json error')
+            return WatchResponse(name=None, raw=data, obj=None)
+        except KeyError:
+            print('key error')
+            # fixup: log message
+            return WatchResponse(name=None, raw=data, obj=None)
+
+        api, kind = k8s_obj['apiVersion'], k8s_obj['kind']
+        api = str.join('', [_.capitalize() for _ in api.split('/')])
+        kind = kind.capitalize()
+        klass = f'{api}{kind}'
+        if klass.endswith('list'):
+            klass = str.join('', klass.rpartition('list')[0]) + 'List'
+        print(api, kind, klass)
+
+        return k8s.swagger.deserialize(data=k8s_obj, klass=klass)
