@@ -17,6 +17,8 @@ class ApiDummy:
         self.args, self.kwargs = args, kwargs
 
     def call_api(self, *args, **kwargs):
+        # print(args, kwargs.keys())
+        # print('Query params:', kwargs.get('query_params', None))
         return convert(self.config, args, kwargs)
 
     def select_header_accept(self, accepts):
@@ -84,7 +86,15 @@ def build_url(config, resource_path, path_params, query_params, header_params,
 
     # query parameters
     if query_params:
-        query_params = dict(sanitize_for_serialization(query_params))
+        tmp = sanitize_for_serialization(query_params)
+        query_params = []
+        for k, v in tmp:
+            if isinstance(v, (list, tuple)):
+                query_params.extend([(k, _) for _ in v])
+            else:
+                query_params.append((k, v))
+        #query_params = [(quote(k), quote(str(v))) for k, v in query_params]
+        print(query_params)
 
     # post parameters
     if post_params:
@@ -184,7 +194,7 @@ def convert(config, args, kwargs):
         config, resource_path, path_params, query_params,
         header_params, kwargs['post_params'], kwargs['auth_settings'], kwargs['body']
     )
-    del args
+    del args, resource_path, path_params, query_params, header_params
 
     headers = kwargs['headers']
     if 'Content-Type' not in headers:
@@ -197,7 +207,9 @@ def convert(config, args, kwargs):
         "headers": headers
     }
 
-    if kwargs['query_params']:
+    query_params = kwargs.get('query_params', tuple())
+
+    if len(query_params) > 0:
         client_args["url"] += '?' + urlencode(query_params)
 
     if kwargs['body'] is not None:
@@ -231,16 +243,23 @@ async def main():
     client = make_client(client_config)
 
     api_dummy = ApiDummy(client_config)
-    client_args = k8s.api.CoreV1Api(api_dummy).list_namespace(watch=False)
-    ret = await client.request(**client_args)
-    js = await ret.json()
-    print([_['metadata']['name'] for _ in js['items']])
+    cargs = k8s.api.CoreV1Api(api_dummy).list_namespace(watch=False)
+    ret = await client.request(**cargs)
+    obj = k8s.watch.watch.Watch2.unmarshal_response(await ret.read())
+    for item in obj.items:
+        print(item.metadata.name)
+    ret.close()
 
     print('\n----\n')
-    cargs = k8s.api.CoreV1Api(api_dummy).list_namespace(watch=True, timeout_seconds=10)
+    cargs = k8s.api.CoreV1Api(api_dummy).list_namespace(watch=True, timeout_seconds=3)
     await watch(client.request(**cargs))
 
-    ret.close()
+    print('\n----\n')
+    cargs = k8s.ExtensionsV1beta1Api(api_dummy).list_deployment_for_all_namespaces(watch=True, timeout_seconds=10)
+    mywatch = k8s.watch.watch.Watch2(client.request(**cargs))
+    async for w in mywatch:
+        print(w.obj.kind, w.obj.metadata.namespace, w.obj.metadata.name)
+
     await client.close()
 
 
