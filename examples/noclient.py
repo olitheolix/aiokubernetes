@@ -3,6 +3,7 @@ import asyncio
 import datetime
 import os
 import ssl
+import warnings
 
 import aiohttp
 import aiokubernetes as k8s
@@ -208,11 +209,12 @@ def convert(config, args, kwargs):
 async def main():
     kubeconf = os.path.expanduser(os.environ.get('KUBECONFIG', '~/.kube/config'))
     client_config = k8s.configuration.Configuration()
-    k8s.config.kube_config.load_kube_config(
-        config_file=kubeconf,
-        client_configuration=client_config,
-        persist_config=False
-    )
+    with warnings.catch_warnings(record=True):
+        k8s.config.kube_config.load_kube_config(
+            config_file=kubeconf,
+            client_configuration=client_config,
+            persist_config=False
+        )
     client = make_client(client_config)
 
     api_dummy = ApiDummy(client_config)
