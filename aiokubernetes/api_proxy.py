@@ -1,4 +1,3 @@
-import copy
 import datetime
 import json
 from urllib.parse import urlencode
@@ -9,20 +8,19 @@ class Proxy:
         self.config = config
         self.args, self.kwargs = args, kwargs
 
-    def call_api(self, *args, **kwargs):
-        # print(args, kwargs.keys())
-        # print('Query params:', kwargs.get('query_params', None))
-        args = tuple(args)
-        kwargs = copy.deepcopy(kwargs)
+    def call_api(
+            self, resource_path, method, path_params=None,
+            query_params=None, header_params=None, body=None, post_params=None,
+            files=None, response_type=None, auth_settings=None,
+            _return_http_data_only=None, collection_formats=None,
+            _preload_content=True, _request_timeout=None):
 
-        resource_path, method, path_params, query_params, header_params = args
-        kwargs = build_url(
+        request_args = build_url(
             self.config, resource_path, path_params, query_params,
-            header_params, kwargs['post_params'], kwargs['auth_settings'], kwargs['body']
+            header_params, post_params, auth_settings, body
         )
-        del args, resource_path, path_params, query_params, header_params
 
-        headers = kwargs['headers']
+        headers = request_args['headers']
         if 'Content-Type' not in headers:
             headers['Content-Type'] = 'application/json'
 
@@ -30,14 +28,14 @@ class Proxy:
             "headers": headers,
             "method": method,
             "timeout": 5 * 60,
-            "url": kwargs['url'],
+            "url": request_args['url'],
         }
 
-        if len(kwargs['query_params']) > 0:
-            client_args["url"] += '?' + urlencode(kwargs['query_params'])
+        if len(request_args['query_params']) > 0:
+            client_args["url"] += '?' + urlencode(request_args['query_params'])
 
-        if kwargs['body'] is not None:
-            client_args["data"] = json.dumps(kwargs['body'])
+        if request_args['body'] is not None:
+            client_args["data"] = json.dumps(request_args['body'])
 
         return client_args
 
