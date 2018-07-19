@@ -1,8 +1,8 @@
 import datetime
-import aiokubernetes as k8s
-
-from types import SimpleNamespace
 import unittest.mock as mock
+from types import SimpleNamespace
+
+import aiokubernetes as k8s
 
 
 class TestProxyClass:
