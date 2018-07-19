@@ -599,5 +599,7 @@ from aiokubernetes.models.version_info import VersionInfo
 # These import are technically unnecessary but are convenient for end users.
 import aiokubernetes.config as config
 import aiokubernetes.swagger as swagger
+import aiokubernetes.clients as clients
+import aiokubernetes.api_proxy as api_proxy
 
 from aiokubernetes.watch import Watch
