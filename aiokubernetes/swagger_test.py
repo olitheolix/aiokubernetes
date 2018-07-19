@@ -1,3 +1,4 @@
+import json
 import aiokubernetes as k8s
 
 
@@ -13,3 +14,24 @@ class TestProxyClass:
 
         # If it ends in `list`, capitalise the list.
         assert fun('V1', 'Namespacelist') == 'V1NamespaceList'
+
+    def test_unpack_ok(self):
+        # Create a Swagger object for this test. It must have a valid
+        # `api_version` and `kind` for this test to work.
+        manifest = k8s.V1DeleteOptions(
+            api_version='V1', kind='DeleteOptions', grace_period_seconds=0,
+            propagation_policy='Foreground',
+        )
+
+        # Serialise the object: Swagger -> Dict -> Json -> Bytes
+        manifest_dict = k8s.api_proxy.sanitize_for_serialization(manifest)
+        manifest_bytes = json.dumps(manifest_dict).encode('utf8')
+
+        # The byte string is what a client would receive from K8s. Unwrap it
+        # into a Swagger class.
+        ret = k8s.swagger.unpack(manifest_bytes)
+        assert ret == manifest
+
+    def test_unpack_invalid_input(self):
+        assert k8s.swagger.unpack(b'\xff') is None
+        assert k8s.swagger.unpack(b'not ]json') is None

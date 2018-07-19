@@ -177,31 +177,24 @@ def determine_type(api_version: str, kind: str):
     return klass
 
 
-def wrap(data: bytes):
-    """Return the K8s response `data` in a `WatchResponse` tuple.
+def unpack(data: bytes):
+    """Unpack the binary K8s `data` into a Swagger class and return it.
 
+    Input:
+        data: bytes
+            UTF-8 encoded JSON payload.
+
+    Returns:
+        SwaggerObject: parsed representation of `data`.
     """
     try:
-        line = data.decode('utf8')
-        k8s_obj = json.loads(line)
+        k8s_obj = json.loads(data.decode('utf8'))
     except UnicodeDecodeError:
         # fixup: log message
         return None
     except json.decoder.JSONDecodeError:
         # fixup: log message
-        print('json error')
-        return None
-    except KeyError:
-        print('key error')
-        # fixup: log message
         return None
 
-    api, kind = k8s_obj['apiVersion'], k8s_obj['kind']
-    api = str.join('', [_.capitalize() for _ in api.split('/')])
-    kind = kind.capitalize()
-    klass = f'{api}{kind}'
-    if klass.endswith('list'):
-        klass = str.join('', klass.rpartition('list')[0]) + 'List'
-    print(api, kind, klass)
-
+    klass = determine_type(k8s_obj['apiVersion'], k8s_obj['kind'])
     return deserialize(data=k8s_obj, klass=klass)

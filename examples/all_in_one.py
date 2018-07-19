@@ -69,7 +69,7 @@ async def create_deployment(api_dummy, client):
         # Get a list of all pods.
         cargs = k8s.CoreV1Api(api_dummy).list_namespaced_pod(namespace)
         http = await client.request(**cargs)
-        pods = k8s.swagger.wrap(await http.read())
+        pods = k8s.swagger.unpack(await http.read())
 
         # Find all running pods whose name starts with 'login'.
         pods = [_ for _ in pods.items if _.metadata.name.lower().startswith('login')]
