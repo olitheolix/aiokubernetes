@@ -34,7 +34,7 @@ async def main():
     api_dummy = k8s.api_proxy.Proxy(client_config)
     cargs = k8s.api.CoreV1Api(api_dummy).list_namespace(watch=False)
     ret = await client.request(**cargs)
-    obj = k8s.swagger.wrap(await ret.read())
+    obj = k8s.swagger.unpack(await ret.read())
     for item in obj.items:
         print(item.metadata.name)
     ret.close()

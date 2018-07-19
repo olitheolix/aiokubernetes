@@ -24,7 +24,7 @@ async def main():
     # Ensure the API call to Kubernetes succeeded.
     assert ret.status == 200
 
-    obj = k8s.swagger.wrap(await ret.read())
+    obj = k8s.swagger.unpack(await ret.read())
 
     # Print the pod names.
     for i in obj.items:
