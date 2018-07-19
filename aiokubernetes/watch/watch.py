@@ -85,10 +85,7 @@ class Watch2(object):
             # fixup: log message
             return WatchResponse(name=None, raw=data, obj=None)
 
-        api, kind = k8s_obj['apiVersion'], k8s_obj['kind']
-        api = str.join('', [_.capitalize() for _ in api.split('/')])
-        kind = kind.capitalize()
-        klass = f'{api}{kind}'
+        klass = k8s.swagger.determine_type(k8s_obj['apiVersion'], k8s_obj['kind'])
 
         # Something went wrong. A typical example would be that the user
         # supplied a resource version that was too old. In that case K8s would

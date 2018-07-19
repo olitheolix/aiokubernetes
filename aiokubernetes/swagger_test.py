@@ -9,5 +9,7 @@ class TestProxyClass:
         assert fun('V1', 'Pod') == 'V1Pod'
         assert fun('Extensions/v1beta1', 'Deployment') == 'ExtensionsV1beta1Deployment'
 
+        assert fun('V1', 'DeleteOptions') == 'V1DeleteOptions'
+
         # If it ends in `list`, capitalise the list.
         assert fun('V1', 'Namespacelist') == 'V1NamespaceList'
