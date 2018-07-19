@@ -95,7 +95,7 @@ async def create_deployment(api_dummy, client):
         # Connect to the pod and run a few shell commands. This will return a
         # Websocket connection that we will consume afterwards.
         exec_command = ['/bin/sh']
-        #exec_command = ['/bin/sh', '-c', 'echo This is stderr ; sleep 0s']
+        # exec_command = ['/bin/sh', '-c', 'echo This is stderr ; sleep 0s']
 
         wargs = k8s.CoreV1Api(api_client=api_dummy).connect_get_namespaced_pod_exec(
             pod_name, namespace,
@@ -133,7 +133,7 @@ async def create_deployment(api_dummy, client):
     print(f'Replaced <{img_orig}> with <{img_new}>')
 
     print(f'\nReplacing deployment {name}...')
-    cargs = k8s_v1beta.replace_namespaced_deployment(name=name, namespace=namespace, body=body)
+    cargs = k8s_v1beta.replace_namespaced_deployment(name, namespace, body=body)
     http = await client.request(**cargs)
     assert isinstance(http, aiohttp.client_reqrep.ClientResponse)
     print(' ->', http.method, http.status, http.url)
@@ -148,7 +148,7 @@ async def create_deployment(api_dummy, client):
         api_version='v1', kind='DeleteOptions', grace_period_seconds=0,
         propagation_policy='Foreground',
     )
-    cargs = k8s_v1beta.delete_namespaced_deployment(name=name, namespace=namespace, body=del_opts)
+    cargs = k8s_v1beta.delete_namespaced_deployment(name, namespace, body=del_opts)
     http = await client.request(**cargs)
     assert isinstance(http, aiohttp.client_reqrep.ClientResponse)
     print(' ->', http.method, http.status, http.url)

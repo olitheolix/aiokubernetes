@@ -34,7 +34,7 @@ async def main():
 
     cargs_ns = corev1.list_namespace(timeout_seconds=5, watch=True)
     cargs_pods = corev1.list_pod_for_all_namespaces(timeout_seconds=5, watch=True)
-    cargs_deploy = extv1beta.list_deployment_for_all_namespaces(timeout_seconds=5, watch=True)
+    cargs_deploy = extv1beta.list_deployment_for_all_namespaces(timeout_seconds=5, watch=True) # noqa
 
     # Specify and dispatch the tasks.
     tasks = [
