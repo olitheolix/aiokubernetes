@@ -602,3 +602,4 @@ import aiokubernetes.swagger
 import aiokubernetes.clients
 import aiokubernetes.api_proxy
 import aiokubernetes.watch
+import aiokubernetes.utils
