@@ -20,15 +20,8 @@ class TestProxyClass:
         pass
 
     def test_ctor(self):
-        """Ensure ctor creates deep copies of the input."""
         args, kwargs = (1, 2), dict(x=1, y=2)
         proxy = k8s.api_proxy.Proxy('config', *args, **kwargs)
-
-        # Proxy instance must store copies of the inputs.
-        assert proxy.args == args
-        assert proxy.kwargs == kwargs
-        assert proxy.args is not args
-        assert proxy.kwargs is not kwargs
 
     def test_select_header_accept_empty(self):
         fun = k8s.api_proxy.Proxy.select_header_accept
