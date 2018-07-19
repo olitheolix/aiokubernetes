@@ -1,4 +1,5 @@
 import datetime
+import json
 import re
 
 from dateutil.parser import parse
@@ -138,3 +139,33 @@ def deserialize_model(data, klass):
 
     # Return an instance of the de-serialised class.
     return klass(**kwargs)
+
+
+def wrap(data: bytes):
+    """Return the K8s response `data` in a `WatchResponse` tuple.
+
+    """
+    try:
+        line = data.decode('utf8')
+        k8s_obj = json.loads(line)
+    except UnicodeDecodeError:
+        # fixup: log message
+        return None
+    except json.decoder.JSONDecodeError:
+        # fixup: log message
+        print('json error')
+        return None
+    except KeyError:
+        print('key error')
+        # fixup: log message
+        return None
+
+    api, kind = k8s_obj['apiVersion'], k8s_obj['kind']
+    api = str.join('', [_.capitalize() for _ in api.split('/')])
+    kind = kind.capitalize()
+    klass = f'{api}{kind}'
+    if klass.endswith('list'):
+        klass = str.join('', klass.rpartition('list')[0]) + 'List'
+    print(api, kind, klass)
+
+    return deserialize(data=k8s_obj, klass=klass)
