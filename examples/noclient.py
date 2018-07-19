@@ -44,7 +44,8 @@ async def main():
     await watch(client.request(**cargs))
 
     print('\n----\n')
-    cargs = k8s.ExtensionsV1beta1Api(api_dummy).list_deployment_for_all_namespaces(watch=True, timeout_seconds=3)
+    extv1 = k8s.ExtensionsV1beta1Api(api_dummy)
+    cargs = extv1.list_deployment_for_all_namespaces(watch=True, timeout_seconds=3)
     mywatch = k8s.watch.AioHttpClientWatch(client.request(**cargs))
     async for w in mywatch:
         print(w.obj.kind, w.obj.metadata.namespace, w.obj.metadata.name)
