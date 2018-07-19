@@ -141,6 +141,32 @@ def deserialize_model(data, klass):
     return klass(**kwargs)
 
 
+def determine_type(api_version: str, kind: str):
+    """Return name of Swagger model for this `api_version` and `kind`.
+
+    Example: ('Extensions/v1beta1', 'Deployment') -> 'ExtensionsV1beta1Deployment'
+
+    This is useful to convert the K8s Json response into a Swagger generated
+    Python object. The `api_version` and `kind` should be copied verbatime
+    (including capitalisation) from the manifests K8s returns.
+
+    Input:
+        api_version: str
+            As returned by K8s API, eg `V1`, `Extensions/v1beta1` ...
+        kind: str
+            As returned by K8s API, eg `Deployment`, `Namespace` ...
+
+    Returns:
+        str: Name of Swagger model that can wrap the specified data.
+    """
+    api = str.join('', [_.capitalize() for _ in api_version.split('/')])
+    kind = kind.capitalize()
+    klass = f'{api}{kind}'
+    if klass.endswith('list'):
+        klass = str.join('', klass.rpartition('list')[0]) + 'List'
+    return klass
+
+
 def wrap(data: bytes):
     """Return the K8s response `data` in a `WatchResponse` tuple.
 
