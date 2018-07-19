@@ -104,5 +104,32 @@ class TestProxyClass:
 
     def test_build_url(self):
         fun = k8s.api_proxy.build_url
+        config = k8s.configuration.Configuration()
+        config.host = 'myhost'
 
-        client_config = k8s.configuration.Configuration()
+        url, kwargs = fun(
+            config,
+            resource_path='/api/v1/namespaces/{namespace}/pods/{name}/exec',
+            path_params={'name': 'login-cd546cd56-q8254', 'namespace': 'foo'},
+            query_params=[('command', ['/bin/sh', 'echo err >&2']), ('stderr', True)],
+            header_params={'Accept': '*/*', 'Content-Type': 'application/json'},
+            post_params={'Accept': '*/*', 'Content-Type': 'application/json'},
+            auth_settings=['BearerToken'],
+            body=None
+        )
+
+        assert url == 'myhost/api/v1/namespaces/foo/pods/login-cd546cd56-q8254/exec'
+        assert kwargs == {
+            'query_params': [
+                ('command', '/bin/sh'), ('command', 'echo err >&2'), ('stderr', True)
+            ],
+            'headers': {
+                'Accept': '*/*',
+                'Content-Type': 'application/json'
+            },
+            'post_params': {
+                'Accept': '*/*', 'Content-Type': 'application/json'
+            },
+            'body': None,
+            '_request_timeout': 10
+        }
