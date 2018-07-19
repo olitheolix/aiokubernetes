@@ -167,8 +167,8 @@ async def setup():
             client_configuration=client_config,
             persist_config=False
         )
-    api_client = noclient.make_client(client_config)
-    api_dummy = noclient.ApiDummy(client_config)
+    api_client = k8s.clients.make_aiohttp_client(client_config)
+    api_dummy = k8s.api_proxy.Proxy(client_config)
 
     # ***********
     # wargs = k8s.CoreV1Api(api_client=api_dummy).connect_get_namespaced_pod_exec(
