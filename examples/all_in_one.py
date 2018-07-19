@@ -10,7 +10,6 @@ more concise feature demonstrations.
 import asyncio
 import os
 import warnings
-import noclient
 
 import aiohttp
 import yaml
@@ -19,7 +18,7 @@ import aiokubernetes as k8s
 
 
 async def watch_resource(request):
-    async for event in k8s.watch.watch.Watch2(request):
+    async for event in k8s.watch.Watch2(request):
         print(f"{event.name} {event.obj.kind} {event.obj.metadata.name}")
 
 
