@@ -177,18 +177,16 @@ def convert(config, args, kwargs):
         headers['Content-Type'] = 'application/json'
 
     client_args = {
+        "headers": headers,
         "method": method,
-        "url": kwargs['url'],
         "timeout": 5 * 60,
-        "headers": headers
+        "url": kwargs['url'],
     }
 
-    query_params = kwargs.get('query_params', tuple())
-
-    if len(query_params) > 0:
-        client_args["url"] += '?' + urlencode(query_params)
+    if len(kwargs['query_params']) > 0:
+        client_args["url"] += '?' + urlencode(kwargs['query_params'])
 
     if kwargs['body'] is not None:
-        body = json.dumps(kwargs['body'])
-        client_args["data"] = body
+        client_args["data"] = json.dumps(kwargs['body'])
+
     return client_args
