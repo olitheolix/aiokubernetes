@@ -107,7 +107,7 @@ class TestProxyClass:
         config = k8s.configuration.Configuration()
         config.host = 'myhost'
 
-        url, kwargs = fun(
+        kwargs = fun(
             config,
             resource_path='/api/v1/namespaces/{namespace}/pods/{name}/exec',
             path_params={'name': 'login-cd546cd56-q8254', 'namespace': 'foo'},
@@ -118,7 +118,6 @@ class TestProxyClass:
             body=None
         )
 
-        assert url == 'myhost/api/v1/namespaces/foo/pods/login-cd546cd56-q8254/exec'
         assert kwargs == {
             'body': None,
             'headers': {

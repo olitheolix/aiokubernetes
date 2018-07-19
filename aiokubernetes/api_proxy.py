@@ -91,7 +91,7 @@ def build_url(config, resource_path, path_params, query_params, header_params,
         'url': url,
         '_request_timeout': 10
     }
-    return (url, kwargs)
+    return kwargs
 
 
 def update_params_for_auth(config, headers, querys, auth_settings):
@@ -166,7 +166,7 @@ def convert(config, args, kwargs):
     import copy
     kwargs = copy.deepcopy(kwargs)
     resource_path, method, path_params, query_params, header_params = args
-    url, kwargs = build_url(
+    kwargs = build_url(
         config, resource_path, path_params, query_params,
         header_params, kwargs['post_params'], kwargs['auth_settings'], kwargs['body']
     )
@@ -178,7 +178,7 @@ def convert(config, args, kwargs):
 
     client_args = {
         "method": method,
-        "url": url,
+        "url": kwargs['url'],
         "timeout": 5 * 60,
         "headers": headers
     }
