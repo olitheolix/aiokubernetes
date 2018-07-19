@@ -18,7 +18,7 @@ import aiokubernetes as k8s
 
 
 async def watch_resource(request):
-    async for event in k8s.watch.Watch2(request):
+    async for event in k8s.watch.AioHttpClientWatch(request):
         print(f"{event.name} {event.obj.kind} {event.obj.metadata.name}")
 
 
