@@ -25,24 +25,28 @@ class Proxy:
         )
         del resource_path, path_params, query_params, header_params, post_params
 
+        # Convenience.
         headers = request_args['headers']
+        query_params = request_args['query_params']
+        body, url = request_args['body'], request_args['url']
+
+        # Declare the 'Content-Type' if it is not already.
         if 'Content-Type' not in headers:
             headers['Content-Type'] = 'application/json'
 
-        client_args = {
+        # Add query parameters to URL, if we have any.
+        if query_params:
+            url += '?' + urlencode(query_params)
+
+        # Compile the necessary information to make the API request with
+        # whatever client library the user chooses.
+        return {
+            "data": json.dumps(body),
             "headers": headers,
             "method": method,
             "timeout": 5 * 60,
-            "url": request_args['url'],
+            "url": url,
         }
-
-        if len(request_args['query_params']) > 0:
-            client_args["url"] += '?' + urlencode(request_args['query_params'])
-
-        if len(request_args['body']):
-            client_args["data"] = json.dumps(request_args['body'])
-
-        return client_args
 
     @staticmethod
     def select_header_accept(accepts):
