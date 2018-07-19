@@ -8,7 +8,7 @@ import aiokubernetes as k8s
 
 async def watch_resource(client, cargs):
     # Consume and print the events as they stream in from the `resource`
-    watch = k8s.watch.Watch2(client.request(**cargs))
+    watch = k8s.watch.AioHttpClientWatch(client.request(**cargs))
     async for event in watch:
         print(f"{event.name} {event.obj.kind} {event.obj.metadata.name}")
 

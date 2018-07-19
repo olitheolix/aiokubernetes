@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json
 from collections import namedtuple
 
 import aiokubernetes as k8s
@@ -24,12 +23,17 @@ import aiokubernetes as k8s
 WatchResponse = namedtuple('WatchResponse', 'name raw obj')
 
 
-class Watch2(object):
+class AioHttpClientWatch(object):
+    """Convenience wrapper to consume K8s event stream.
 
+    This wrapper is custom made for AioHttp clients.
+
+    Input:
+        request: AioHttp client instance.
+    """
     def __init__(self, request):
         self.request = request
         self.connection = None
-        self._stop = False
 
     def __aiter__(self):
         return self
@@ -40,59 +44,14 @@ class Watch2(object):
         if self.connection is None:
             self.connection = await self.request
 
-        # Abort at the current iteration if the user has called `stop` on this
-        # stream instance.
-        if self._stop:
-            raise StopAsyncIteration
-
-        # Fetch the next K8s response. This is where the callee's async
-        # iterator will yield until K8s sends another Http chunk through the
-        # connection.
+        # Wait until K8s sends another line (ie another event).
         line = await self.connection.content.readline()
 
-        # Stop the iterator if K8s sends an empty response. This happens when
-        # eg the supplied timeout has expired.
+        # Stop the iterator when the response is empty. This happens when
+        # either the user-supplied timeout expired or there is no more data.
         if len(line) == 0:
             raise StopAsyncIteration
 
-        return self.unmarshal_event(line)
-
-    def stop(self):
-        self._stop = True
-
-    @staticmethod
-    def unmarshal_event(data: bytes):
-        """Return the K8s response `data` in a `WatchResponse` tuple.
-
-        """
-        try:
-            line = data.decode('utf8')
-            js = json.loads(line)
-
-            # Unpack the watched event and extract the event name (ADDED, MODIFIED,
-            # etc) and the raw event content.
-            name, k8s_obj = js['type'], js['object']
-        except UnicodeDecodeError:
-            # fixup: log message
-            print('unicode error')
-            return WatchResponse(name=None, raw=data, obj=None)
-        except json.decoder.JSONDecodeError:
-            # fixup: log message
-            print('json error')
-            return WatchResponse(name=None, raw=data, obj=None)
-        except KeyError:
-            print('key error')
-            # fixup: log message
-            return WatchResponse(name=None, raw=data, obj=None)
-
-        klass = k8s.swagger.determine_type(k8s_obj['apiVersion'], k8s_obj['kind'])
-
-        # Something went wrong. A typical example would be that the user
-        # supplied a resource version that was too old. In that case K8s would
-        # not send a conventional ADDED/DELETED/... event but an error.
-        if name.lower() == 'error' or klass is None:
-            return WatchResponse(name=name, raw=data, obj=None)
-
-        # De-serialise the K8s response and return everything.
-        obj = k8s.swagger.deserialize(data=k8s_obj, klass=klass)
-        return WatchResponse(name=name, raw=data, obj=obj)
+        # Return then unpacked response.
+        name, obj = k8s.swagger.unpack_watch(line)
+        return WatchResponse(name=name, raw=line, obj=obj)
