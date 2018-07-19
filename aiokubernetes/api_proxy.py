@@ -6,7 +6,6 @@ from urllib.parse import urlencode
 class Proxy:
     def __init__(self, config, *args, **kwargs):
         self.config = config
-        self.args, self.kwargs = args, kwargs
 
     def call_api(
             self, resource_path, method, path_params=None,
@@ -176,8 +175,6 @@ def sanitize_for_serialization(obj):
     if isinstance(obj, dict):
         obj_dict = obj
     else:
-        print('***', obj.attribute_map, obj.swagger_types)
-        print(dir(obj))
         # Convert model obj to dict except attributes `swagger_types`,
         # `attribute_map` and attributes which value is not None. Convert
         # attribute name to json key in model definition for request.
