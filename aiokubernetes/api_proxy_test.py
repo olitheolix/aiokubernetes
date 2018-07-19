@@ -120,9 +120,7 @@ class TestProxyClass:
 
         assert url == 'myhost/api/v1/namespaces/foo/pods/login-cd546cd56-q8254/exec'
         assert kwargs == {
-            'query_params': [
-                ('command', '/bin/sh'), ('command', 'echo err >&2'), ('stderr', True)
-            ],
+            'body': None,
             'headers': {
                 'Accept': '*/*',
                 'Content-Type': 'application/json'
@@ -130,6 +128,9 @@ class TestProxyClass:
             'post_params': {
                 'Accept': '*/*', 'Content-Type': 'application/json'
             },
-            'body': None,
+            'query_params': [
+                ('command', '/bin/sh'), ('command', 'echo err >&2'), ('stderr', True)
+            ],
+            'url': 'myhost/api/v1/namespaces/foo/pods/login-cd546cd56-q8254/exec',
             '_request_timeout': 10
         }

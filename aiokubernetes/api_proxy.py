@@ -80,18 +80,17 @@ def build_url(config, resource_path, path_params, query_params, header_params,
     # auth setting
     update_params_for_auth(config, header_params, query_params, auth_settings)
 
-    kwargs = {
-        'query_params': query_params,
-        'headers': header_params,
-        'post_params': post_params,
-        'body': body,
-        '_request_timeout': 10
-    }
-
-    # request url
+    # Compile complete Request URL.
     url = config.host + resource_path
 
-    # Make the request and wait for a response.
+    kwargs = {
+        'body': body,
+        'headers': header_params,
+        'post_params': post_params,
+        'query_params': query_params,
+        'url': url,
+        '_request_timeout': 10
+    }
     return (url, kwargs)
 
 
