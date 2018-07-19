@@ -158,10 +158,20 @@ def determine_type(api_version: str, kind: str):
 
     Returns:
         str: Name of Swagger model that can wrap the specified data.
+
     """
-    api = str.join('', [_.capitalize() for _ in api_version.split('/')])
-    kind = kind.capitalize()
+    # Split the API name by '/', eg Extensions/v1beta1 -> (Extensions,
+    # v1beta1). Then capitalize the first character only, leaving all other
+    # characters untouched. This is the scheme Swagger uses for its classes.
+    words = api_version.split('/')
+    words = [word[0].capitalize() + word[1:] for word in words]
+    api = str.join('', words)
+
+    # Capitalise the first character of the `kind` and compile the Swagger name.
+    kind = kind[0].capitalize() + kind[1:]
     klass = f'{api}{kind}'
+
+    # Capitalise trailing `list` to match the Swagger class name.
     if klass.endswith('list'):
         klass = str.join('', klass.rpartition('list')[0]) + 'List'
     return klass
