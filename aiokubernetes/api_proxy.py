@@ -50,46 +50,35 @@ class Proxy:
 
 def build_url(config, resource_path, path_params, query_params, header_params,
               post_params, auth_settings, body):
-    # header parameters
-    header_params = header_params or {}
-    if header_params:
-        header_params = dict(sanitize_for_serialization(header_params))
+    assert isinstance(header_params, dict)
+    assert isinstance(path_params, dict)
+    assert isinstance(query_params, (tuple, list))
 
-    # path parameters
-    if path_params:
-        path_params = dict(sanitize_for_serialization(path_params))
-        for k, v in path_params.items():
-            # specified safe chars, encode everything
-            resource_path = resource_path.replace(
-                '{%s}' % k,
-                quote(str(v), safe=config.safe_chars_for_path_param)
-            )
+    # Convert all Swagger models to Json compatible Python dicts.
+    body = sanitize_for_serialization(body)
+    header_params = dict(sanitize_for_serialization(header_params))
+    path_params = dict(sanitize_for_serialization(path_params))
+    post_params = dict(sanitize_for_serialization(post_params))
+    query_params = sanitize_for_serialization(query_params)
 
-    # query parameters
-    if query_params:
-        tmp = sanitize_for_serialization(query_params)
-        query_params = []
-        for k, v in tmp:
-            if isinstance(v, (list, tuple)):
-                query_params.extend([(k, _) for _ in v])
-            else:
-                query_params.append((k, v))
-        #query_params = [(quote(k), quote(str(v))) for k, v in query_params]
-        print(query_params)
+    # Convert "/api/v1/namespace/{namespace}" -> "/api/v1/namespace/foo"
+    # This is particularly easy to do because it utilises the same syntax as
+    # the Python format strings.
+    resource_path = resource_path.format(**path_params)
 
-    # post parameters
-    if post_params:
-        post_params = dict(sanitize_for_serialization(post_params))
+    # Convert [("limit", 5), ("command", ["ls", "pwd"])] to
+    # [("limit", 5), ("command", "ls"), ("command", "pwd")]
+    sane_query_params = []
+    for k, v in query_params:
+        if isinstance(v, (list, tuple)):
+            sane_query_params.extend([(k, _) for _ in v])
+        else:
+            sane_query_params.append((k, v))
+    query_params = sane_query_params
+    del sane_query_params
 
     # auth setting
     update_params_for_auth(config, header_params, query_params, auth_settings)
-
-    # body
-    if body:
-        body = sanitize_for_serialization(body)
-
-    # request url
-    url = config.host + resource_path
 
     kwargs = {
         'query_params': query_params,
@@ -98,6 +87,9 @@ def build_url(config, resource_path, path_params, query_params, header_params,
         'body': body,
         '_request_timeout': 10
     }
+
+    # request url
+    url = config.host + resource_path
 
     # Make the request and wait for a response.
     return (url, kwargs)
@@ -131,6 +123,8 @@ def update_params_for_auth(config, headers, querys, auth_settings):
 def sanitize_for_serialization(obj):
     """Builds a JSON POST object.
 
+    fixup: rename this to swagger_to_json
+
     If obj is None, return None.
     If obj is str, int, long, float, bool, return directly.
     If obj is datetime.datetime, datetime.date
@@ -157,6 +151,8 @@ def sanitize_for_serialization(obj):
     if isinstance(obj, dict):
         obj_dict = obj
     else:
+        print('***', obj.attribute_map, obj.swagger_types)
+        print(dir(obj))
         # Convert model obj to dict except attributes `swagger_types`,
         # `attribute_map` and attributes which value is not None. Convert
         # attribute name to json key in model definition for request.
