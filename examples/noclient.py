@@ -1,8 +1,6 @@
 """Print the name of all pods in the cluster."""
 import asyncio
 import json
-import os
-import warnings
 
 import aiokubernetes as k8s
 
@@ -16,23 +14,14 @@ async def watch(request):
         print(json.loads(line)['object']['metadata']['name'])
     print('done')
 
-    # async for event in k8s.Watch(resource, **kwargs):
-    #     print(f"{event.name} {event.obj.kind} {event.obj.metadata.name}")
-
 
 async def main():
-    kubeconf = os.path.expanduser(os.environ.get('KUBECONFIG', '~/.kube/config'))
-    client_config = k8s.configuration.Configuration()
-    with warnings.catch_warnings(record=True):
-        k8s.config.kube_config.load_kube_config(
-            config_file=kubeconf,
-            client_configuration=client_config,
-            persist_config=False
-        )
-    client = k8s.clients.make_aiohttp_client(client_config)
+    # Create a client instance and load the credentials from ~/.kube/kubeconfig
+    config = k8s.utils.load_config(warn=False)
+    client = k8s.clients.make_aiohttp_client(config)
+    proxy = k8s.api_proxy.Proxy(config)
 
-    api_dummy = k8s.api_proxy.Proxy(client_config)
-    cargs = k8s.api.CoreV1Api(api_dummy).list_namespace(watch=False)
+    cargs = k8s.api.CoreV1Api(proxy).list_namespace(watch=False)
     ret = await client.request(**cargs)
     obj = k8s.swagger.unpack(await ret.read())
     for item in obj.items:
@@ -40,11 +29,11 @@ async def main():
     ret.close()
 
     print('\n----\n')
-    cargs = k8s.api.CoreV1Api(api_dummy).list_namespace(watch=True, timeout_seconds=3)
+    cargs = k8s.api.CoreV1Api(proxy).list_namespace(watch=True, timeout_seconds=3)
     await watch(client.request(**cargs))
 
     print('\n----\n')
-    extv1 = k8s.ExtensionsV1beta1Api(api_dummy)
+    extv1 = k8s.ExtensionsV1beta1Api(proxy)
     cargs = extv1.list_deployment_for_all_namespaces(watch=True, timeout_seconds=3)
     mywatch = k8s.watch.AioHttpClientWatch(client.request(**cargs))
     async for w in mywatch:

@@ -1,7 +1,5 @@
 """Watch multiple K8s event streams without threads."""
 import asyncio
-import os
-import warnings
 
 import aiokubernetes as k8s
 
@@ -14,29 +12,22 @@ async def watch_resource(client, cargs):
 
 
 async def main():
-    # Create a client instance and load the credentials from ~/.kube/kubeconfig
-    kubeconf = os.path.expanduser(os.environ.get('KUBECONFIG', '~/.kube/config'))
-    client_config = k8s.configuration.Configuration()
-    with warnings.catch_warnings(record=True):
-        k8s.config.kube_config.load_kube_config(
-            config_file=kubeconf,
-            client_configuration=client_config,
-            persist_config=False
-        )
-    client = k8s.clients.make_aiohttp_client(client_config)
-    proxy = k8s.api_proxy.Proxy(client_config)
+    config = k8s.utils.load_config(warn=False)
+    client = k8s.clients.make_aiohttp_client(config)
+    proxy = k8s.api_proxy.Proxy(config)
 
-    # Namespaces and Pods are part of the K8s Core API.
+    # Namespaces and Pods are in the K8s Core API, Deployments in an extension.
     corev1 = k8s.CoreV1Api(proxy)
-
-    # Deployments are part of the Extension API (still in beta).
     extv1beta = k8s.ExtensionsV1beta1Api(proxy)
 
+    # Compile the necessary request parameters (headers, body, parameters, ...)
+    # for the API calls we want to make. We also specify watch=True because we
+    # want to listen to changes.
     cargs_ns = corev1.list_namespace(timeout_seconds=5, watch=True)
     cargs_pods = corev1.list_pod_for_all_namespaces(timeout_seconds=5, watch=True)
     cargs_deploy = extv1beta.list_deployment_for_all_namespaces(timeout_seconds=5, watch=True) # noqa
 
-    # Specify and dispatch the tasks.
+    # Define and dispatch the tasks.
     tasks = [
         watch_resource(client, cargs_ns),
         watch_resource(client, cargs_pods),

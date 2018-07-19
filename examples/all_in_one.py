@@ -9,7 +9,6 @@ more concise feature demonstrations.
 """
 import asyncio
 import os
-import warnings
 
 import aiohttp
 import yaml
@@ -22,7 +21,7 @@ async def watch_resource(request):
         print(f"{event.name} {event.obj.kind} {event.obj.metadata.name}")
 
 
-async def create_deployment(api_dummy, client):
+async def create_deployment(proxy, client):
     img_alpine_34, img_alpine_35 = 'alpine:3.4', 'alpine:3.5'
     time_between_steps = 3
 
@@ -41,7 +40,7 @@ async def create_deployment(api_dummy, client):
     # -------------------------------------------------------------------------
     #                           Create Deployment
     # -------------------------------------------------------------------------
-    k8s_v1beta = k8s.ExtensionsV1beta1Api(api_dummy)
+    k8s_v1beta = k8s.ExtensionsV1beta1Api(proxy)
     print(f'Creating deployment {name}...')
     cargs = k8s_v1beta.create_namespaced_deployment(body=body, namespace=namespace)
     http = await client.request(**cargs)
@@ -67,7 +66,7 @@ async def create_deployment(api_dummy, client):
     # only just created the pod and it takes a few seconds until it is ready.
     for i in range(300):
         # Get a list of all pods.
-        cargs = k8s.CoreV1Api(api_dummy).list_namespaced_pod(namespace)
+        cargs = k8s.CoreV1Api(proxy).list_namespaced_pod(namespace)
         http = await client.request(**cargs)
         pods = k8s.swagger.unpack(await http.read())
 
@@ -97,7 +96,7 @@ async def create_deployment(api_dummy, client):
         exec_command = ['/bin/sh']
         # exec_command = ['/bin/sh', '-c', 'echo This is stderr ; sleep 0s']
 
-        wargs = k8s.CoreV1Api(api_client=api_dummy).connect_get_namespaced_pod_exec(
+        wargs = k8s.CoreV1Api(api_client=proxy).connect_get_namespaced_pod_exec(
             pod_name, namespace,
             command=exec_command,
             stderr=True, stdin=True,
@@ -158,43 +157,20 @@ async def create_deployment(api_dummy, client):
 
 
 async def setup():
-    kubeconf = os.path.expanduser(os.environ.get('KUBECONFIG', '~/.kube/config'))
-    client_config = k8s.configuration.Configuration()
-    with warnings.catch_warnings(record=True):
-        k8s.config.kube_config.load_kube_config(
-            config_file=kubeconf,
-            client_configuration=client_config,
-            persist_config=False
-        )
-    api_client = k8s.clients.make_aiohttp_client(client_config)
-    api_dummy = k8s.api_proxy.Proxy(client_config)
-
-    # ***********
-    # wargs = k8s.CoreV1Api(api_client=api_dummy).connect_get_namespaced_pod_exec(
-    #     'pod_name', 'namespace',
-    #     command=['ls', '-l'],
-    #     stderr=True, stdin=False,
-    #     stdout=True, tty=False
-    # )
-    # print('----')
-    # for k, v in sorted(wargs.items()):
-    #     print(f'{k.upper()}: {v}')
-    # print('----')
-    # await api_client.close()
-    # await asyncio.sleep(0.2)
-    # return
-    # ***********
+    config = k8s.utils.load_config(warn=False)
+    client = k8s.clients.make_aiohttp_client(config)
+    proxy = k8s.api_proxy.Proxy(config)
 
     # Specify and dispatch the tasks.
-    cargs = k8s.CoreV1Api(api_dummy).list_namespace(watch=True, timeout_seconds=1)
+    cargs = k8s.CoreV1Api(proxy).list_namespace(watch=True, timeout_seconds=1)
     tasks = [
-        create_deployment(api_dummy, api_client),
-        watch_resource(api_client.request(**cargs)),
+        create_deployment(proxy, client),
+        watch_resource(client.request(**cargs)),
     ]
     await asyncio.gather(*tasks)
 
     print('\nShutting down')
-    await api_client.close()
+    await client.close()
 
 
 def main():

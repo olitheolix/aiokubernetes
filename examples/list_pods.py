@@ -1,21 +1,14 @@
 """Print the name of all pods in the cluster."""
 import asyncio
-import os
 
 import aiokubernetes as k8s
 
 
 async def main():
     # Create a client instance and load the credentials from ~/.kube/kubeconfig
-    kubeconf = os.path.expanduser(os.environ.get('KUBECONFIG', '~/.kube/config'))
-    client_config = k8s.configuration.Configuration()
-    k8s.config.kube_config.load_kube_config(
-        config_file=kubeconf,
-        client_configuration=client_config,
-        persist_config=False
-    )
-    client = k8s.clients.make_aiohttp_client(client_config)
-    proxy = k8s.api_proxy.Proxy(client_config)
+    config = k8s.utils.load_config(warn=False)
+    client = k8s.clients.make_aiohttp_client(config)
+    proxy = k8s.api_proxy.Proxy(config)
 
     # Ask for all Pods.
     cargs = k8s.api.CoreV1Api(proxy).list_namespace(watch=False)
