@@ -601,5 +601,4 @@ import aiokubernetes.config as config
 import aiokubernetes.swagger as swagger
 import aiokubernetes.clients as clients
 import aiokubernetes.api_proxy as api_proxy
-
-from aiokubernetes.watch import Watch
+import aiokubernetes.watch.watch as watch
