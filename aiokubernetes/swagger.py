@@ -180,6 +180,9 @@ def determine_type(api_version: str, kind: str):
 def unpack(data: bytes):
     """Unpack the binary K8s `data` into a Swagger class and return it.
 
+    The data must be from a K8s call with `watch=False`. See `unpack_watch` if
+    you want do de-serialise a response where `watch=True`.
+
     Input:
         data: bytes
             UTF-8 encoded JSON payload.
@@ -198,3 +201,46 @@ def unpack(data: bytes):
 
     klass = determine_type(k8s_obj['apiVersion'], k8s_obj['kind'])
     return deserialize(data=k8s_obj, klass=klass)
+
+
+def unpack_watch(data: bytes):
+    """Unpack the binary K8s `data` into a Swagger class and return it.
+
+    The data must be from a K8s call with `watch=True`. See `unpack` if
+    you want do de-serialise a response where `watch=False`.
+
+    Input:
+        data: bytes
+            UTF-8 encoded JSON payload.
+
+    Returns:
+        SwaggerObject: parsed representation of `data`.
+    """
+    try:
+        line = data.decode('utf8')
+        js = json.loads(line)
+
+        # Unpack the watched event and extract the event name (ADDED, MODIFIED,
+        # etc) and the raw event content.
+        name, k8s_obj = js['type'], js['object']
+    except UnicodeDecodeError:
+        # fixup: log message
+        return None
+    except json.decoder.JSONDecodeError:
+        # fixup: log message
+        return None
+    except KeyError:
+        # fixup: log message
+        return None
+
+    klass = determine_type(k8s_obj['apiVersion'], k8s_obj['kind'])
+
+    # Something went wrong. A typical example would be that the user
+    # supplied a resource version that was too old. In that case K8s would
+    # not send a conventional ADDED/DELETED/... event but an error.
+    if name.lower() == 'error' or klass is None:
+        return (name, None)
+    else:
+        # De-serialise the K8s response and return everything.
+        obj = deserialize(data=k8s_obj, klass=klass)
+        return (name, obj)
