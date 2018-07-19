@@ -2,27 +2,49 @@ import datetime
 import aiokubernetes as k8s
 
 from types import SimpleNamespace
+import unittest.mock as mock
 
 
 class TestProxyClass:
-    @classmethod
-    def setup_class(cls):
-        pass
-
-    @classmethod
-    def teardown_class(cls):
-        pass
-
-    def setup_method(self, method):
-        pass
-
-    def teardown_method(self, method):
-        pass
-
     def test_ctor(self):
         args, kwargs = (1, 2), dict(x=1, y=2)
-        proxy = k8s.api_proxy.Proxy('config', *args, **kwargs)
+        k8s.api_proxy.Proxy('config', *args, **kwargs)
 
+    @mock.patch.object(k8s.api_proxy, 'update_params_for_auth')
+    def test_call_api(self, m_auth):
+        config = k8s.configuration.Configuration()
+        config.host = 'myhost'
+
+        resource_path = '/apis/namespaces/{namespace}/deployments/{name}'
+        path_params = {'name': 'login', 'namespace': 'delme'}
+        query_params = [('cmd', ['ls', 'pwd']), ('foo', 'bar')]
+        header_params = {'Accept': 'application/json'}
+        post_params = [('we', 'do'), ('not', 'support'), ('this', 'parameter')]
+        auth_settings = ['BearerToken']
+        body = {'some': 'body'}
+
+        proxy = k8s.api_proxy.Proxy(config)
+        ret = proxy.call_api(
+            resource_path, 'GET', path_params,
+            query_params, header_params, body, post_params,
+            files=None, response_type=None, auth_settings=auth_settings,
+            _return_http_data_only=True, collection_formats=None,
+            _preload_content=True, _request_timeout=5,
+        )
+
+        assert ret == {
+            'headers': {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            'method': 'GET',
+            'timeout': 300,
+            'url': 'myhost/apis/namespaces/delme/deployments/login?cmd=ls&cmd=pwd&foo=bar',  # noqa
+            'data': '{"some": "body"}'
+        }
+
+
+class TestSupportFunctions:
     def test_select_header_accept_empty(self):
         fun = k8s.api_proxy.Proxy.select_header_accept
 

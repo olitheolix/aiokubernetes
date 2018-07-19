@@ -39,7 +39,7 @@ class Proxy:
         if len(request_args['query_params']) > 0:
             client_args["url"] += '?' + urlencode(request_args['query_params'])
 
-        if request_args['body'] is not None:
+        if len(request_args['body']):
             client_args["data"] = json.dumps(request_args['body'])
 
         return client_args
