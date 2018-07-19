@@ -14,10 +14,16 @@ class Proxy:
             _return_http_data_only=None, collection_formats=None,
             _preload_content=True, _request_timeout=None):
 
+        # We will not actually use these arguments. They only exist because the
+        # Swagger wrappers expects them to.
+        del (files, response_type, _return_http_data_only,
+             collection_formats, _preload_content, _request_timeout)
+
         request_args = build_url(
             self.config, resource_path, path_params, query_params,
             header_params, post_params, auth_settings, body
         )
+        del resource_path, path_params, query_params, header_params, post_params
 
         headers = request_args['headers']
         if 'Content-Type' not in headers:
