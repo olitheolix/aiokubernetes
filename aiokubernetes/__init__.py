@@ -597,8 +597,8 @@ from aiokubernetes.models.v2beta1_resource_metric_status import V2beta1ResourceM
 from aiokubernetes.models.version_info import VersionInfo
 
 # These import are technically unnecessary but are convenient for end users.
-import aiokubernetes.config as config
-import aiokubernetes.swagger as swagger
-import aiokubernetes.clients as clients
-import aiokubernetes.api_proxy as api_proxy
-import aiokubernetes.watch.watch as watch
+import aiokubernetes.config
+import aiokubernetes.swagger
+import aiokubernetes.clients
+import aiokubernetes.api_proxy
+import aiokubernetes.watch
