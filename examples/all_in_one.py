@@ -74,8 +74,7 @@ async def create_deployment(proxy, client):
         pods = [_ for _ in pods.items if _.metadata.name.lower().startswith('login')]
         pods = [_ for _ in pods if _.status.phase.lower() == 'running']
 
-        # Wait, rinse and repeat if Kubernetes returned an error or we found no
-        # running login Pod.
+        # Briefly wait before looking for a suitable pod, unless we already found one.
         if http.status != 200 or len(pods) == 0:
             print('.', end='', flush=True)
             await asyncio.sleep(0.1)
@@ -91,34 +90,34 @@ async def create_deployment(proxy, client):
         pod_name = pods[0].metadata.name
         print(f'Connecting to Pod <{pod_name}>')
 
-        # Connect to the pod and run a few shell commands. This will return a
-        # Websocket connection that we will consume afterwards.
-        exec_command = ['/bin/sh']
-        # exec_command = ['/bin/sh', '-c', 'echo This is stderr ; sleep 0s']
-
+        # Connect to the pod and issue a single command to spawn a shell. We
+        # will then use a websocket to send commands to that shell.
         wargs = k8s.CoreV1Api(api_client=proxy).connect_get_namespaced_pod_exec(
             pod_name, namespace,
-            command=exec_command,
+            command=['/bin/sh'],
             stderr=True, stdin=True,
             stdout=True, tty=True
         )
-        print('----')
-        for k, v in sorted(wargs.items()):
-            print(f'{k.upper()}: {v}')
-        print('----')
-        assert 'headers' in wargs
+
+        # We need to tell K8s that this is not going to be a GET call after
+        # all, but a Websocket connection.
         wargs['headers']['sec-websocket-protocol'] = 'v4.channel.k8s.io'
         url = k8s.api_client.get_websocket_url(wargs['url'])
-        wargs['url'] = url
 
         ws_session = client.ws_connect(url, headers=wargs['headers'])
 
         # Consume the Websocket until all commands have finished and Kubernetes
         # closes the connection.
         async with ws_session as ws:
-            await ws.send_bytes(b'\x00ls\nexit\n')
+            # The \x00 prefix indicates `stdin`, which is where we need to send
+            # the command to. The rest is just a sequence of two shell commands.
+            await ws.send_bytes(b'\x00' + b'ls --color=never /\nexit\n')
+
+            # Read out the response until we receive a message on the K8s
+            # channel 3 to tell us that this was all.
             async for msg in ws:
-                print(f'  Websocket received: {msg.data}')
+                chan, msg = msg.data[0], msg.data[1:].decode('utf8')
+                print(f'  Websocket {chan}: {msg}')
         break
     else:
         print('No login has entered "running" state yet: skip connection test')
