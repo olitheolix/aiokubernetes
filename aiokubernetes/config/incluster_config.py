@@ -33,7 +33,7 @@ def _join_host_port(host, port):
     return template % (host, port)
 
 
-def load_service_account_config(token_filename=TOKEN_FNAME, cert_filename=CERT_FNAME):
+def load(token_filename=TOKEN_FNAME, cert_filename=CERT_FNAME):
     """Return a client `Configuration` instance with service account credentials.
 
     Args:
