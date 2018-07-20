@@ -55,3 +55,8 @@ class AioHttpClientWatch(object):
         # Return then unpacked response.
         name, obj = k8s.swagger.unpack_watch(line)
         return WatchResponse(name=name, raw=line, obj=obj)
+
+    def close(self):
+        if self.connection is not None:
+            self.connection.close()
+            self.connection = None
