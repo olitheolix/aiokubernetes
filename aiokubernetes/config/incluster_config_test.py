@@ -55,7 +55,7 @@ class TestCreateConfigFromServiceAccount:
 
             # Compile the configuration using the service account tokens in the
             # Pod and verify it got the correct file and compiled the correct host.
-            conf = incluster_config.load_service_account_config(fname_token, fname_cert)
+            conf = incluster_config.load(fname_token, fname_cert)
             assert isinstance(conf, aiokubernetes.configuration.Configuration)
             assert conf.host == 'https://hostname:1234'
             assert conf.ssl_ca_cert == fname_cert
@@ -75,7 +75,7 @@ class TestCreateConfigFromServiceAccount:
         for env in envs:
             m_env.side_effect = lambda key, default: env[key] if key in env else default
             with pytest.raises(ConfigException):
-                incluster_config.load_service_account_config(None, None)
+                incluster_config.load(None, None)
 
     def test_missing_token_or_cert(self, m_env):
         """Certificate and/or token are missing."""
@@ -98,10 +98,10 @@ class TestCreateConfigFromServiceAccount:
 
             # Token file does not exist.
             with pytest.raises(ConfigException):
-                incluster_config.load_service_account_config(fname_token, '/foo')
+                incluster_config.load(fname_token, '/foo')
             # Certificate file does not exist.
             with pytest.raises(ConfigException):
-                incluster_config.load_service_account_config('/foo', fname_cert)
+                incluster_config.load('/foo', fname_cert)
 
     def test_empty_token_or_cert(self, m_env):
         """Certificate and/or token files are empty."""
@@ -122,13 +122,13 @@ class TestCreateConfigFromServiceAccount:
             open(fname_cert, 'w').write('')
             open(fname_token, 'w').write('my token')
             with pytest.raises(ConfigException):
-                incluster_config.load_service_account_config(fname_token, fname_cert)
+                incluster_config.load(fname_token, fname_cert)
 
             # Token file is empty.
             open(fname_cert, 'w').write('my cert')
             open(fname_token, 'w').write('')
             with pytest.raises(ConfigException):
-                incluster_config.load_service_account_config(fname_token, fname_cert)
+                incluster_config.load(fname_token, fname_cert)
 
 
 if __name__ == '__main__':
