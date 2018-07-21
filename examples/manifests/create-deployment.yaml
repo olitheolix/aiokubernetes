@@ -3,7 +3,7 @@ kind: Deployment
 
 metadata:
   name: login
-  namespace: delme
+  namespace: aiokubernets
 
 spec:
   replicas: 1
