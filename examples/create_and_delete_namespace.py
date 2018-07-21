@@ -7,7 +7,7 @@ import aiokubernetes as k8s
 async def main():
     # Create a client instance and load the credentials from ~/.kube/kubeconfig
     config = k8s.utils.load_config(warn=False)
-    client = k8s.clients.make_aiohttp_client(config)
+    client = k8s.clients.get_aiohttp(config)
     proxy = k8s.api_proxy.Proxy(config)
 
     # Name of the namespace.

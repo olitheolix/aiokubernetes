@@ -18,8 +18,8 @@ async def start(kubeconf_a, kubeconf_b):
     # Create client API instances to each cluster.
     config_a = k8s.utils.load_config(kubeconf_a, warn=False)
     config_b = k8s.utils.load_config(kubeconf_b, warn=False)
-    client_a = k8s.clients.make_aiohttp_client(config_a)
-    client_b = k8s.clients.make_aiohttp_client(config_b)
+    client_a = k8s.clients.get_aiohttp(config_a)
+    client_b = k8s.clients.get_aiohttp(config_b)
     proxy_a = k8s.api_proxy.Proxy(config_a)
     proxy_b = k8s.api_proxy.Proxy(config_b)
 
