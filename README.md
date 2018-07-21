@@ -31,25 +31,28 @@ pip install aiokubernetes
 import asyncio
 import aiokubernetes as k8s
 
-
 async def main():
-    # Create a client instance and load the credentials from ~/.kube/kubeconfig
-    api_client = k8s.config.new_client_from_config()
+    # Load default kubeconfig file and create an aiohttp client instance.
+    config = k8s.utils.load_config(warn=False)
+    client = k8s.clients.get_aiohttp(config)
+    proxy = k8s.api_proxy.Proxy(config)
 
-    # Ask Kubernetes for a list of all Pods.
-    v1 = k8s.api.CoreV1Api(api_client)
-    ret = await v1.list_pod_for_all_namespaces()
+    # Ask Kubernetes for all Pods.
+    cargs = k8s.api.CoreV1Api(proxy).list_namespace(watch=False)
+    ret = await client.request(**cargs)
 
-    # Inspect the http response to ensure the call to the Kubernetes API was successful.
-    assert ret.http.status == 200
+    # Ensure the API call to Kubernetes did succeed.
+    assert ret.status == 200
+
+    # Optional: wrap the JSon response into a Swagger generated Python object.
+    obj = k8s.swagger.unpack(await ret.read())
 
     # Print the pod names.
-    for i in ret.obj.items:
+    for i in obj.items:
         print(f"{i.metadata.namespace} {i.metadata.name}")
 
-    # Terminate the client connection for a clean shutdown.
-    await api_client.close()
-
+    # Close all pending client connections.
+    await client.close()
 
 if __name__ == '__main__':
     loop = asyncio.get_event_loop()
@@ -66,43 +69,49 @@ import asyncio
 import aiokubernetes as k8s
 
 
-async def watch_resource(resource, **kwargs):
-    # Consume and print the events as they stream in from the `resource`
-    async for event in k8s.Watch(resource, **kwargs):
+async def watch_resource(client, cargs):
+    """Consume and print the events as they stream in."""
+
+    # Use helper class to consume the K8s events via an async iterator.
+    watch = k8s.watch.AioHttpClientWatch(client.request(**cargs))
+    async for event in watch:
         print(f"{event.name} {event.obj.kind} {event.obj.metadata.name}")
 
 
-async def start():
-    # Create a client instance and load the credentials from ~/.kube/kubeconfig
-    api_client = k8s.config.new_client_from_config()
+async def main():
+    # Load default kubeconfig file and create an aiohttp client instance.
+    config = k8s.utils.load_config(warn=False)
+    client = k8s.clients.get_aiohttp(config)
+    proxy = k8s.api_proxy.Proxy(config)
 
-    # Namespaces and Pods are part of the K8s Core API.
-    corev1 = k8s.CoreV1Api(api_client)
+    # Namespaces and Pods are in the K8s Core API, Deployments in an extension (unless you run a very recent K8s version).
+    corev1 = k8s.CoreV1Api(proxy)
+    extv1beta = k8s.ExtensionsV1beta1Api(proxy)
 
-    # Deployments are part of the Extension API (still in beta).
-    extv1beta = k8s.ExtensionsV1beta1Api(api_client)
+    # Compile the necessary request parameters (headers, body, parameters, ...)
+    # for the API calls we want to make. We also specify watch=True because we
+    # want to listen to changes.
+    cargs_ns = corev1.list_namespace(timeout_seconds=5, watch=True)
+    cargs_pods = corev1.list_pod_for_all_namespaces(timeout_seconds=5, watch=True)
+    cargs_deploy = extv1beta.list_deployment_for_all_namespaces(timeout_seconds=5, watch=True) # noqa
 
-    # Specify and dispatch the tasks.
+    # Define and dispatch the tasks.
     tasks = [
-        watch_resource(corev1.list_namespace, timeout_seconds=5),
-        watch_resource(corev1.list_pod_for_all_namespaces, timeout_seconds=5),
-        watch_resource(extv1beta.list_deployment_for_all_namespaces, timeout_seconds=5),
+        watch_resource(client, cargs_ns),
+        watch_resource(client, cargs_pods),
+        watch_resource(client, cargs_deploy),
     ]
     await asyncio.gather(*tasks)
 
-    # Terminate the connection pool for a clean shutdown.
-    await api_client.close()
-
-
-def main():
-    # Setup event loop and start the program.
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(asyncio.ensure_future(start()))
-    loop.close()
+    # Close all pending connections.
+    await client.close()
 
 
 if __name__ == '__main__':
-    main()
+    # Setup event loop and start the program.
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(asyncio.ensure_future(main()))
+    loop.close()
 ```
 
 ## Source code
