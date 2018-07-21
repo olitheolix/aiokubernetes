@@ -3,7 +3,7 @@ import ssl
 import aiohttp
 
 
-def make_aiohttp_client(configuration):
+def get_aiohttp(configuration):
     assert configuration.ssl_ca_cert is not None
     ca_certs = configuration.ssl_ca_cert
     ssl_context = ssl.create_default_context(cafile=ca_certs)
