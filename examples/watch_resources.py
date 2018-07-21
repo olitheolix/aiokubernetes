@@ -5,13 +5,16 @@ import aiokubernetes as k8s
 
 
 async def watch_resource(client, cargs):
-    # Consume and print the events as they stream in from the `resource`
+    """Consume and print the events as they stream in."""
+
+    # Use helper class to consume the K8s events via an async iterator.
     watch = k8s.watch.AioHttpClientWatch(client.request(**cargs))
     async for event in watch:
         print(f"{event.name} {event.obj.kind} {event.obj.metadata.name}")
 
 
 async def main():
+    # Load default kubeconfig file and create an aiohttp client instance.
     config = k8s.utils.load_config(warn=False)
     client = k8s.clients.make_aiohttp_client(config)
     proxy = k8s.api_proxy.Proxy(config)
