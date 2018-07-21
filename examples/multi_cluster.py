@@ -5,30 +5,37 @@ import asyncio
 import aiokubernetes as k8s
 
 
-async def watch_resource(cluster_name, resource, **kwargs):
-    async for event in k8s.Watch(resource, **kwargs):
+async def watch_resource(client, cargs):
+    """Consume and print the events as they stream in."""
+
+    # Use helper class to consume the K8s events via an async iterator.
+    watch = k8s.watch.AioHttpClientWatch(client.request(**cargs))
+    async for event in watch:
         print(f"{event.name} {event.obj.kind} {event.obj.metadata.name}")
 
 
 async def start(kubeconf_a, kubeconf_b):
     # Create client API instances to each cluster.
-    api_client_a = k8s.config.new_client_from_config(kubeconf_a)
-    api_client_b = k8s.config.new_client_from_config(kubeconf_b)
+    config_a = k8s.utils.load_config(kubeconf_a, warn=False)
+    config_b = k8s.utils.load_config(kubeconf_b, warn=False)
+    client_a = k8s.clients.make_aiohttp_client(config_a)
+    client_b = k8s.clients.make_aiohttp_client(config_b)
+    proxy_a = k8s.api_proxy.Proxy(config_a)
+    proxy_b = k8s.api_proxy.Proxy(config_b)
+
+    cargs_ns_a = k8s.CoreV1Api(proxy_a).list_namespace(timeout_seconds=5, watch=True)
+    cargs_ns_b = k8s.CoreV1Api(proxy_b).list_namespace(timeout_seconds=5, watch=True)
 
     # Specify and dispatch the tasks.
     tasks = [
-        watch_resource(
-            "Cluster A: ", k8s.CoreV1Api(api_client_a).list_namespace
-        ),
-        watch_resource(
-            "Cluster B: ", k8s.CoreV1Api(api_client_b).list_namespace
-        ),
+        watch_resource(client_a, cargs_ns_a),
+        watch_resource(client_b, cargs_ns_b),
     ]
     await asyncio.gather(*tasks)
 
     # Close all pending connections.
-    await api_client_a.close()
-    await api_client_b.close()
+    await client_a.close()
+    await client_b.close()
 
 
 def main():
