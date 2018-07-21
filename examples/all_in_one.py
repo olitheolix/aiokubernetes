@@ -25,7 +25,7 @@ async def create_deployment(proxy, client):
     img_alpine_34, img_alpine_35 = 'alpine:3.4', 'alpine:3.5'
     time_between_steps = 3
 
-    # Create deployment.
+    # Load the manifest with a valid Python/Alpine container deployment.
     base_path = os.path.dirname(os.path.abspath(__file__))
     fname = os.path.join(base_path, 'manifests/create-deployment.yaml')
     body = yaml.safe_load(open(fname, 'r'))
@@ -33,9 +33,29 @@ async def create_deployment(proxy, client):
     img_orig = body['spec']['template']['spec']['containers'][0]['image']
     del fname
 
+    # Assign a specific container image (we will later replace that container
+    # and re-deploy to illustrate the workflow).
     body['spec']['template']['spec']['containers'][0]['image'] = img_alpine_34
     img_new = body['spec']['template']['spec']['containers'][0]['image']
     print(f'Replaced <{img_orig}> with <{img_new}>')
+
+    # ----------------------------------------------------------------------
+    #                  Create the namespace <aiokubernet>.
+    # ----------------------------------------------------------------------
+    manifest = {
+        'apiVersion': 'v1',
+        'kind': 'Namespace',
+        'metadata': {'name': namespace},
+    }
+    cargs = k8s.api.CoreV1Api(proxy).create_namespace(body=manifest)
+    ret = await client.request(**cargs)
+    if ret.status == 201:
+        print(f'Namespace <{namespace}> created')
+    elif ret.status == 409:
+        print(f'Namespace <{namespace}> already exists')
+    else:
+        print(f'Error {ret.status}')
+        print(await ret.text())
 
     # -------------------------------------------------------------------------
     #                           Create Deployment
