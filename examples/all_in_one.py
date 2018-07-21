@@ -1,8 +1,8 @@
 """Test all components of `aiokubernetes`.
 
 This script will create two async tasks. One will watch the namespaces and the
-other will create a deployment, log into the created Pod and issue some
-commands and then delete the deployment again.
+other will create a login pod deployment, log into that Pod, issue commands
+with and without an interactive Websocket connection and then delete the pod.
 
 NOTE: This is both a demo and an integration test. See the other examples for
 more concise feature demonstrations.
@@ -78,7 +78,7 @@ async def create_deployment(proxy, client):
     # await asyncio.sleep(time_between_steps)
 
     # -------------------------------------------------------------------------
-    #                        Execute Command in Pod
+    #                       Search For The Login Pod
     # -------------------------------------------------------------------------
     print(f'\nConnecting to a login pod: ', end='', flush=True)
 
@@ -107,40 +107,66 @@ async def create_deployment(proxy, client):
             print('Found multiple login pods')
 
         # Extract the pod name that we will connect to.
-        pod_name = pods[0].metadata.name
-        print(f'Connecting to Pod <{pod_name}>')
+        login_pod_name = pods[0].metadata.name
+        print(f'Connecting to Pod <{login_pod_name}>')
+        break
+    else:
+        login_pod_name = None
+        print('No login has entered "running" state yet: skip connection test')
+
+    # -------------------------------------------------------------------------
+    #             Execute Command in Login Pod via GET request.
+    # -------------------------------------------------------------------------
+    if login_pod_name is not None:
+        print('\nNon-interactive Websocket')
+        # Connect to the pod and print something to the terminal.
+        cargs = k8s.CoreV1Api(api_client=proxy).connect_get_namespaced_pod_exec(
+            login_pod_name, namespace,
+            command=['/bin/sh', '-c', 'echo Hello World'],
+            stderr=True, stdin=True, stdout=True, tty=True
+        )
+
+        # Tell K8s that this is a Websocket, not a GET.
+        cargs['headers']['sec-websocket-protocol'] = 'v4.channel.k8s.io'
+        url = k8s.api_client.get_websocket_url(cargs['url'])
+
+        # Connect the Websocket and consume the Websocket until Kubernetes closes it.
+        ws_session = client.ws_connect(url, headers=cargs['headers'])
+        async with ws_session as ws:
+            async for msg in ws:
+                chan, msg = msg.data[0], msg.data[1:]
+                print(f'  Websocket Channel {chan}: {msg}')
+        del cargs, url, ws_session
+
+    # -------------------------------------------------------------------------
+    #      Use interactive Websocket to execute commands in Login Pod
+    # -------------------------------------------------------------------------
+    if login_pod_name is not None:
+        print('\nInteractive Websocket')
 
         # Connect to the pod and issue a single command to spawn a shell. We
         # will then use a websocket to send commands to that shell.
         wargs = k8s.CoreV1Api(api_client=proxy).connect_get_namespaced_pod_exec(
-            pod_name, namespace,
+            login_pod_name, namespace,
             command=['/bin/sh'],
-            stderr=True, stdin=True,
-            stdout=True, tty=True
+            stderr=True, stdin=True, stdout=True, tty=True
         )
 
-        # We need to tell K8s that this is not going to be a GET call after
-        # all, but a Websocket connection.
+        # Tell K8s that this is a Websocket, not a GET.
         wargs['headers']['sec-websocket-protocol'] = 'v4.channel.k8s.io'
         url = k8s.api_client.get_websocket_url(wargs['url'])
 
+        # Connect the Websocket and consume the Websocket until Kubernetes closes it.
         ws_session = client.ws_connect(url, headers=wargs['headers'])
-
-        # Consume the Websocket until all commands have finished and Kubernetes
-        # closes the connection.
         async with ws_session as ws:
-            # The \x00 prefix indicates `stdin`, which is where we need to send
+            # The \x00 prefix denotes `stdin`, which is where we need to send
             # the command to. The rest is just a sequence of two shell commands.
             await ws.send_bytes(b'\x00' + b'ls --color=never /\nexit\n')
 
-            # Read out the response until we receive a message on the K8s
-            # channel 3 to tell us that this was all.
+            # Read until we receive something on channel 3 to tell us that this was it.
             async for msg in ws:
-                chan, msg = msg.data[0], msg.data[1:].decode('utf8')
-                print(f'  Websocket {chan}: {msg}')
-        break
-    else:
-        print('No login has entered "running" state yet: skip connection test')
+                chan, msg = msg.data[0], msg.data[1:]
+                print(f'  Websocket Channel {chan}: {msg}')
 
     # -------------------------------------------------------------------------
     #                          Replace Deployment
