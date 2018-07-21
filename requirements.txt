@@ -9,4 +9,3 @@ requests
 requests-oauthlib # ISC
 setuptools
 urllib3
-websocket-client
