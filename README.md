@@ -4,7 +4,7 @@
 
 <p align="center"><img src="aiokubernetes.svg" width="50%"></p>
 
-# Async Kubernetes Client
+# Sync and Async Kubernetes Client
 
 
 See the [documentation](https://aiokubernetes.readthedocs.io/en/latest/) and
@@ -13,11 +13,11 @@ See the [documentation](https://aiokubernetes.readthedocs.io/en/latest/) and
 
 ## Key Features
 
-- Based on [aiohttp](https://aiohttp.readthedocs.io/en/stable/).
-- Websocket stream when executing commands in Pods.
+- Works with the (a)synchronous REST clients of **your** choice.
+- Ships with [Requests](http://docs.python-requests.org/en/master/) and [AioHttp](https://aiohttp.readthedocs.io/en/stable/) by default (BYO if you like).
 - Uses [Swagger](https://github.com/swagger-api/swagger-codegen) to generate Kubernetes models and API calls.
-- Based on the [Kubernetes Python client generator](https://github.com/kubernetes-client/gen).
-- Python 3.7 support.
+- Based on the official [Kubernetes Python client generator](https://github.com/kubernetes-client/gen).
+
 
 ## Getting Started
 
@@ -59,6 +59,81 @@ if __name__ == '__main__':
     loop.run_until_complete(main())
     loop.close()
 ```
+
+### Mix Synchronous and Asynchronous Clients To List Pods
+
+The following example lists pods, just like the previous one. The difference is
+that it does so twice, once with the asynchronous
+[AioHttp](https://aiohttp.readthedocs.io/en/stable/) library and once with the
+synchronous [Requests](http://docs.python-requests.org/en/master/) library. The
+example does not use any convenience function to configure the SSL certificates
+for the (a)sync client. This is to emphasise that `aiokubernetes` does not add
+any secret sauce to use the Kubernetes API because Kubernetes is, after all,
+just that: an API. `aiokubernetes` conveniently compiles the necessary headers,
+request body and URL for the selected resource endpoint. The rest is up to you.
+
+
+```python
+import asyncio
+
+import aiohttp
+import requests
+import ssl
+
+import aiokubernetes as k8s
+
+
+async def main():
+    # Load default kubeconfig file and create an aiohttp client instance.
+    config = k8s.utils.load_config(warn=False)
+
+    # --- Compile the API request parameters to list all Pods in the cluster ---
+
+    # `cargs` is a dict with keys for 'data' (body), 'headers', 'method' (eg
+    # GET, POST), and 'url'. This encompasses the necessary information _any_
+    # REST client would need to successfully list the K8s namespaces.
+    cargs = k8s.api.CoreV1Api(k8s.api_proxy.Proxy(config)).list_namespace(watch=False)
+
+    # --- Setup the AioHttp client ---
+    connector = aiohttp.TCPConnector(
+        limit=4,
+        ssl_context=ssl.create_default_context(cafile=config.ssl_ca_cert),
+        verify_ssl=True,
+    )
+    client_aiohttp = aiohttp.ClientSession(connector=connector)
+
+    # --- Setup the Requests client ---
+    client_requests = requests.Session()
+    client_requests.verify = config.ssl_ca_cert
+
+    # --- Ask with asynchronous client ---
+    ret = await client_aiohttp.request(**cargs)
+    assert ret.status == 200
+    text_async = await ret.text()
+    await client_aiohttp.close()
+
+    # --- Ask with synchronous client ---
+    ret = client_requests.request(**cargs, verify=config.ssl_ca_cert)
+    assert ret.status_code == 200
+    text_sync = ret.text
+
+    # --- Verify that both clients returned the same data ---
+    assert text_sync == text_async
+
+    # Optional: wrap the raw (byte encoded) response into a Swagger object.
+    obj = k8s.swagger.unpack(text_sync.encode('utf8'))
+
+    # Print the pod names.
+    for i in obj.items:
+        print(f"{i.metadata.namespace} {i.metadata.name}")
+
+
+if __name__ == '__main__':
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())
+    loop.close()
+```
+
 
 ### Concurrently Watch Multiple Resources
 Watch several Kubernetes resources for 5 seconds then shut down gracefully.
