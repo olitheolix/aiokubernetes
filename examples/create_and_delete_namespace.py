@@ -6,11 +6,12 @@ import aiokubernetes as k8s
 
 async def main():
     # Create a client instance and load the credentials from ~/.kube/kubeconfig
-    api_client = k8s.config.new_client_from_config()
-    api_v1 = k8s.CoreV1Api(api_client)
+    config = k8s.utils.load_config(warn=False)
+    client = k8s.clients.make_aiohttp_client(config)
+    proxy = k8s.api_proxy.Proxy(config)
 
     # Name of the namespace.
-    name = 'foo'
+    name = 'aiokubernetes-test'
 
     # ----------------------------------------------------------------------
     # Create the namespace.
@@ -20,20 +21,21 @@ async def main():
         'kind': 'Namespace',
         'metadata': {'name': name},
     }
-    resp = await api_v1.create_namespace(body=manifest)
-    if resp.http.status == 201:
+    cargs = k8s.api.CoreV1Api(proxy).create_namespace(body=manifest)
+    ret = await client.request(**cargs)
+    if ret.status == 201:
         print(f'Namespace <{name}> created')
-    elif resp.http.status == 409:
+    elif ret.status == 409:
         print(f'Namespace <{name}> already exists')
     else:
-        print(f'Error {resp.http.status}')
-        print(resp.http.text)
+        print(f'Error {ret.status}')
+        print(await ret.text())
 
     # ----------------------------------------------------------------------
     # When we try to create the same namespace a second time it must fail.
     # ----------------------------------------------------------------------
-    resp = await api_v1.create_namespace(body=manifest)
-    assert resp.http.status == 409
+    ret = await client.request(**cargs)
+    assert ret.status == 409
     print(f'Namespace <{name}> already exists')
 
     # ----------------------------------------------------------------------
@@ -45,12 +47,13 @@ async def main():
         grace_period_seconds=0,
         propagation_policy='Foreground',
     )
-    resp = await api_v1.delete_namespace(name=name, body=delete_opts)
-    assert resp.http.status == 200
+    cargs = k8s.api.CoreV1Api(proxy).delete_namespace(name=name, body=delete_opts)
+    ret = await client.request(**cargs)
+    assert ret.status == 200
     print(f'Namespace <{name}> deleted')
 
     # Close all pending connections.
-    await api_client.close()
+    await client.close()
 
 
 if __name__ == '__main__':
