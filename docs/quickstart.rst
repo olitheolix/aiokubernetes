@@ -2,6 +2,13 @@
 Quickstart
 ==========
 
+.. note::
+
+   These notes are for v0.5 only. Version 0.6 introduced a breaking change to
+   accomodate the Rest client of your choice (async or not). Please see the
+   Readme and files in the `examples/` folder for v0.6 usage examples.
+
+
 .. currentmodule:: aiokubernetes
 
 Eager to get started? This page gives a good introduction in how to
