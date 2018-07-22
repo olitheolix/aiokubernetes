@@ -43,7 +43,6 @@ setup(
         'aiokubernetes',
         'aiokubernetes.api',
         'aiokubernetes.config',
-        'aiokubernetes.watch',
         'aiokubernetes.models',
     ],
     include_package_data=True,
