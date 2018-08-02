@@ -22,9 +22,6 @@ def load_config(config_file=None, context=None, warn=True):
     if config_file is None:
         config_file = os.path.expanduser(os.environ.get('KUBECONFIG', '~/.kube/config'))
 
-    # Create dummy configuration.
-    config = k8s.configuration.Configuration()
-
     loader = k8s.config.kube_config._get_kube_config_loader_for_yaml_file(
         config_file,
         active_context=context,
@@ -32,8 +29,9 @@ def load_config(config_file=None, context=None, warn=True):
     )
 
     # Load the token and refresh it, if necessary. Suppress all warnings if
-    # asked. This option will suppress an annoying Google Auth library message
-    # that warns about using your kubeconfig file instead of service accounts.
+    # asked to (skips an annoying Google Auth library message that recommends
+    # to use service accounts instead of a kubeconfig file).
+    config = k8s.configuration.Configuration()
     if warn:
         loader.load_and_set(config)
     else:
