@@ -16,9 +16,13 @@ def get_aiohttp(config):
     Returns:
         Requests session instance.
     """
+    ssl_context = ssl.create_default_context(cafile=config.ssl_ca_cert)
+    if config.cert_file:
+        ssl_context.load_cert_chain(config.cert_file, keyfile=config.key_file)
+
     connector = aiohttp.TCPConnector(
         limit=4,
-        ssl_context=ssl.create_default_context(cafile=config.ssl_ca_cert),
+        ssl_context=ssl_context,
         verify_ssl=config.verify_ssl  # Bool, usually True.
     )
     return aiohttp.ClientSession(connector=connector)
