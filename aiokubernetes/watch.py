@@ -52,7 +52,7 @@ class AioHttpClientWatch(object):
         if len(line) == 0:
             raise StopAsyncIteration
 
-        # Return then unpacked response.
+        # Return the unpacked response.
         name, obj = k8s.swagger.unpack_watch(line)
         return WatchResponse(name=name, raw=line, obj=obj)
 

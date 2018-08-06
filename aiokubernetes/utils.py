@@ -22,6 +22,7 @@ def load_config(config_file=None, context=None, warn=True):
     if config_file is None:
         config_file = os.path.expanduser(os.environ.get('KUBECONFIG', '~/.kube/config'))
 
+    # fixup: trap FileNotFoundError here and return None.
     loader = k8s.config.kube_config._get_kube_config_loader_for_yaml_file(
         config_file,
         active_context=context,
