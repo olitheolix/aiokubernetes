@@ -1,7 +1,6 @@
 aiohttp
 certifi >= 14.05.14
 google-auth>=1.0.1  # Apache-2.0
-ipython
 oauthlib
 python_dateutil >= 2.5.3
 pyyaml
